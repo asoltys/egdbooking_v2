@@ -6,16 +6,12 @@ namespace egdBooking_v2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("egdbooking.Vessels")]
     public partial class Vessel
     {
-        [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int VNID { get; set; }
+        public int ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(100)]
         public string Name { get; set; }
 
@@ -32,14 +28,8 @@ namespace egdBooking_v2.Models
 
         public double? Tonnage { get; set; }
 
-        public int? CID { get; set; }
-
-        [Key]
-        [Column(Order = 2)]
         public bool Anonymous { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
         public bool Deleted { get; set; }
 
         public DateTime? EndHighlight { get; set; }

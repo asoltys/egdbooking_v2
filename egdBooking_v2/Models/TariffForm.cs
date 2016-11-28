@@ -6,7 +6,6 @@ namespace egdBooking_v2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("egdbooking.TariffForms")]
     public partial class TariffForm
     {
         [Key]

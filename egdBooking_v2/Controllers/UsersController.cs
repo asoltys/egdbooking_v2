@@ -47,7 +47,7 @@ namespace egdBooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "UID,FirstName,LastName,Password,Email,Deleted,ReadOnly,notice_acknowledged")] User user)
+        public async Task<ActionResult> Create([Bind(Include = "id,FirstName,LastName,Password,Email,Deleted,ReadOnly,notice_acknowledged")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace egdBooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "UID,FirstName,LastName,Password,Email,Deleted,ReadOnly,notice_acknowledged")] User user)
+        public async Task<ActionResult> Edit([Bind(Include = "id,FirstName,LastName,Password,Email,Deleted,ReadOnly,notice_acknowledged")] User user)
         {
             if (ModelState.IsValid)
             {

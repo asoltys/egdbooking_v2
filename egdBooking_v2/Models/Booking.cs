@@ -6,13 +6,11 @@ namespace egdBooking_v2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("egdbooking.Bookings")]
     public partial class Booking
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
-        public int? VNID { get; set; }
+        public int VesselID { get; set; }
 
         public DateTime StartDate { get; set; }
 
@@ -30,5 +28,20 @@ namespace egdBooking_v2.Models
 
         [StringLength(100)]
         public string BookingTimeChangeStatus { get; set; }
+
+        public bool? Section1 { get; set; }
+
+        public bool? Section2 { get; set; }
+
+        public bool? Section3 { get; set; }
+
+        public bool? NorthJetty { get; set; }
+
+        public bool? SouthJetty { get; set; }
+
+        [StringLength(2)]
+        public string Status { get; set; }
+
+        public virtual Vessel Vessel { get; set; }
     }
 }

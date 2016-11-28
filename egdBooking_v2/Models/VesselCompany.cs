@@ -6,10 +6,12 @@ namespace egdBooking_v2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Administrator
+    public partial class VesselCompany
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int UID { get; set; }
+        public int vessel_id { get; set; }
+
+        public int? company_id { get; set; }
     }
 }

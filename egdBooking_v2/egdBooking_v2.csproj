@@ -182,16 +182,14 @@
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\BookingContext.cs" />
     <Compile Include="Models\Company.cs" />
-    <Compile Include="Models\Dock.cs" />
     <Compile Include="Models\dtproperty.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Jetty.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\TariffFee.cs" />
     <Compile Include="Models\TariffForm.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserCompany.cs" />
     <Compile Include="Models\Vessel.cs" />
+    <Compile Include="Models\VesselCompany.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -265,6 +263,7 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Bookings\Details2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
