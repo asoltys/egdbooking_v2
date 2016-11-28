@@ -1,0 +1,36 @@
+﻿@model MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel
+@using System.Web.Mvc.Html
+@using System.Linq
+@using MvcSiteMapProvider.Web.Html.Models
+
+<ol class="breadcrumb">
+    @if (Url.Content("~/").Contains("canada.ca"))
+    {
+        if (Culture == "fr")
+        {
+            @Html.Partial("~/Views/Partials/WET/_BreadcrumbsGCFra.cshtml")
+        }
+        else
+        {
+            @Html.Partial("~/Views/Partials/WET/_BreadcrumbsGCEng.cshtml")
+        }
+    }
+    else
+    {
+        if (Culture == "fr")
+        {
+            @Html.Partial("~/Views/Partials/WET/_BreadcrumbsPWGSCFra.cshtml")
+        }
+        else
+        {
+            @Html.Partial("~/Views/Partials/WET/_BreadcrumbsPWGSCEng.cshtml")
+        }
+    }
+    @foreach (var node in Model)
+    {
+        if (node != Model.Last())
+        {
+            <li>@Html.DisplayFor(m => node)</li>
+        }
+    }
+</ol>
