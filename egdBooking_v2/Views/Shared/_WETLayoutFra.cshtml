@@ -37,7 +37,9 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer1'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer1','GTM-TLGQ9K');</script>
     <!-- End Google Tag Manager -->
     @Html.Partial("~/Views/Partials/_WETHeaderFra.cshtml")
-    @RenderBody()
+    <main role="main" property="mainContentOfPage" class="container">
+        @RenderBody()
+    </main>
     @Html.Partial("~/Views/Partials/_WETFooterFra.cshtml")
     <!--[if gte IE 9 | !IE ]><!-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
