@@ -546,6 +546,10 @@
     <Content Include="Views\Partials\_WETSiteMenuFra.cshtml" />
     <Content Include="Views\Partials\_WETBreadcrumbsEng.cshtml" />
     <Content Include="Views\Partials\_WETBreadcrumbsFra.cshtml" />
+    <Content Include="Views\Partials\_WETActivitiesInitiativesEng.cshtml" />
+    <Content Include="Views\Partials\_WETActivitiesInitiativesFra.cshtml" />
+    <Content Include="Views\Partials\_WETPageDetailsEng.cshtml" />
+    <Content Include="Views\Partials\_WETPageDetailsFra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
