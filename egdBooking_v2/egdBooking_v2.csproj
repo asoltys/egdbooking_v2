@@ -516,10 +516,10 @@
     <Content Include="Views\Bookings\Index.cshtml" />
     <Content Include="Views\Shared\_WETLayoutEng.cshtml" />
     <Content Include="Views\Shared\_WETLayoutFra.cshtml" />
-    <Content Include="Views\Partials\_WETHeaderEng.cshtml" />
-    <Content Include="Views\Partials\_WETHeaderFra.cshtml" />
-    <Content Include="Views\Partials\_WETFooterEng.cshtml" />
-    <Content Include="Views\Partials\_WETFooterFra.cshtml" />
+    <Content Include="Views\Partials\WET\_HeaderEng.cshtml" />
+    <Content Include="Views\Partials\WET\_HeaderFra.cshtml" />
+    <Content Include="Views\Partials\WET\_FooterEng.cshtml" />
+    <Content Include="Views\Partials\WET\_FooterFra.cshtml" />
     <Content Include="wet-boew\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="wet-boew\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="wet-boew\fonts\glyphicons-halflings-regular.woff" />
@@ -538,18 +538,18 @@
     <Content Include="wet-boew\js\polyfills\svg.min.js.map" />
     <Content Include="wet-boew\js\polyfills\test.min.js.map" />
     <Content Include="wet-boew\js\wet-boew.min.js.map" />
-    <Content Include="Views\Partials\_WETAnchorsEng.cshtml" />
-    <Content Include="Views\Partials\_WETAnchorsFra.cshtml" />
-    <Content Include="Views\Partials\_WETBannerEng.cshtml" />
-    <Content Include="Views\Partials\_WETBannerFra.cshtml" />
-    <Content Include="Views\Partials\_WETSiteMenuEng.cshtml" />
-    <Content Include="Views\Partials\_WETSiteMenuFra.cshtml" />
-    <Content Include="Views\Partials\_WETBreadcrumbsEng.cshtml" />
-    <Content Include="Views\Partials\_WETBreadcrumbsFra.cshtml" />
-    <Content Include="Views\Partials\_WETActivitiesInitiativesEng.cshtml" />
-    <Content Include="Views\Partials\_WETActivitiesInitiativesFra.cshtml" />
-    <Content Include="Views\Partials\_WETPageDetailsEng.cshtml" />
-    <Content Include="Views\Partials\_WETPageDetailsFra.cshtml" />
+    <Content Include="Views\Partials\WET\_AnchorsEng.cshtml" />
+    <Content Include="Views\Partials\WET\_AnchorsFra.cshtml" />
+    <Content Include="Views\Partials\WET\_BannerEng.cshtml" />
+    <Content Include="Views\Partials\WET\_BannerFra.cshtml" />
+    <Content Include="Views\Partials\WET\_SiteMenuEng.cshtml" />
+    <Content Include="Views\Partials\WET\_SiteMenuFra.cshtml" />
+    <Content Include="Views\Partials\WET\_BreadcrumbsEng.cshtml" />
+    <Content Include="Views\Partials\WET\_BreadcrumbsFra.cshtml" />
+    <Content Include="Views\Partials\WET\_ActivitiesInitiativesEng.cshtml" />
+    <Content Include="Views\Partials\WET\_ActivitiesInitiativesFra.cshtml" />
+    <Content Include="Views\Partials\WET\_PageDetailsEng.cshtml" />
+    <Content Include="Views\Partials\WET\_PageDetailsFra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
