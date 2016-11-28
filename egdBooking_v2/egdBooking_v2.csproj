@@ -538,6 +538,14 @@
     <Content Include="wet-boew\js\polyfills\svg.min.js.map" />
     <Content Include="wet-boew\js\polyfills\test.min.js.map" />
     <Content Include="wet-boew\js\wet-boew.min.js.map" />
+    <Content Include="Views\Partials\_WETAnchorsEng.cshtml" />
+    <Content Include="Views\Partials\_WETAnchorsFra.cshtml" />
+    <Content Include="Views\Partials\_WETBannerEng.cshtml" />
+    <Content Include="Views\Partials\_WETBannerFra.cshtml" />
+    <Content Include="Views\Partials\_WETSiteMenuEng.cshtml" />
+    <Content Include="Views\Partials\_WETSiteMenuFra.cshtml" />
+    <Content Include="Views\Partials\_WETBreadcrumbsEng.cshtml" />
+    <Content Include="Views\Partials\_WETBreadcrumbsFra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
