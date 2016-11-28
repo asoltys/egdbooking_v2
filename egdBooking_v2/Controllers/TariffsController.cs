@@ -11,107 +11,107 @@ using egdBooking_v2.Models;
 
 namespace egdBooking_v2.Controllers
 {
-    public class UsersController : Controller
+    public class TariffsController : Controller
     {
         private BookingContext db = new BookingContext();
 
-        // GET: Users
+        // GET: Tariffs
         public async Task<ActionResult> Index()
         {
-            return View(await db.Users.ToListAsync());
+            return View(await db.TariffForms.ToListAsync());
         }
 
-        // GET: Users/Details/5
+        // GET: Tariffs/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = await db.Users.FindAsync(id);
-            if (user == null)
+            Tariff tariff = await db.TariffForms.FindAsync(id);
+            if (tariff == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(tariff);
         }
 
-        // GET: Users/Create
+        // GET: Tariffs/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Users/Create
+        // POST: Tariffs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "id,FirstName,LastName,Password,Email,Deleted,Role,SeenNotice")] User user)
+        public async Task<ActionResult> Create([Bind(Include = "ID,BookingID,BookFee,FullDrain,VesselDockage,CargoDockage,WorkVesselBerthNorth,NonworkVesselBerthNorth,VesselBerthSouth,CargoStore,TopWharfage,CraneLightHook,CraneMedHook,CraneBigHook,CraneHyster,CraneGrove,Forklift,CompressPrimary,CompressSecondary,CompressPortable,Tug,FreshH2O,Electric,TieUp,Commissionaire,OvertimeLabour,LightsStandard,LightsCaisson,OtherText,Other")] Tariff tariff)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
+                db.TariffForms.Add(tariff);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(user);
+            return View(tariff);
         }
 
-        // GET: Users/Edit/5
+        // GET: Tariffs/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = await db.Users.FindAsync(id);
-            if (user == null)
+            Tariff tariff = await db.TariffForms.FindAsync(id);
+            if (tariff == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(tariff);
         }
 
-        // POST: Users/Edit/5
+        // POST: Tariffs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "id,FirstName,LastName,Password,Email,Deleted,ReadOnly,notice_acknowledged")] User user)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,BookingID,BookFee,FullDrain,VesselDockage,CargoDockage,WorkVesselBerthNorth,NonworkVesselBerthNorth,VesselBerthSouth,CargoStore,TopWharfage,CraneLightHook,CraneMedHook,CraneBigHook,CraneHyster,CraneGrove,Forklift,CompressPrimary,CompressSecondary,CompressPortable,Tug,FreshH2O,Electric,TieUp,Commissionaire,OvertimeLabour,LightsStandard,LightsCaisson,OtherText,Other")] Tariff tariff)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
+                db.Entry(tariff).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(user);
+            return View(tariff);
         }
 
-        // GET: Users/Delete/5
+        // GET: Tariffs/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = await db.Users.FindAsync(id);
-            if (user == null)
+            Tariff tariff = await db.TariffForms.FindAsync(id);
+            if (tariff == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(tariff);
         }
 
-        // POST: Users/Delete/5
+        // POST: Tariffs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            User user = await db.Users.FindAsync(id);
-            db.Users.Remove(user);
+            Tariff tariff = await db.TariffForms.FindAsync(id);
+            db.TariffForms.Remove(tariff);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

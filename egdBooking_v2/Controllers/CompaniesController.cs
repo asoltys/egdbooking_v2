@@ -11,107 +11,107 @@ using egdBooking_v2.Models;
 
 namespace egdBooking_v2.Controllers
 {
-    public class UsersController : Controller
+    public class CompaniesController : Controller
     {
         private BookingContext db = new BookingContext();
 
-        // GET: Users
+        // GET: Companies
         public async Task<ActionResult> Index()
         {
-            return View(await db.Users.ToListAsync());
+            return View(await db.Companies.ToListAsync());
         }
 
-        // GET: Users/Details/5
+        // GET: Companies/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = await db.Users.FindAsync(id);
-            if (user == null)
+            Company company = await db.Companies.FindAsync(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(company);
         }
 
-        // GET: Users/Create
+        // GET: Companies/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Users/Create
+        // POST: Companies/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "id,FirstName,LastName,Password,Email,Deleted,Role,SeenNotice")] User user)
+        public async Task<ActionResult> Create([Bind(Include = "CID,Name,Approved,Deleted,Name_f,Address1,Address2,City,Province,Country,Zip,Phone,Abbreviation,Fax")] Company company)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
+                db.Companies.Add(company);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(user);
+            return View(company);
         }
 
-        // GET: Users/Edit/5
+        // GET: Companies/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = await db.Users.FindAsync(id);
-            if (user == null)
+            Company company = await db.Companies.FindAsync(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(company);
         }
 
-        // POST: Users/Edit/5
+        // POST: Companies/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "id,FirstName,LastName,Password,Email,Deleted,ReadOnly,notice_acknowledged")] User user)
+        public async Task<ActionResult> Edit([Bind(Include = "CID,Name,Approved,Deleted,Name_f,Address1,Address2,City,Province,Country,Zip,Phone,Abbreviation,Fax")] Company company)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
+                db.Entry(company).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(user);
+            return View(company);
         }
 
-        // GET: Users/Delete/5
+        // GET: Companies/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = await db.Users.FindAsync(id);
-            if (user == null)
+            Company company = await db.Companies.FindAsync(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(company);
         }
 
-        // POST: Users/Delete/5
+        // POST: Companies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            User user = await db.Users.FindAsync(id);
-            db.Users.Remove(user);
+            Company company = await db.Companies.FindAsync(id);
+            db.Companies.Remove(company);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

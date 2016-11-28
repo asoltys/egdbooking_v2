@@ -171,9 +171,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingsController.cs" />
+    <Compile Include="Controllers\CompaniesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TariffsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\VesselsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -185,7 +188,7 @@
     <Compile Include="Models\dtproperty.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\TariffForm.cs" />
+    <Compile Include="Models\Tariff.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserCompany.cs" />
     <Compile Include="Models\Vessel.cs" />
@@ -258,12 +261,26 @@
     <Content Include="Views\Bookings\Details.cshtml" />
     <Content Include="Views\Bookings\Edit.cshtml" />
     <Content Include="Views\Bookings\Index.cshtml" />
+    <Content Include="Views\Vessels\Create.cshtml" />
+    <Content Include="Views\Vessels\Delete.cshtml" />
+    <Content Include="Views\Vessels\Details.cshtml" />
+    <Content Include="Views\Vessels\Edit.cshtml" />
+    <Content Include="Views\Vessels\Index.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Bookings\Details2.cshtml" />
+    <Content Include="Views\Companies\Create.cshtml" />
+    <Content Include="Views\Companies\Delete.cshtml" />
+    <Content Include="Views\Companies\Details.cshtml" />
+    <Content Include="Views\Companies\Edit.cshtml" />
+    <Content Include="Views\Companies\Index.cshtml" />
+    <Content Include="Views\Tariffs\Create.cshtml" />
+    <Content Include="Views\Tariffs\Delete.cshtml" />
+    <Content Include="Views\Tariffs\Details.cshtml" />
+    <Content Include="Views\Tariffs\Edit.cshtml" />
+    <Content Include="Views\Tariffs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

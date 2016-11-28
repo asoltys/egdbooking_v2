@@ -30,8 +30,8 @@ namespace egdBooking_v2.Models
         public bool Deleted { get; set; }
 
         [StringLength(50)]
-        public string ReadOnly { get; set; }
+        public string Role { get; set; }
 
-        public bool? notice_acknowledged { get; set; }
+        public bool? SeenNotice { get; set; }
     }
 }

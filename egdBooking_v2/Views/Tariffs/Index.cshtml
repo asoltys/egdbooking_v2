@@ -1,0 +1,201 @@
+﻿@model IEnumerable<egdBooking_v2.Models.Tariff>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullDrain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VesselDockage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CargoDockage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkVesselBerthNorth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NonworkVesselBerthNorth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VesselBerthSouth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CargoStore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopWharfage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CraneLightHook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CraneMedHook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CraneBigHook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CraneHyster)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CraneGrove)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Forklift)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompressPrimary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompressSecondary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompressPortable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tug)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FreshH2O)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Electric)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TieUp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Commissionaire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OvertimeLabour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LightsStandard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LightsCaisson)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullDrain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VesselDockage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CargoDockage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkVesselBerthNorth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NonworkVesselBerthNorth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VesselBerthSouth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CargoStore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TopWharfage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CraneLightHook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CraneMedHook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CraneBigHook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CraneHyster)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CraneGrove)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Forklift)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompressPrimary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompressSecondary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompressPortable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tug)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FreshH2O)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Electric)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TieUp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Commissionaire)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OvertimeLabour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LightsStandard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LightsCaisson)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
