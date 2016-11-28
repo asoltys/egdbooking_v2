@@ -6,10 +6,14 @@
     <meta charset="utf-8">
     <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
     wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-    <title>Thème Canada.ca - Canada.ca</title>
+    <title>@ViewBag.Title – Cale sèche d'Esquimalt – Conception, construction et entretien des bâtiments – Transport maritime – Transport et infrastructure</title>
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <!-- Meta data -->
-    <meta name="description" content="La Boîte à outils de l’expérience Web (BOEW) rassemble différents composants réutilisables et prêts-à-utiliser pour la conception et la mise à jour de sites Web innovateurs qui sont à la fois accessibles, conviviaux et interopérables. Tous ces composants réutilisables sont des logiciels libres mis à la disposition des ministères et des collectivités Web externes.">
+@{
+    //TODO: Get proper translation for meta description
+    //      (currently using Google translation)
+}
+    <meta name="description" content="Les entreprises et les particuliers peuvent réserver de l'espace pour une embarcation dans l'une des installations de la Cale sèche d'Esquimalt selon le principe du premier arrivé, premier servi ou consulter le résumé public des réservations.">
     <!-- Meta data-->
     <!--[if gte IE 9 | !IE ]><!-->
     <link href="/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
@@ -17,14 +21,11 @@
     <!--<![endif]-->
     <!--[if lt IE 9]>
     <link href="/GCWeb/assets/favicon.ico" rel="shortcut icon" />
-
     <link rel="stylesheet" href="/GCWeb/css/ie8-theme.min.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/wet-boew/js/ie8-wet-boew.min.js"></script>
     <![endif]-->
     <!--[if lte IE 9]>
-
-
     <![endif]-->
     <noscript><link rel="stylesheet" href="/wet-boew/css/noscript.min.css" /></noscript>
     <!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
@@ -32,24 +33,13 @@
     <!-- End Google Tag Manager -->
 </head>
 <body vocab="http://schema.org/" typeof="WebPage">
-    <!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
-    <noscript><iframe title="Google Tag Manager" src="//www.googletagmanager.com/ns.html?id=GTM-TLGQ9K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer1'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer1','GTM-TLGQ9K');</script>
-    <!-- End Google Tag Manager -->
+    @Html.Partial("~/Views/Partials/WET/_GoogleTagManager.cshtml")
     @Html.Partial("~/Views/Partials/WET/_HeaderFra.cshtml")
     <main role="main" property="mainContentOfPage" class="container">
         @RenderBody()
         @Html.Partial("~/Views/Partials/WET/_PageDetailsFra.cshtml")
     </main>
     @Html.Partial("~/Views/Partials/WET/_FooterFra.cshtml")
-    <!--[if gte IE 9 | !IE ]><!-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-    <script src="/wet-boew/js/wet-boew.min.js"></script>
-    <!--<![endif]-->
-    <!--[if lt IE 9]>
-    <script src="/wet-boew/js/ie8-wet-boew2.min.js"></script>
-
-    <![endif]-->
-    <script src="/GCWeb/js/theme.min.js"></script>
+    @Html.Partial("~/Views/Partials/WET/_ThemeScripts.cshtml")
 </body>
 </html>

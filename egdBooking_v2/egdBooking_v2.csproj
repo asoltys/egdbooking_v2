@@ -585,6 +585,8 @@
     <Content Include="Views\Partials\WET\_BreadcrumbsGCFra.cshtml" />
     <Content Include="Views\Partials\WET\_BreadcrumbsPWGSCEng.cshtml" />
     <Content Include="Views\Partials\WET\_BreadcrumbsPWGSCFra.cshtml" />
+    <Content Include="Views\Partials\WET\_GoogleTagManager.cshtml" />
+    <Content Include="Views\Partials\WET\_ThemeScripts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
