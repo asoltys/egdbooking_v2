@@ -10,7 +10,7 @@ using egdBooking_v2.Models;
 
 namespace egdBooking_v2.Controllers
 {
-    public class BookingsController : Controller
+    public class BookingsController : BaseController
     {
         private BookingContext db = new BookingContext();
 
