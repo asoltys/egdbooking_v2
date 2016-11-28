@@ -17,7 +17,7 @@ namespace egdBooking_v2.Controllers
         // GET: Bookings
         public ActionResult Index()
         {
-            return View(db.Bookings.ToList());
+            return View(db.Bookings.ToList().Where(i => i.ID > 3000));
         }
 
         // GET: Bookings/Details/5
