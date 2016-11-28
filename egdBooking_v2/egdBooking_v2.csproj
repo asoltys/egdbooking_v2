@@ -550,6 +550,10 @@
     <Content Include="Views\Partials\WET\_ActivitiesInitiativesFra.cshtml" />
     <Content Include="Views\Partials\WET\_PageDetailsEng.cshtml" />
     <Content Include="Views\Partials\WET\_PageDetailsFra.cshtml" />
+    <Content Include="Views\Partials\WET\_InformationEng.cshtml" />
+    <Content Include="Views\Partials\WET\_AboutEng.cshtml" />
+    <Content Include="Views\Partials\WET\_InformationFra.cshtml" />
+    <Content Include="Views\Partials\WET\_AboutFra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
