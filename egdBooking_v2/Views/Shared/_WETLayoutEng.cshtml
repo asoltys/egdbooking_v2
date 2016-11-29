@@ -53,18 +53,25 @@
 
 <!-- The following are section templates that can be copied into views to display certain aspects of the footer. -->
 <!-- Copies are also located at the top of Views/Home/Index.cshtml -->
+
 <!-- The first one is the section tag that allows the "Date Modified" text to be displayed. It should be copied into every view. -->
 @*
     @section lastwrite
         {
-            @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath))
+            @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath)).ToString("yyyy-MM-dd")
         }
 *@
+@{ 
+    //TODO: Abstract date format into resource
+}
 
 <!-- This is the section tag that displays the "Share This Page" button in the footer. It should be displayed on every page that doesn't
     require a login to view -->
 @*
-    <div class="col-sm-3 mrgn-tp-sm pull-right">
-        <div class="wb-share" data-wb-share='{"lnkClass": "btn btn-default btn-block"}'></div>
-    </div>
+    @section pagedetails
+        {
+            <div class="col-sm-3 mrgn-tp-sm pull-right">
+                <div class="wb-share" data-wb-share='{"lnkClass": "btn btn-default btn-block"}'></div>
+            </div>
+        }
 *@
