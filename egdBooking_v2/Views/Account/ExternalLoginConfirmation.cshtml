@@ -2,6 +2,12 @@
 @{
     ViewBag.Title = "Register";
 }
+
+@section lastwrite
+{
+    @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath))
+}
+
 <h2>@ViewBag.Title.</h2>
 <h3>Associate your @ViewBag.LoginProvider account.</h3>
 

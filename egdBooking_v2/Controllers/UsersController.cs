@@ -11,7 +11,7 @@ using egdBooking_v2.Models;
 
 namespace egdBooking_v2.Controllers
 {
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
         private BookingContext db = new BookingContext();
 
@@ -47,7 +47,7 @@ namespace egdBooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "id,FirstName,LastName,Password,Email,Deleted,ReadOnly,notice_acknowledged")] User user)
+        public async Task<ActionResult> Create([Bind(Include = "id,FirstName,LastName,Password,Email,Deleted,Role,SeenNotice")] User user)
         {
             if (ModelState.IsValid)
             {

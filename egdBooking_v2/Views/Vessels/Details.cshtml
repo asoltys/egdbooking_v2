@@ -1,0 +1,98 @@
+﻿@model egdBooking_v2.Models.Vessel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vessel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Length)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Width)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Width)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BlockSetupTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BlockSetupTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BlockTeardownTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BlockTeardownTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LloydsID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LloydsID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tonnage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tonnage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anonymous)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anonymous)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndHighlight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndHighlight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

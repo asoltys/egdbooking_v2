@@ -4,6 +4,11 @@
     ViewBag.Title = "Index";
 }
 
+@section lastwrite
+{
+    @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath))
+}
+
 <h2>Index</h2>
 
 <p>
@@ -12,31 +17,15 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ID)
+            Vessel
+        <th>
+            Section
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StartDate)
+            Docking Dates
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BookingTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Deleted)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndHighlight)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BookingTimeChange)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BookingTimeChangeStatus)
+            Booking Date
         </th>
         <th></th>
     </tr>
@@ -44,31 +33,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ID)
+            @Html.DisplayFor(modelItem => item.Vessel.Name)
+        </td>
+        <td>
+            @foreach (var section in item.Sections) { 
+                @Html.DisplayText(section)
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StartDate)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.EndDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.BookingTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Deleted)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EndHighlight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookingTimeChange)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookingTimeChangeStatus)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

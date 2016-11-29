@@ -19,7 +19,7 @@ namespace egdBooking_v2.Models
         public virtual DbSet<Administrator> Administrators { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<dtproperty> dtproperties { get; set; }
-        public virtual DbSet<TariffForm> TariffForms { get; set; }
+        public virtual DbSet<Tariff> Tariffs { get; set; }
         public virtual DbSet<VesselCompany> VesselCompanies { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -49,7 +49,7 @@ namespace egdBooking_v2.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.ReadOnly)
+                .Property(e => e.Role)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Vessel>()
@@ -112,7 +112,7 @@ namespace egdBooking_v2.Models
                 .Property(e => e.value)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TariffForm>()
+            modelBuilder.Entity<Tariff>()
                 .Property(e => e.OtherText)
                 .IsUnicode(false);
         }
