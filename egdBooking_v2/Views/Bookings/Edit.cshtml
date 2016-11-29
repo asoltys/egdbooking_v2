@@ -4,6 +4,11 @@
     ViewBag.Title = "Edit";
 }
 
+@section lastwrite
+{
+    @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath))
+}
+
 <h2>Edit</h2>
 
 

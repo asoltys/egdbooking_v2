@@ -34,6 +34,12 @@
     <main role="main" property="mainContentOfPage" class="container">
         @RenderBody()
         @Html.Partial("~/Views/Partials/WET/_PageDetailsEng.cshtml")
+        <div class="datemod col-xs-12 mrgn-tp-lg">
+            <dl id="wb-dtmd">
+                <dt>Date modified:&#32;</dt>
+                <dd>@RenderSection("lastwrite", required: false)</dd>
+            </dl>
+        </div>
     </main>
     @Html.Partial("~/Views/Partials/WET/_FooterEng.cshtml")
     @Html.Partial("~/Views/Partials/WET/_ThemeScripts.cshtml")
