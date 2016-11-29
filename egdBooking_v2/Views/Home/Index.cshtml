@@ -1,4 +1,7 @@
-﻿@{
+﻿@using egdBooking_v2.Models
+@model LoginViewModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -14,30 +17,33 @@
         </div>
     }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">@Resources.Resources.Booking</a></p>
-</div>
+<h1 id="wb-cont">TBD</h1>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+<div class="span-4">
+    <br />
+    <p>TBD</p>
+    <p style="border: solid 1px gray; padding: 4px"><strong>TBD</strong><br />TBD</p>
+    
+    <h2>TBD</h2>
+
+    <ul>
+        <li>Jump to login by clicking here</li>
+        <li>Jump to bookings by clicking here</li>
+        <li>Jump to information by clicking here</li>
+    </ul>
+
+    <!-- Div so link above can jump to this point (login) -->
+    <div id="login"></div>
+    <h2>TBD</h2>
+    <p>Haven't decided what I want to put here yet</p>
+
+    <!-- Div so link above can jump to this point (bookings) -->
+    <div id="bookings"></div>
+    <p>Same here</p>
+
+    <!-- Div so link above can jump to this point (information) -->
+    <div id="information"></div>
+    <p>Going to worry about this later too</p>
+
+
 </div>
