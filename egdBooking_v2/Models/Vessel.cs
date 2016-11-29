@@ -33,5 +33,7 @@ namespace egdBooking_v2.Models
         public bool Deleted { get; set; }
 
         public DateTime? EndHighlight { get; set; }
+
+        public virtual ICollection<Booking> Bookings { get; set; }
     }
 }

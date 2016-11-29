@@ -19,7 +19,7 @@ namespace egdBooking_v2.Models
         public virtual DbSet<Administrator> Administrators { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<dtproperty> dtproperties { get; set; }
-        public virtual DbSet<Tariff> TariffForms { get; set; }
+        public virtual DbSet<Tariff> Tariffs { get; set; }
         public virtual DbSet<VesselCompany> VesselCompanies { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

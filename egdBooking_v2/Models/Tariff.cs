@@ -69,5 +69,7 @@ namespace egdBooking_v2.Models
         public string OtherText { get; set; }
 
         public bool Other { get; set; }
+
+        public virtual Booking Booking { get; set; }
     }
 }

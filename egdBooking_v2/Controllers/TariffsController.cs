@@ -18,7 +18,7 @@ namespace egdBooking_v2.Controllers
         // GET: Tariffs
         public async Task<ActionResult> Index()
         {
-            return View(await db.TariffForms.ToListAsync());
+            return View(db.Tariffs.ToList().Where(i => i.ID < 100));
         }
 
         // GET: Tariffs/Details/5
@@ -28,7 +28,7 @@ namespace egdBooking_v2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tariff tariff = await db.TariffForms.FindAsync(id);
+            Tariff tariff = await db.Tariffs.FindAsync(id);
             if (tariff == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace egdBooking_v2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.TariffForms.Add(tariff);
+                db.Tariffs.Add(tariff);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace egdBooking_v2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tariff tariff = await db.TariffForms.FindAsync(id);
+            Tariff tariff = await db.Tariffs.FindAsync(id);
             if (tariff == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace egdBooking_v2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tariff tariff = await db.TariffForms.FindAsync(id);
+            Tariff tariff = await db.Tariffs.FindAsync(id);
             if (tariff == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace egdBooking_v2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Tariff tariff = await db.TariffForms.FindAsync(id);
-            db.TariffForms.Remove(tariff);
+            Tariff tariff = await db.Tariffs.FindAsync(id);
+            db.Tariffs.Remove(tariff);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
