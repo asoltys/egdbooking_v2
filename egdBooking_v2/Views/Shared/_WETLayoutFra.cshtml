@@ -6,14 +6,14 @@
     <meta charset="utf-8">
     <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
     wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-    <title>@ViewBag.Title – Cale sèche d'Esquimalt – Conception, construction et entretien des bâtiments – Transport maritime – Transport et infrastructure</title>
+    <title>@ViewBag.Title – @Resources.Resources.MetaTitle</title>
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <!-- Meta data -->
 @{
     //TODO: Get proper translation for meta description
     //      (currently using Google translation)
 }
-    <meta name="description" content="Les entreprises et les particuliers peuvent réserver de l'espace pour une embarcation dans l'une des installations de la Cale sèche d'Esquimalt selon le principe du premier arrivé, premier servi ou consulter le résumé public des réservations.">
+    <meta name="description" content="@Resources.Resources.MetaDescription">
     <!-- Meta data-->
     <!--[if gte IE 9 | !IE ]><!-->
     <link href="/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
@@ -39,7 +39,7 @@
         @RenderBody()
         <div class="row pagedetails">
             <div class="col-sm-6 col-lg-4 mrgn-tp-sm">
-                <a href="https://www.canada.ca/fr/signaler-probleme.html" class="btn btn-default btn-block">Signaler un problème ou une erreur sur cette page</a>
+                <a href="https://www.canada.ca/fr/signaler-probleme.html" class="btn btn-default btn-block">@Resources.Resources.WETReport</a>
             </div>
             @RenderSection("pagedetails", required: false)
             <div class="datemod col-xs-12 mrgn-tp-lg">
@@ -62,13 +62,9 @@
 @*
     @section lastwrite
         {
-            @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath)).ToString("yyyy-MM-dd")
+            @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath)).ToString(Resources.Resources.ShortDate)
         }
 *@
-@{
-    //TODO: Abstract date format into resource
-}
-
 
 <!-- This is the section tag that displays the "Share This Page" button in the footer. It should be displayed on every page that doesn't
     require a login to view -->

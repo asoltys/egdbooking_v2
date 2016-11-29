@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "egdBooking_v2", "egdBooking_v2\egdBooking_v2.csproj", "{225DF2FB-89CA-48B7-8F78-F85A96A5A5D4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A631E79A-ACA4-45FF-A32C-269C07A3F474} = {A631E79A-ACA4-45FF-A32C-269C07A3F474}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{A631E79A-ACA4-45FF-A32C-269C07A3F474}"
 EndProject
