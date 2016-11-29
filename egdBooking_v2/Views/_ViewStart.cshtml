@@ -1,3 +1,8 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@if (Culture == "fr")
+{
+    Layout = "~/Views/Shared/_WETLayoutFra.cshtml";
+}
+else
+{
+    Layout = "~/Views/Shared/_WETLayoutEng.cshtml";
 }

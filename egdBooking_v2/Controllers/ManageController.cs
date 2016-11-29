@@ -11,7 +11,7 @@ using egdBooking_v2.Models;
 namespace egdBooking_v2.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;

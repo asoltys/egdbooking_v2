@@ -1,6 +1,11 @@
 ﻿@model egdBooking_v2.Models.ExternalLoginListViewModel
 @using Microsoft.Owin.Security
 
+@section lastwrite
+{
+    @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath))
+}
+
 <h4>Use another service to log in.</h4>
 <hr />
 @{
