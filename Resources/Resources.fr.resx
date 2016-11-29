@@ -120,4 +120,28 @@
   <data name="Booking" xml:space="preserve">
     <value>Réservation</value>
   </data>
+  <data name="LongDate" xml:space="preserve">
+    <value>d MMMM yyyy</value>
+  </data>
+  <data name="MetaCreator" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="MetaDescription" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="MetaKeywords" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="MetaSubject" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="MetaTitle" xml:space="preserve">
+    <value>Cale sèche d'Esquimalt – Conception, construction et entretien des bâtiments – Transport maritime – Transport et infrastructure</value>
+  </data>
+  <data name="ShortDate" xml:space="preserve">
+    <value>yyyy-MM-dd</value>
+  </data>
+  <data name="WETReport" xml:space="preserve">
+    <value>Signaler un problème ou une erreur sur cette page</value>
+  </data>
 </root>

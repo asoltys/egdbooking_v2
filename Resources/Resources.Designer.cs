@@ -68,5 +68,77 @@ namespace Resources {
                 return ResourceManager.GetString("Booking", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MMMM d, yyyy.
+        /// </summary>
+        public static string LongDate {
+            get {
+                return ResourceManager.GetString("LongDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Government of Canada, Public Works and Government Services, Real Property Branch.
+        /// </summary>
+        public static string MetaCreator {
+            get {
+                return ResourceManager.GetString("MetaCreator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Companies and individuals can book space for a watercraft at any of the facilities of the Esquimalt Graving Dock on a first-come, first-served basis or can consult the public summary of bookings..
+        /// </summary>
+        public static string MetaDescription {
+            get {
+                return ResourceManager.GetString("MetaDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esquimalt Graving Dock, EGD, Drydock, North Landing Wharf, South Jetty,  bookings, space booking, reserve a space, reservation, cancellation, booking dates, docking dates, commercial drydock, dry-dock, ship repair facility.
+        /// </summary>
+        public static string MetaKeywords {
+            get {
+                return ResourceManager.GetString("MetaKeywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Government of Canada; marine installations; wharfs; vessels; ships;.
+        /// </summary>
+        public static string MetaSubject {
+            get {
+                return ResourceManager.GetString("MetaSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esquimalt Graving Dock – Vessels design, construction and maintenance – Marine transportation – Transport and infrastructure.
+        /// </summary>
+        public static string MetaTitle {
+            get {
+                return ResourceManager.GetString("MetaTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to yyyy-MM-dd.
+        /// </summary>
+        public static string ShortDate {
+            get {
+                return ResourceManager.GetString("ShortDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report a problem or mistake on this page.
+        /// </summary>
+        public static string WETReport {
+            get {
+                return ResourceManager.GetString("WETReport", resourceCulture);
+            }
+        }
     }
 }

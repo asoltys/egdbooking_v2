@@ -4,18 +4,18 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>@ViewBag.Title</title>
+    <title>@ViewBag.Title - @Resources.Resources.MetaTitle</title>
     <meta content="width=device-width,initial-scale=1" name="viewport">
-    <meta name="description" content="Companies and individuals can book space for a watercraft at any of the facilities of the Esquimalt Graving Dock on a first-come, first-served basis or can consult the public summary of bookings.">
-    <meta name="description" lang="fr" content="Companies and individuals can book space for a watercraft at any of the facilities of the Esquimalt Graving Dock on a first-come, first-served basis or can consult the public summary of bookings.">
-    <meta name="dcterms.creator" content="Government of Canada, Public Works and Government Services, Real Property Branch">
-    <meta name="dcterms.creator" lang="fr" content="Government of Canada, Public Works and Government Services, Real Property Branch">
-    <meta name="dcterms.title" content="@ViewBag.Title">
-    <meta name="dcterms.title" lang="fr" content="@ViewBag.Title">
-    <meta name="dcterms.issued" title="W3CDTF" content="2016-11-29">
+    <meta name="description" content="@Resources.Resources.MetaDescription">
+    <meta name="description" lang="fr" content="@Resources.Resources.MetaDescription">
+    <meta name="dcterms.creator" content="@Resources.Resources.MetaCreator">
+    <meta name="dcterms.creator" lang="fr" content="@Resources.Resources.MetaCreator">
+    <meta name="dcterms.title" content="@ViewBag.Title - @Resources.Resources.MetaTitle">
+    <meta name="dcterms.title" lang="fr" content="@ViewBag.Title - @Resources.Resources.MetaTitle">
+    <meta name="dcterms.issued" title="W3CDTF" content="@File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath)).ToString(Resources.Resources.ShortDate)">
     <meta name="dcterms.modified" title="W3CDTF" content="">
-    <meta name="dcterms.subject" title="scheme" content="Government of Canada; marine installations; wharfs; vessels; ships;">
-    <meta name="dcterms.subject" lang="fr" title="scheme" content="Government of Canada; marine installations; wharfs; vessels; ships;">
+    <meta name="dcterms.subject" title="scheme" content="@Resources.Resources.MetaSubject">
+    <meta name="dcterms.subject" lang="fr" title="scheme" content="@Resources.Resources.MetaSubject">
     <meta name="dcterms.language" title="ISO639-2" content="eng">
     <meta name="dcterms.language" lang="fr" title="ISO639-2" content="fra">
     <meta name="robots" content="noindex, follow">
