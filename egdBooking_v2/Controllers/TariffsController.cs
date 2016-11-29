@@ -11,7 +11,7 @@ using egdBooking_v2.Models;
 
 namespace egdBooking_v2.Controllers
 {
-    public class TariffsController : Controller
+    public class TariffsController : BaseController
     {
         private BookingContext db = new BookingContext();
 
