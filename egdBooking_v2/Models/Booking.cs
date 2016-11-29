@@ -39,6 +39,33 @@ namespace egdBooking_v2.Models
 
         public bool? SouthJetty { get; set; }
 
+        public List<string> Sections {
+            get {
+                List<string> sections = new List<string>();
+                if (Section1.HasValue) {
+                    if ((bool)Section1) {
+                        sections.Add("Section 1");
+                    }
+                }
+                if (Section2.HasValue)
+                {
+                    if ((bool)Section2)
+                    {
+                        sections.Add("Section 2");
+                    }
+                }
+                if (Section3.HasValue)
+                {
+                    if ((bool)Section3)
+                    {
+                        sections.Add("Section 3");
+                    }
+                }
+
+                return sections;
+            }
+        }
+
         [StringLength(2)]
         public string Status { get; set; }
 
