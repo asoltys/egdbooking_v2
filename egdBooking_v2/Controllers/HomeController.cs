@@ -26,5 +26,10 @@ namespace egdBooking_v2.Controllers
 
             return View();
         }
+
+        public ActionResult Welcome()
+        {
+            return View();
+        }
     }
 }
