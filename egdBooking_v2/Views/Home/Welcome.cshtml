@@ -1,40 +1,7 @@
 ﻿@{
     ViewBag.Title = "Welcome";
-    Layout = Layout = "~/Views/Shared/_WETSplash.cshtml";
+    Layout = Layout = "~/Views/Shared/_WETSplashLayout.cshtml";
 }
 
-<div class="sp-hb">
-    <div class="sp-bx col-xs-12">
-        <h1 property="name" class="wb-inv">{title}}</h1>
-        <div class="row">
-            <div class="col-xs-11 col-md-8">
-                <object type="image/svg+xml" tabindex="-1" role="img" data="/GCWeb/assets/sig-spl.svg" width="283" aria-label="Government of Canada / Gouvernement du Canada"></object>
-            </div>
-        </div>
-        <div style="width: inherit; margin-right: auto; margin-left: auto; text-align: center;">
-            <h3>Welcome / Bienvenue</h3>
-            <h2>Esquimalt Graving Dock<br />Cale s&egrave;che d'Esquimalt</h2>
-        </div>
-        <div class="row">
-            <section class="col-xs-6 text-right">
-                <h2 class="wb-inv">Public Works and Government Services Canada</h2>
-                <p>@Html.ActionLink("English", "Index", "Home", new { lang = "eng" }, new { @class = "btn btn-primary" })</p>
-            </section>
-            <section class="col-xs-6" lang="fr">
-                <h2 class="wb-inv">Travaux publics et Services gouvernementaux Canada</h2>
-                <p>@Html.ActionLink("Français", "Index", "Home", new { lang = "fra" }, new { @class = "btn btn-primary" })</p>
-            </section>
-        </div>
-    </div>
-    <div class="sp-bx-bt col-xs-12">
-        <div class="row">
-            <div class="col-xs-7 col-md-8">
-                <a href="http://www.tpsgc-pwgsc.gc.ca/comm/ai-in-eng.html" class="sp-lk">Terms & conditions</a> <span class="glyphicon glyphicon-asterisk"></span> <a href="http://www.tpsgc-pwgsc.gc.ca/comm/ai-in-fra.html" class="sp-lk" lang="fr">Avis</a>
-            </div>
-            <div class="col-xs-5 col-md-4 text-right mrgn-bttm-md">
-                <object type="image/svg+xml" tabindex="-1" role="img" data="./GCWeb/assets/wmms-spl.svg" width="127" aria-label="Symbol of the Government of Canada / Symbole du gouvernement du Canada"></object>
-            </div>
-        </div>
-    </div>
-</div>
+@Html.Partial("~/Views/Partials/WET/_Splash.cshtml")
 
