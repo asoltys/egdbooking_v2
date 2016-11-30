@@ -70,6 +70,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Approve.
+        /// </summary>
+        public static string Approve {
+            get {
+                return ResourceManager.GetString("Approve", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bookings.
         /// </summary>
         public static string Booking {
@@ -79,11 +88,56 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to a company.
+        /// </summary>
+        public static string CompanyRequest {
+            get {
+                return ResourceManager.GetString("CompanyRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} companies.
+        /// </summary>
+        public static string CompanyRequests {
+            get {
+                return ResourceManager.GetString("CompanyRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drydock.
         /// </summary>
         public static string Drydock {
             get {
                 return ResourceManager.GetString("Drydock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
             }
         }
         
@@ -151,11 +205,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have {0} that need to be approved..
+        /// </summary>
+        public static string NeedingApproval {
+            get {
+                return ResourceManager.GetString("NeedingApproval", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to North Landing Wharf.
         /// </summary>
         public static string NorthJetty {
             get {
                 return ResourceManager.GetString("NorthJetty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
             }
         }
         
@@ -183,6 +255,24 @@ namespace Resources {
         public static string SouthJetty {
             get {
                 return ResourceManager.GetString("SouthJetty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to a user company request.
+        /// </summary>
+        public static string UserCompanyRequest {
+            get {
+                return ResourceManager.GetString("UserCompanyRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} user company requests.
+        /// </summary>
+        public static string UserCompanyRequests {
+            get {
+                return ResourceManager.GetString("UserCompanyRequests", resourceCulture);
             }
         }
     }

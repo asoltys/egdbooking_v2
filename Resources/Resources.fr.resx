@@ -120,11 +120,29 @@
   <data name="AbbrevDate" xml:space="preserve">
     <value>d MMM yyyy</value>
   </data>
+  <data name="Approve" xml:space="preserve">
+    <value>TBD</value>
+  </data>
   <data name="Booking" xml:space="preserve">
     <value>Réservation</value>
   </data>
+  <data name="CompanyRequest" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="CompanyRequests" xml:space="preserve">
+    <value>{0} TBD</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>TBD</value>
+  </data>
   <data name="Drydock" xml:space="preserve">
     <value>Cale sèche</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>TBD</value>
   </data>
   <data name="EGD" xml:space="preserve">
     <value>Cale sèche d'Esquimalt</value>
@@ -147,8 +165,14 @@
   <data name="MetaTitle" xml:space="preserve">
     <value>Conception, construction et entretien des bâtiments – Transport maritime – Transport et infrastructure</value>
   </data>
+  <data name="NeedingApproval" xml:space="preserve">
+    <value>TBD {0} TBD</value>
+  </data>
   <data name="NorthJetty" xml:space="preserve">
     <value>Quai de débarquement nord</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>TBD</value>
   </data>
   <data name="SectionMenu" xml:space="preserve">
     <value>Menu de la section</value>
@@ -158,5 +182,11 @@
   </data>
   <data name="SouthJetty" xml:space="preserve">
     <value>Jetée sud</value>
+  </data>
+  <data name="UserCompanyRequest" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="UserCompanyRequests" xml:space="preserve">
+    <value>{0} TBD</value>
   </data>
 </root>
