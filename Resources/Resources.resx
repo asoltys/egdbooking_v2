@@ -120,6 +120,9 @@
   <data name="Booking" xml:space="preserve">
     <value>Bookings</value>
   </data>
+  <data name="EGD" xml:space="preserve">
+    <value>Esquimalt Graving Dock</value>
+  </data>
   <data name="LongDate" xml:space="preserve">
     <value>MMMM d, yyyy</value>
   </data>
@@ -136,7 +139,10 @@
     <value>Government of Canada; marine installations; wharfs; vessels; ships;</value>
   </data>
   <data name="MetaTitle" xml:space="preserve">
-    <value>Esquimalt Graving Dock – Vessels design, construction and maintenance – Marine transportation – Transport and infrastructure</value>
+    <value>Vessels design, construction and maintenance – Marine transportation – Transport and infrastructure</value>
+  </data>
+  <data name="SectionMenu" xml:space="preserve">
+    <value>Section menu</value>
   </data>
   <data name="ShortDate" xml:space="preserve">
     <value>yyyy-MM-dd</value>

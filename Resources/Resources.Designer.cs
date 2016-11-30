@@ -70,6 +70,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esquimalt Graving Dock.
+        /// </summary>
+        public static string EGD {
+            get {
+                return ResourceManager.GetString("EGD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MMMM d, yyyy.
         /// </summary>
         public static string LongDate {
@@ -115,11 +124,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Esquimalt Graving Dock – Vessels design, construction and maintenance – Marine transportation – Transport and infrastructure.
+        ///   Looks up a localized string similar to Vessels design, construction and maintenance – Marine transportation – Transport and infrastructure.
         /// </summary>
         public static string MetaTitle {
             get {
                 return ResourceManager.GetString("MetaTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Section menu.
+        /// </summary>
+        public static string SectionMenu {
+            get {
+                return ResourceManager.GetString("SectionMenu", resourceCulture);
             }
         }
         

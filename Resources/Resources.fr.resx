@@ -120,6 +120,9 @@
   <data name="Booking" xml:space="preserve">
     <value>Réservation</value>
   </data>
+  <data name="EGD" xml:space="preserve">
+    <value>Cale sèche d'Esquimalt</value>
+  </data>
   <data name="LongDate" xml:space="preserve">
     <value>d MMMM yyyy</value>
   </data>
@@ -136,7 +139,10 @@
     <value>TBD</value>
   </data>
   <data name="MetaTitle" xml:space="preserve">
-    <value>Cale sèche d'Esquimalt – Conception, construction et entretien des bâtiments – Transport maritime – Transport et infrastructure</value>
+    <value>Conception, construction et entretien des bâtiments – Transport maritime – Transport et infrastructure</value>
+  </data>
+  <data name="SectionMenu" xml:space="preserve">
+    <value>Menu de la section</value>
   </data>
   <data name="ShortDate" xml:space="preserve">
     <value>yyyy-MM-dd</value>
