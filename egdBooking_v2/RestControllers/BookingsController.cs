@@ -33,7 +33,12 @@ namespace egdBooking_v2.RestControllers
                 return NotFound();
             }
 
-            return Ok(booking);
+            var test_obj = new
+            {
+                vessellName = booking.Vessel.Name,
+                date = booking.BookingTime
+            };
+            return Ok(test_obj);
         }
 
         // PUT: api/Bookings/5

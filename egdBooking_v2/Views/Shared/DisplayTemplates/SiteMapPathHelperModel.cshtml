@@ -1,7 +1,6 @@
 ﻿@model MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel
 @using System.Web.Mvc.Html
 @using System.Linq
-@using MvcSiteMapProvider.Web.Html.Models
 
 <ol class="breadcrumb">
     @if (Url.Content("~/").Contains("canada.ca"))
@@ -30,7 +29,7 @@
     {
         if (node != Model.Last())
         {
-            <li>@Html.DisplayFor(m => node)</li>
+            <li><a href="@node.Url">@node.Title</a></li>
         }
     }
 </ol>

@@ -6,7 +6,7 @@
 
 @section lastwrite
 {
-    @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath))
+    @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath)).ToString(Resources.ShortDate)
 }
 
 <h2>Details</h2>

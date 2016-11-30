@@ -14,8 +14,8 @@ namespace egdBooking_v2.Controllers
     {
         protected const string APPLICATION_CULTURE_EN = "en";
         protected const string APPLICATION_CULTURE_FR = "fr";
-        protected const string QUERY_CULTURE_EN = "eng";
-        protected const string QUERY_CULTURE_FR = "fra";
+        protected const string QUERY_CULTURE_EN = "en";
+        protected const string QUERY_CULTURE_FR = "fr";
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -57,13 +57,13 @@ namespace egdBooking_v2.Controllers
             var HostName = ReferrerRequest.Url.GetLeftPart(UriPartial.Authority);
             var AbsolutePath = ReferrerRequest.Url.AbsolutePath;
             var ReferrerQuery = ReferrerRequest.Url.Query;
-            var QueryPattern = @"(lang=)([A-z]{3})";
+            var QueryPattern = @"(lang=)([A-z]{2})";
             var MatchQuery = Regex.Match(ReferrerQuery, QueryPattern);
             string NextQuery;
             if (MatchQuery.Success)
                 NextQuery = Regex.Replace(ReferrerQuery, QueryPattern, "$1" + lang);
             else
-                NextQuery = "?lang=fra";
+                NextQuery = "?lang=fr";
             return Redirect(HostName + AbsolutePath + NextQuery);
         }
     }
