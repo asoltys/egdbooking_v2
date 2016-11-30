@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
-<!--[if lt IE 9]><html class="no-js lt-ie9" lang="fr" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
-<html class="no-js" lang="fr" dir="ltr">
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr">
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
     wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-    <title>@ViewBag.Title – @Resources.MetaTitle</title>
+    <title>@ViewBag.Title – @Resources.Resources.MetaTitle</title>
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <!-- Meta data -->
-    <meta name="description" content="@Resources.MetaDescription">
+    <meta name="description" content="@Resources.Resources.MetaDescription">
     <!-- Meta data-->
     <!--[if gte IE 9 | !IE ]><!-->
     <link href="/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
@@ -30,23 +30,23 @@
 </head>
 <body vocab="http://schema.org/" typeof="WebPage">
     @Html.Partial("~/Views/Partials/WET/_GoogleTagManager.cshtml")
-    @Html.Partial("~/Views/Partials/WET/_HeaderFra.cshtml")
+    @Html.Partial("~/Views/Partials/WET/_HeaderEng.cshtml")
     <main role="main" property="mainContentOfPage" class="container">
         @RenderBody()
         <div class="row pagedetails">
             <div class="col-sm-6 col-lg-4 mrgn-tp-sm">
-                <a href="https://www.canada.ca/fr/signaler-probleme.html" class="btn btn-default btn-block">Signaler un problème ou une erreur sur cette page</a>
+                <a href="https://www.canada.ca/en/report-problem.html" class="btn btn-default btn-block">Report a problem or mistake on this page</a>
             </div>
             @RenderSection("pagedetails", required: false)
             <div class="datemod col-xs-12 mrgn-tp-lg">
                 <dl id="wb-dtmd">
-                    <dt>Date de modification:&#32;</dt>
+                    <dt>Date modified:&#32;</dt>
                     <dd>@RenderSection("lastwrite", required: false)</dd>
                 </dl>
             </div>
          </div>
     </main>
-    @Html.Partial("~/Views/Partials/WET/_FooterFra.cshtml")
+    @Html.Partial("~/Views/Partials/WET/_FooterEng.cshtml")
     @Html.Partial("~/Views/Partials/WET/_ThemeScripts.cshtml")
 </body>
 </html>

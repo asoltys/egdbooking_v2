@@ -632,6 +632,8 @@
     <Content Include="Views\Home\Welcome.cshtml" />
     <Content Include="Views\Shared\_WETSplashLayout.cshtml" />
     <Content Include="Views\Partials\WET\_Splash.cshtml" />
+    <Content Include="Views\Shared\_WETLayout2ColEng.cshtml" />
+    <Content Include="Views\Shared\_WETLayout2ColFra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
