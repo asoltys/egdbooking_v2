@@ -124,5 +124,11 @@ namespace egdBooking_v2.Controllers
             }
             base.Dispose(disposing);
         }
+
+        // GET: Companies/Approve
+        public ActionResult Approve()
+        {
+            return View();
+        }
     }
 }
