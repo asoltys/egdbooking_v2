@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AbbrevDate" xml:space="preserve">
+    <value>d MMM yyyy</value>
+  </data>
   <data name="Booking" xml:space="preserve">
     <value>Réservation</value>
+  </data>
+  <data name="Drydock" xml:space="preserve">
+    <value>Cale sèche</value>
   </data>
   <data name="EGD" xml:space="preserve">
     <value>Cale sèche d'Esquimalt</value>
@@ -141,10 +147,16 @@
   <data name="MetaTitle" xml:space="preserve">
     <value>Conception, construction et entretien des bâtiments – Transport maritime – Transport et infrastructure</value>
   </data>
+  <data name="NorthJetty" xml:space="preserve">
+    <value>Quai de débarquement nord</value>
+  </data>
   <data name="SectionMenu" xml:space="preserve">
     <value>Menu de la section</value>
   </data>
   <data name="ShortDate" xml:space="preserve">
     <value>yyyy-MM-dd</value>
+  </data>
+  <data name="SouthJetty" xml:space="preserve">
+    <value>Jetée sud</value>
   </data>
 </root>

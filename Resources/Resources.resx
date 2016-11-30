@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AbbrevDate" xml:space="preserve">
+    <value>MMM d, yyyy</value>
+  </data>
   <data name="Booking" xml:space="preserve">
     <value>Bookings</value>
+  </data>
+  <data name="Drydock" xml:space="preserve">
+    <value>Drydock</value>
   </data>
   <data name="EGD" xml:space="preserve">
     <value>Esquimalt Graving Dock</value>
@@ -141,10 +147,16 @@
   <data name="MetaTitle" xml:space="preserve">
     <value>Vessels design, construction and maintenance – Marine transportation – Transport and infrastructure</value>
   </data>
+  <data name="NorthJetty" xml:space="preserve">
+    <value>North Landing Wharf</value>
+  </data>
   <data name="SectionMenu" xml:space="preserve">
     <value>Section menu</value>
   </data>
   <data name="ShortDate" xml:space="preserve">
     <value>yyyy-MM-dd</value>
+  </data>
+  <data name="SouthJetty" xml:space="preserve">
+    <value>South Jetty</value>
   </data>
 </root>

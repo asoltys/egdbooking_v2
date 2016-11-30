@@ -61,11 +61,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MMM d, yyyy.
+        /// </summary>
+        public static string AbbrevDate {
+            get {
+                return ResourceManager.GetString("AbbrevDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bookings.
         /// </summary>
         public static string Booking {
             get {
                 return ResourceManager.GetString("Booking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drydock.
+        /// </summary>
+        public static string Drydock {
+            get {
+                return ResourceManager.GetString("Drydock", resourceCulture);
             }
         }
         
@@ -133,6 +151,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to North Landing Wharf.
+        /// </summary>
+        public static string NorthJetty {
+            get {
+                return ResourceManager.GetString("NorthJetty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Section menu.
         /// </summary>
         public static string SectionMenu {
@@ -147,6 +174,15 @@ namespace Resources {
         public static string ShortDate {
             get {
                 return ResourceManager.GetString("ShortDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to South Jetty.
+        /// </summary>
+        public static string SouthJetty {
+            get {
+                return ResourceManager.GetString("SouthJetty", resourceCulture);
             }
         }
     }
