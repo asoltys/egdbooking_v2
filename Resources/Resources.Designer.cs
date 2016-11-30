@@ -131,14 +131,5 @@ namespace Resources {
                 return ResourceManager.GetString("ShortDate", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Report a problem or mistake on this page.
-        /// </summary>
-        public static string WETReport {
-            get {
-                return ResourceManager.GetString("WETReport", resourceCulture);
-            }
-        }
     }
 }

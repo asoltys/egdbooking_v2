@@ -141,7 +141,4 @@
   <data name="ShortDate" xml:space="preserve">
     <value>yyyy-MM-dd</value>
   </data>
-  <data name="WETReport" xml:space="preserve">
-    <value>Report a problem or mistake on this page</value>
-  </data>
 </root>
