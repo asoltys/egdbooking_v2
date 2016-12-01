@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace core.Services
+namespace egdbooking_v2.Services
 {
     public interface ISmsSender
     {

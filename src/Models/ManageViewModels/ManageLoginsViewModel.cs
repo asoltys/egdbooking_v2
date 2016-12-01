@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace core.Models.ManageViewModels
+namespace egdbooking_v2.Models.ManageViewModels
 {
     public class ManageLoginsViewModel
     {

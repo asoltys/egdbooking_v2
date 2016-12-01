@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace core.Models.ManageViewModels
+namespace egdbooking_v2.Models.ManageViewModels
 {
     public class IndexViewModel
     {
