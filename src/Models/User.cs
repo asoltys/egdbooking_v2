@@ -1,5 +1,6 @@
 namespace egdbooking_v2.Models
 {
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
