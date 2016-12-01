@@ -34,7 +34,7 @@ namespace egdbooking_v2
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<ApplicationDBContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("SQLServer")));
 
             services.AddMvc();
