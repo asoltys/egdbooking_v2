@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using egdbooking_v2.Models;
 using egdbooking_v2.Models.AccountViewModels;
 using egdbooking_v2.Services;
+using egdbooking_v2.Data;
 
 namespace egdbooking_v2.Controllers
 {
@@ -205,7 +206,7 @@ namespace egdbooking_v2.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new User { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { FirstName = model.Email, Email = model.Email };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

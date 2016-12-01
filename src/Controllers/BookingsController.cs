@@ -3,6 +3,7 @@ using System.Net;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using egdbooking_v2.Data;
 
 namespace egdbooking_v2.Controllers
 {

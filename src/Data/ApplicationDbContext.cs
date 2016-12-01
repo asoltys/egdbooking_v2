@@ -4,12 +4,19 @@ using egdbooking_v2.Models;
 
 namespace egdbooking_v2.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<User>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+
+        public virtual DbSet<Booking> Bookings { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Vessel> Vessels { get; set; }
+        public virtual DbSet<Administrator> Administrators { get; set; }
+        public virtual DbSet<Company> Companies { get; set; }
+        public virtual DbSet<Tariff> Tariffs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

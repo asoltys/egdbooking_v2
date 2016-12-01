@@ -1,4 +1,5 @@
-﻿using egdbooking_v2.Models;
+﻿using egdbooking_v2.Data;
+using egdbooking_v2.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace egdbooking_v2.Controllers
