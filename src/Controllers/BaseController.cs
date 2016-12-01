@@ -1,15 +1,7 @@
-﻿using egdBooking_v2.Models;
+﻿using egdbooking_v2.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Globalization;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 
-namespace egdBooking_v2.Controllers
+namespace egdbooking_v2.Controllers
 {
     public class BaseController : Controller
     {

@@ -1,8 +1,8 @@
-﻿using egdBooking_v2.Models;
+﻿using egdbooking_v2.Models;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
-namespace egdBooking_v2.Controllers
+namespace egdbooking_v2.Controllers
 {
     public class AdminController : BaseController
     {

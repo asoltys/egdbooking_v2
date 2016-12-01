@@ -1,4 +1,4 @@
-namespace egdBooking_v2.Models
+namespace egdbooking_v2.Models
 {
     using System;
     using System.Collections.Generic;

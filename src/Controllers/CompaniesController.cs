@@ -1,10 +1,10 @@
-﻿using egdBooking_v2.Models;
+﻿using egdbooking_v2.Models;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
-namespace egdBooking_v2.Controllers
+namespace egdbooking_v2.Controllers
 {
     public class CompaniesController : BaseController
     {
