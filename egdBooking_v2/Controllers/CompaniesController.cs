@@ -126,9 +126,9 @@ namespace egdBooking_v2.Controllers
         }
 
         // GET: Companies/Approve
-        public ActionResult Approve()
+        public async Task<ActionResult> Approve()
         {
-            return View();
+            return View(await db.Companies.Where(c => !c.Approved).ToListAsync());
         }
     }
 }
