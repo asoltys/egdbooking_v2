@@ -6,7 +6,7 @@ namespace egdbooking_v2.Controllers
 {
     public class AdminController : BaseController
     {
-        public AdminController(ApplicationDBContext db) : base(db)
+        public AdminController(ApplicationDbContext db) : base(db)
         {
         }
 
