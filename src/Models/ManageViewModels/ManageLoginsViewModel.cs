@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace egdbooking_v2.Models.ManageViewModels
+namespace core.Models.ManageViewModels
 {
     public class ManageLoginsViewModel
     {

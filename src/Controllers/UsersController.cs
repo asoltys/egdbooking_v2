@@ -9,7 +9,7 @@ namespace egdBooking_v2.Controllers
 {
     public class UsersController : BaseController
     {
-        public UsersController(BookingContext db) : base(db)
+        public UsersController(ApplicationDBContext db) : base(db)
         {
         }
 

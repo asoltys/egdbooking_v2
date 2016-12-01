@@ -5,8 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using egdbooking_v2.Services;
-using egdBooking_v2.Models;
+using egdbooking_v2.Data;
+using egdbooking_v2.Models;
 
 namespace egdbooking_v2
 {
@@ -35,8 +35,8 @@ namespace egdbooking_v2
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<BookingContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("BookingContext")));
+            services.AddDbContext<ApplicationDBContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("SQLServer")));
 
             services.AddMvc();
 

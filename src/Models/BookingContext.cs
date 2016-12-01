@@ -3,9 +3,9 @@ namespace egdBooking_v2.Models
     using System.Linq;
     using Microsoft.EntityFrameworkCore;
 
-    public partial class BookingContext : Microsoft.EntityFrameworkCore.DbContext
+    public partial class ApplicationDBContext : Microsoft.EntityFrameworkCore.DbContext
     {
-        public BookingContext(DbContextOptions<BookingContext> options)
+        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options)
             : base(options)
         {
         }

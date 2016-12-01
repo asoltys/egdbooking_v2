@@ -9,7 +9,7 @@ namespace egdBooking_v2.Controllers
 {
     public class TariffsController : BaseController
     {
-        public TariffsController(BookingContext db) : base(db)
+        public TariffsController(ApplicationDBContext db) : base(db)
         {
         }
 

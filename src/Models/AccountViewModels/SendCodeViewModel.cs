@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace egdbooking_v2.Models.AccountViewModels
+namespace core.Models.AccountViewModels
 {
     public class SendCodeViewModel
     {

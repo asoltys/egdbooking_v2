@@ -18,8 +18,8 @@ namespace egdBooking_v2.Controllers
         protected const string QUERY_CULTURE_EN = "eng";
         protected const string QUERY_CULTURE_FR = "fra";
 
-        protected BookingContext db;
-        public BaseController(BookingContext _db)
+        protected ApplicationDBContext db;
+        public BaseController(ApplicationDBContext _db)
         {
             db = _db;
         }

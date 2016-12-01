@@ -9,7 +9,7 @@ namespace egdBooking_v2.Controllers
 {
     public class VesselsController : BaseController
     {
-        public VesselsController(BookingContext db) : base(db)
+        public VesselsController(ApplicationDBContext db) : base(db)
         {
         }
 

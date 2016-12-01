@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace egdbooking_v2.Services
+namespace core.Services
 {
     public interface ISmsSender
     {

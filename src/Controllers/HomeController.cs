@@ -5,7 +5,7 @@ namespace egdBooking_v2.Controllers
 {
     public class HomeController : BaseController
     {
-        public HomeController(BookingContext db) : base(db)
+        public HomeController(ApplicationDBContext db) : base(db)
         {
         }
 

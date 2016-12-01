@@ -8,7 +8,7 @@ namespace egdBooking_v2.Controllers
 {
     public class CompaniesController : BaseController
     {
-        public CompaniesController(BookingContext db) : base(db)
+        public CompaniesController(ApplicationDBContext db) : base(db)
         {
         }
 
