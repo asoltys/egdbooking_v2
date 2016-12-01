@@ -1,6 +1,6 @@
 ﻿{
   "ConnectionStrings": {
-    "BookingContext": "Server=192.168.0.11;Initial Catalog=egdBooking_v2;Persist Security Info=True;User ID=sa;Password=Beethoven!7;MultipleActiveResultSets=true"
+    "BookingContext": "Server=127.0.0.1;Initial Catalog=egdBooking_v2;Persist Security Info=True;User ID=sa;Password=password;MultipleActiveResultSets=true"
   },
   "Logging": {
     "IncludeScopes": false,
