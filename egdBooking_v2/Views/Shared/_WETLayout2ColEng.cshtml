@@ -31,24 +31,32 @@
 <body vocab="http://schema.org/" typeof="WebPage">
     @Html.Partial("~/Views/Partials/WET/_GoogleTagManager.cshtml")
     @Html.Partial("~/Views/Partials/WET/_HeaderEng.cshtml")
-    <main role="main" property="mainContentOfPage" class="container">
-        @RenderBody()
-        <div class="row pagedetails">
-            <div class="col-sm-6 col-lg-4 mrgn-tp-sm">
-                <a href="https://www.canada.ca/en/report-problem.html" class="btn btn-default btn-block">Report a problem or mistake on this page</a>
-            </div>
-            @RenderSection("pagedetails", required: false)
-            <div class="datemod col-xs-12 mrgn-tp-lg">
-                <dl id="wb-dtmd">
-                    <dt>Date modified:&#32;</dt>
-                    <dd>@RenderSection("lastwrite", required: false)</dd>
-                </dl>
-            </div>
-         </div>
-    </main>
+    <div class="container">
+        <div class="row">
+            <main property="mainContentOfPage" class="col-md-9 col-md-push-3" role="main">
+                @RenderBody()
+                <div class="row pagedetails">
+                    <div class="col-sm-6 col-lg-4 mrgn-tp-sm">
+                        <a href="https://www.canada.ca/en/report-problem.html" class="btn btn-default btn-block">Report a problem or mistake on this page</a>
+                    </div>
+                    @RenderSection("pagedetails", required: false)
+                    <div class="datemod col-xs-12 mrgn-tp-lg">
+                        <dl id="wb-dtmd">
+                            <dt>Date modified:&#32;</dt>
+                            <dd>@RenderSection("lastwrite", required: false)</dd>
+                        </dl>
+                    </div>
+                </div>
+            </main>
+            @Html.Partial("~/Views/Partials/WET/_LocalNavigation.cshtml")
+        </div>
+    </div>
     @Html.Partial("~/Views/Partials/WET/_FooterEng.cshtml")
     @Html.Partial("~/Views/Partials/WET/_ThemeScripts.cshtml")
+
+    @RenderSection("Scripts", required: false)
 </body>
+
 </html>
 
 <!-- The following are section templates that can be copied into views to display certain aspects of the footer. -->

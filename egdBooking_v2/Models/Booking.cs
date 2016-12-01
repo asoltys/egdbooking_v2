@@ -13,10 +13,13 @@ namespace egdBooking_v2.Models
         public int VesselID { get; set; }
 
         public DateTime StartDate { get; set; }
+        public string FormattedStartDate { get { return this.StartDate.ToString(Resources.Resources.AbbrevDate); } }
 
         public DateTime EndDate { get; set; }
+        public string FormattedEndDate { get { return this.EndDate.ToString(Resources.Resources.AbbrevDate); } }
 
         public DateTime BookingTime { get; set; }
+        public string FormattedBookingDate { get { return this.BookingTime.ToString(Resources.Resources.AbbrevDate); } }
 
         public int UID { get; set; }
 

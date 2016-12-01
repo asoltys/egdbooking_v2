@@ -9,7 +9,7 @@ namespace egdBooking_v2.Controllers
     public class HomeController : BaseController
     {
         public ActionResult Index()
-        {
+        {            
             return View();
         }
 

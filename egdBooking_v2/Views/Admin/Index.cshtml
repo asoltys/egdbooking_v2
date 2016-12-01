@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@section lastwrite{
+    @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath)).ToString(Resources.ShortDate)
+}
+
+<h1>@ViewBag.Title</h1>
+
+@if ((int)ViewBag.companies > 0)
+{
+    <p>
+        @Html.Raw(string.Format(Resources.NeedingApproval, 
+        ((int)ViewBag.companies == 1) ? 
+            Html.ActionLink(string.Format(Resources.CompanyRequest), "Approve", "Companies", new { lang = ViewBag.lang }, null)
+        :
+            Html.ActionLink(string.Format(Resources.CompanyRequests, (int)ViewBag.companies), "Approve", "Companies", new { lang = ViewBag.lang }, null)
+        ))
+    </p>
+}
+
+@if ((int)ViewBag.users > 0)
+{
+    <p>
+        @Html.Raw(string.Format(Resources.NeedingApproval, 
+        ((int)ViewBag.users == 1) ?
+            Html.ActionLink(string.Format(Resources.UserCompanyRequest), "Approve", "Users", new { lang = ViewBag.lang }, null)
+        :
+            Html.ActionLink(string.Format(Resources.UserCompanyRequests, (int)ViewBag.users), "Approve", "Users", new { lang = ViewBag.lang }, null)
+        ))
+    </p>
+}
+
+<h2>Bookings</h2>
+<div class="container">
+    TBD
+    @{ 
+        //TODO: Implement dock admin views
+    }
+</div>
+
+<h2>Users</h2>
+<div class="container">
+    @Html.ActionLink(Resources.Create, "Create", "Users", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.Edit, "Edit", "Users", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.Approve, "Approve", "Users", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.Delete, "Delete", "Users", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+</div>
+
+<h2>Administrators</h2>
+<div class="container">
+    @Html.ActionLink(Resources.Create, "Create", "Admin", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.Remove, "Remove", "Admin", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+</div>
+
+<h2>Companies</h2>
+<div class="container">
+    @Html.ActionLink(Resources.Create, "Create", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.Edit, "Edit", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.Approve, "Approve", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.Delete, "Delete", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+</div>
+
+<h2>Vessels</h2>
+<div class="container">
+    @Html.ActionLink(Resources.Create, "Create", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.Edit, "Edit", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.Delete, "Delete", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+</div>

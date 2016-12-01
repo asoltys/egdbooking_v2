@@ -195,6 +195,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BookingsController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="RestControllers\BookingsController.cs" />
     <Compile Include="RestControllers\GantDataController.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\BookingsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -634,6 +636,10 @@
     <Content Include="Views\Partials\WET\_Splash.cshtml" />
     <Content Include="Views\Shared\_WETLayout2ColEng.cshtml" />
     <Content Include="Views\Shared\_WETLayout2ColFra.cshtml" />
+    <Content Include="Views\Partials\WET\_LocalNavigation.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Users\Approve.cshtml" />
+    <Content Include="Views\Companies\Approve.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

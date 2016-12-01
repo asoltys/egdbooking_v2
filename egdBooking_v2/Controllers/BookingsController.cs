@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using egdBooking_v2.Models;
+using egdBooking_v2.ViewModels;
 
 namespace egdBooking_v2.Controllers
 {
@@ -17,7 +18,17 @@ namespace egdBooking_v2.Controllers
         // GET: Bookings
         public ActionResult Index()
         {
-            return View(db.Bookings.ToList().Where(i => i.ID > 3000));
+            BookingsViewModel ViewModel = new BookingsViewModel(Resources.Resources.Drydock, Resources.Resources.NorthJetty, Resources.Resources.SouthJetty);
+
+            List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000).ToList();
+
+            ViewModel.Drydock.Bookings = BookingsDB.Where(b => (b.Section1 != null && (bool)b.Section1)
+                                                    || (b.Section2 != null && (bool)b.Section2)
+                                                    || (b.Section3 != null && (bool)b.Section3)).OrderBy(b => b.StartDate).ToList();
+            ViewModel.NorthJetty.Bookings = BookingsDB.Where(b => (b.NorthJetty != null && (bool)b.NorthJetty)).OrderBy(b => b.StartDate).ToList();
+            ViewModel.SouthJetty.Bookings = BookingsDB.Where(b => (b.SouthJetty != null && (bool)b.SouthJetty)).OrderBy(b => b.StartDate).ToList();
+
+            return View(ViewModel);
         }
 
         // GET: Bookings/Details/5
