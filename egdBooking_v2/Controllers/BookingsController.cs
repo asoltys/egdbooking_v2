@@ -16,11 +16,16 @@ namespace egdBooking_v2.Controllers
         private BookingContext db = new BookingContext();
 
         // GET: Bookings
-        public ActionResult Index()
+        public ActionResult Index(FormCollection collection)
         {
+            DateTime startdate = Convert.ToDateTime(collection.Get("startdate"));
+            DateTime enddate = Convert.ToDateTime(collection.Get("enddate"));
+
             BookingsViewModel ViewModel = new BookingsViewModel(Resources.Resources.Drydock, Resources.Resources.NorthJetty, Resources.Resources.SouthJetty);
 
-            List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000).ToList();
+            List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000)
+                                                  .Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
+                                                  .ToList();
 
             ViewModel.Drydock.Bookings = BookingsDB.Where(b => (b.Section1 != null && (bool)b.Section1)
                                                     || (b.Section2 != null && (bool)b.Section2)
