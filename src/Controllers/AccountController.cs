@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -8,9 +6,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using core.Models;
-using core.Models.AccountViewModels;
-using core.Services;
+using egdbooking_v2.Models;
+using egdbooking_v2.Services;
+using egdbooking_v2.Models.AccountViewModels;
+using egdbooking_v2.Controllers;
 
 namespace core.Controllers
 {

@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using egdbooking_v2.Models;
 using egdbooking_v2.Services;
+using egdbooking_v2.Data;
 
 namespace egdbooking_v2
 {
