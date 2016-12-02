@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-egdbooking_v2-b8ff566c-a6ad-426d-b25b-d299b4cd14f5",
 
   "dependencies": {
@@ -44,7 +44,8 @@
     },
     "Microsoft.AspNetCore.Http.Abstractions": "1.1.0",
     "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
-    "Microsoft.EntityFrameworkCore.Design": "1.1.0"
+    "Microsoft.EntityFrameworkCore.Design": "1.1.0",
+    "Resources": "1.0.0-*"
   },
 
   "tools": {

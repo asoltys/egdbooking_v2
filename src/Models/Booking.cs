@@ -3,6 +3,7 @@ namespace egdbooking_v2.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using Resources;
 
     public partial class Booking
     {

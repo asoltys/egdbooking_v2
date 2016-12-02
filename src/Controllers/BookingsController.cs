@@ -23,7 +23,7 @@ namespace egdbooking_v2.Controllers
             DateTime startdate = Convert.ToDateTime(collection["startdate"]);
             DateTime enddate = Convert.ToDateTime(collection["enddate"]);
 
-            BookingsViewModel ViewModel = new BookingsViewModel(Resources.Drydock, Resources.NorthJetty, Resources.SouthJetty);
+            BookingsViewModel ViewModel = new BookingsViewModel(Resources.Resources.Drydock, Resources.Resources.NorthJetty, Resources.Resources.SouthJetty);
 
             List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000)
                                                   .Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
