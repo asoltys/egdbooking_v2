@@ -12,7 +12,7 @@
     <meta name="dcterms.creator" lang="fr" content="@Resources.MetaCreator">
     <meta name="dcterms.title" content="@ViewBag.Title - @Resources.MetaTitle">
     <meta name="dcterms.title" lang="fr" content="@ViewBag.Title - @Resources.MetaTitle">
-    <meta name="dcterms.issued" title="W3CDTF" content="@File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath)).ToString(Resources.ShortDate)">
+    <meta name="dcterms.issued" title="W3CDTF" content="@System.IO.File.GetLastWriteTime(System.IO.Path.GetFullPath(this.Path.TrimStart(new char[] { '/' }))).ToString(Resources.ShortDate)">
     <meta name="dcterms.modified" title="W3CDTF" content="">
     <meta name="dcterms.subject" title="scheme" content="@Resources.MetaSubject">
     <meta name="dcterms.subject" lang="fr" title="scheme" content="@Resources.MetaSubject">
