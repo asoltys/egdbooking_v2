@@ -1,7 +1,28 @@
-﻿
+﻿@model IEnumerable<egdBooking_v2.Models.Company>
 @{
     ViewBag.Title = "Approve";
 }
 
 <h2>Approve</h2>
 
+<table>
+    <thead>
+        <tr>
+            <th>@Resources.Name</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var company in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(company.Name, "Details", "Companies", new { id = company.CID }, null)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>

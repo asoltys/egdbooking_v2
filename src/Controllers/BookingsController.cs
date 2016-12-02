@@ -18,12 +18,21 @@ namespace egdbooking_v2.Controllers
         }
 
         // GET: Bookings
+<<<<<<< HEAD:src/Controllers/BookingsController.cs
         public IActionResult Index(IFormCollection collection)
         {
             DateTime startdate = Convert.ToDateTime(collection["startdate"]);
             DateTime enddate = Convert.ToDateTime(collection["enddate"]);
 
             BookingsViewModel ViewModel = new BookingsViewModel(Resources.Drydock, Resources.NorthJetty, Resources.SouthJetty);
+=======
+        public ActionResult Index(FormCollection collection)
+        {
+            DateTime startdate = Convert.ToDateTime(collection.Get("startdate"));
+            DateTime enddate = Convert.ToDateTime(collection.Get("enddate"));
+
+            BookingsViewModel ViewModel = new BookingsViewModel(Resources.Resources.Drydock, Resources.Resources.NorthJetty, Resources.Resources.SouthJetty);
+>>>>>>> 634a7b949cbf5cb97f74345625c2e7aa213e0eb0:egdBooking_v2/Controllers/BookingsController.cs
 
             List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000)
                                                   .Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
