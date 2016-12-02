@@ -1,9 +1,11 @@
-﻿using egdbooking_v2.Models;
-using System.Net;
+﻿using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using egdbooking_v2.Data;
+using egdbooking_v2.ViewModels;
+using egdbooking_v2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using egdbooking_v2.Data;
 
 namespace egdbooking_v2.Controllers
 {
@@ -16,7 +18,17 @@ namespace egdbooking_v2.Controllers
         // GET: Bookings
         public IActionResult Index()
         {
-            return View(db.Bookings.ToList().Where(i => i.ID > 3000));
+            BookingsViewModel ViewModel = new BookingsViewModel(Resources.Drydock, Resources.NorthJetty, Resources.SouthJetty);
+
+            List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000).ToList();
+
+            ViewModel.Drydock.Bookings = BookingsDB.Where(b => (b.Section1 != null && (bool)b.Section1)
+                                                    || (b.Section2 != null && (bool)b.Section2)
+                                                    || (b.Section3 != null && (bool)b.Section3)).OrderBy(b => b.StartDate).ToList();
+            ViewModel.NorthJetty.Bookings = BookingsDB.Where(b => (b.NorthJetty != null && (bool)b.NorthJetty)).OrderBy(b => b.StartDate).ToList();
+            ViewModel.SouthJetty.Bookings = BookingsDB.Where(b => (b.SouthJetty != null && (bool)b.SouthJetty)).OrderBy(b => b.StartDate).ToList();
+
+            return View(ViewModel);
         }
 
         // GET: Bookings/Details/5
@@ -24,7 +36,7 @@ namespace egdbooking_v2.Controllers
         {
             if (id == null)
             {
-                return new StatusCodeResult((int)(int)HttpStatusCode.BadRequest);
+                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             }
             Booking booking = db.Bookings.Find(id);
             if (booking == null)
@@ -45,7 +57,7 @@ namespace egdbooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("ID,VNID,StartDate,EndDate,BookingTime,UID,Deleted,EndHighlight,BookingTimeChange,BookingTimeChangeStatus")] Booking booking)
+        public IActionResult Create([Bind("ID,VesselID,StartDate,EndDate,BookingTime,UID,Deleted,EndHighlight,BookingTimeChange,BookingTimeChangeStatus")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +74,7 @@ namespace egdbooking_v2.Controllers
         {
             if (id == null)
             {
-                return new StatusCodeResult((int)(int)HttpStatusCode.BadRequest);
+                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             }
             Booking booking = db.Bookings.Find(id);
             if (booking == null)
@@ -93,7 +105,7 @@ namespace egdbooking_v2.Controllers
         {
             if (id == null)
             {
-                return new StatusCodeResult((int)(int)HttpStatusCode.BadRequest);
+                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             }
             Booking booking = db.Bookings.Find(id);
             if (booking == null)
@@ -112,6 +124,15 @@ namespace egdbooking_v2.Controllers
             db.Bookings.Remove(booking);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }
