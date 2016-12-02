@@ -3,7 +3,7 @@
 
 @section lastwrite
 {
-    @File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath))
+    @System.IO.File.GetLastWriteTime(System.IO.Path.GetFullPath(this.Path.TrimStart(new char[] { '/' }))).ToString(Resources.ShortDate)
 }
 
 <h4>Use another service to log in.</h4>
