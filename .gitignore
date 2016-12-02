@@ -245,3 +245,5 @@ ModelManifest.xml
 .fake/
 appsettings.json
 src/bin
+*.sln
+Resources
