@@ -6,6 +6,8 @@ using egdbooking_v2.ViewModels;
 using egdbooking_v2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using System;
 
 namespace egdbooking_v2.Controllers
 {
@@ -16,11 +18,16 @@ namespace egdbooking_v2.Controllers
         }
 
         // GET: Bookings
-        public IActionResult Index()
+        public IActionResult Index(IFormCollection collection)
         {
+            DateTime startdate = Convert.ToDateTime(collection["startdate"]);
+            DateTime enddate = Convert.ToDateTime(collection["enddate"]);
+
             BookingsViewModel ViewModel = new BookingsViewModel(Resources.Drydock, Resources.NorthJetty, Resources.SouthJetty);
 
-            List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000).ToList();
+            List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000)
+                                                  .Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
+                                                  .ToList();
 
             ViewModel.Drydock.Bookings = BookingsDB.Where(b => (b.Section1 != null && (bool)b.Section1)
                                                     || (b.Section2 != null && (bool)b.Section2)

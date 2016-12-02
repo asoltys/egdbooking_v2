@@ -19,8 +19,6 @@
 
 <h1 id="wb-cont">TBD</h1>
 
-
-
 <div class="span-4">
 
     <br />
@@ -45,10 +43,24 @@
     <div class="row">
         <div class="col-md-8">
             <section id="bookingsform">
+                @using (Html.BeginForm("Index", "Bookings"))
+                {
+                        <fieldset>
+                        <div class="form-group">
+                            <label for="startdate">Start date<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
+                            <input class="form-control" type="date" id="startdate" name="startdate" />
+                        </div>
+                        <div class="form-group">
+                            <label for="enddate">End date<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
+                            <input class="form-control" type="date" id="enddate" name="enddate" />
+                        </div>
+                        <input type="submit" value="Submit" />
+                    </fieldset>
+                }
             </section>
         </div>
     </div>
-    <p>To see the list of all bookings @Html.RouteLink("click here", new { controller = "Bookings", action = "Index" })</p>
+    @* <p>To see the list of all bookings @Html.RouteLink("click here", new { controller = "Bookings", action = "Index" })</p> *@
 
     <!-- Div so link above can jump to this point (information) -->
     <div id="information"></div>

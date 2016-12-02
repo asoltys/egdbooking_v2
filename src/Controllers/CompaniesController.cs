@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using egdbooking_v2.Data;
+using System.Linq;
 
 namespace egdbooking_v2.Controllers
 {
@@ -124,9 +125,10 @@ namespace egdbooking_v2.Controllers
         }
 
         // GET: Companies/Approve
-        public IActionResult Approve()
+        // GET: Companies/Approve
+        public async Task<IActionResult> Approve()
         {
-            return View();
+            return View(await db.Companies.Where(c => !c.Approved).ToListAsync());
         }
     }
 }
