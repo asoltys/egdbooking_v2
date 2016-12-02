@@ -1,46 +1,76 @@
-﻿@model IEnumerable<egdbooking_v2.Models.Booking>
+﻿@model egdbooking_v2.ViewModels.BookingsViewModel
 
 @{
     ViewBag.Title = "Index";
+    //ViewBag.isAdmin = HttpContext.Current.User.IsInRole("Admin");
+}
+
+@section lastwrite
+{
+    File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath)).ToString(Resources.ShortDate)
 }
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>Vessel</th>
-        <th>Section</th>
-        <th>Docking Dates</th>
-        <th>Booking Date</th>
-        <th></th>
-    </tr>
+<ul>
+    @foreach (var dock in Model.Docks)
+    {
+        <li><a href="#@dock.DockName">@dock.DockName</a></li>
+    }
+</ul>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vessel.Name)
-        </td>
-        <td>
-            @foreach (var section in item.Sections) { 
-                @Html.DisplayText(section)
-            }
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
-            @Html.DisplayFor(modelItem => item.EndDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookingTime)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+@if (true)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
 }
 
-</table>
+@foreach (var dock in Model.Docks)
+{
+    <h2><a name="@dock.DockName"></a>@dock.DockName</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                Vessel
+            </th>
+            <th>
+                Section
+            </th>
+            <th>
+                Docking Dates
+            </th>
+            <th>
+                Booking Date
+            </th>
+            <th></th>
+        </tr>
+    @foreach (var item in dock.Bookings) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vessel.Name)
+            </td>
+            <td>
+                @foreach (var section in item.Sections) { 
+                    @Html.DisplayText(section)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormattedStartDate)
+                -
+                @Html.DisplayFor(modelItem => item.FormattedEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormattedBookingDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+    </table>
+}
