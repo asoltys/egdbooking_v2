@@ -245,5 +245,4 @@ ModelManifest.xml
 .fake/
 appsettings.json
 src/bin
-*.sln
-Resources
+/src/Properties/launchSettings.json
