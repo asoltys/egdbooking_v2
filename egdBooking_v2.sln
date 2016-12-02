@@ -3,9 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "src", "src\egdBooking_v2\src.xproj", "{46D8C928-8537-4D8C-849D-DBB972E87A8E}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "egdBooking_v2", "src\egdBooking_v2\egdBooking_v2.xproj", "{46D8C928-8537-4D8C-849D-DBB972E87A8E}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Resources", "src\Resources\Resources.xproj", "{5F4E7C18-AE99-4EB7-B74B-FE991B4702CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{08B201BE-3A1C-40B9-B359-FA6A96F0C1E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{17E1FEF2-9F00-4B4C-8E41-80E49D0A096A}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +31,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46D8C928-8537-4D8C-849D-DBB972E87A8E} = {08B201BE-3A1C-40B9-B359-FA6A96F0C1E2}
+		{5F4E7C18-AE99-4EB7-B74B-FE991B4702CF} = {08B201BE-3A1C-40B9-B359-FA6A96F0C1E2}
 	EndGlobalSection
 EndGlobal
