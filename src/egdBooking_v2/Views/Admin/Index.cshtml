@@ -3,7 +3,7 @@
 }
 
 @section lastwrite{
-    File.GetLastWriteTime(this.Server.MapPath(this.VirtualPath)).ToString(Resources.ShortDate)
+    @System.IO.File.GetLastWriteTime(System.IO.Path.GetFullPath(this.Path.TrimStart(new char[] { '/' }))).ToString(Resources.ShortDate)
 }
 
 <h1>@ViewBag.Title</h1>
