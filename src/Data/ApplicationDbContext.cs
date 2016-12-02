@@ -11,12 +11,12 @@ namespace egdbooking_v2.Data
         {
         }
 
-        public virtual DbSet<Booking> Bookings { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Vessel> Vessels { get; set; }
         public virtual DbSet<Administrator> Administrators { get; set; }
+        public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
+        public virtual DbSet<User> EGDUsers { get; set; }
         public virtual DbSet<Tariff> Tariffs { get; set; }
+        public virtual DbSet<Vessel> Vessels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

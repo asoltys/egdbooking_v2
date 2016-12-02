@@ -17,7 +17,7 @@ namespace egdbooking_v2.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            return View(await db.Users.ToListAsync());
+            return View(await db.EGDUsers.ToListAsync());
         }
 
         // GET: Users/Details/5
@@ -27,7 +27,7 @@ namespace egdbooking_v2.Controllers
             {
                 return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             }
-            User user = await db.Users.FindAsync(id);
+            User user = await db.EGDUsers.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -50,7 +50,7 @@ namespace egdbooking_v2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
+                db.EGDUsers.Add(user);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace egdbooking_v2.Controllers
             {
                 return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             }
-            User user = await db.Users.FindAsync(id);
+            User user = await db.EGDUsers.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -96,7 +96,7 @@ namespace egdbooking_v2.Controllers
             {
                 return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             }
-            User user = await db.Users.FindAsync(id);
+            User user = await db.EGDUsers.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -109,8 +109,8 @@ namespace egdbooking_v2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            User user = await db.Users.FindAsync(id);
-            db.Users.Remove(user);
+            User user = await db.EGDUsers.FindAsync(id);
+            db.EGDUsers.Remove(user);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
