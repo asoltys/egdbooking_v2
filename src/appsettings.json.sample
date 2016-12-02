@@ -1,6 +1,7 @@
-﻿{
+﻿// You need to copy this to appsettings.json and set the password
+{
   "ConnectionStrings": {
-    "ApplicationDbContext": "Server=127.0.0.1;Initial Catalog=egdbooking_v2;Persist Security Info=True;User ID=sa;Password=password;MultipleActiveResultSets=true"
+    "SQLServer": "Server=cypress.ncr.pwgsc.gc.ca;Initial Catalog=egdbooking_v2;Persist Security Info=True;User ID=sa;Password=password;MultipleActiveResultSets=true"
   },
   "Logging": {
     "IncludeScopes": false,
