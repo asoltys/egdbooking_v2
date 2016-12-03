@@ -1,5 +1,16 @@
 ﻿using egdbooking_v2.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using System;
+using System.Globalization;
+using System.Threading;
+using System.Linq;
+using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Primitives;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Http.Extensions;
+using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Http;
 
 namespace egdbooking_v2.Controllers
 {
@@ -7,8 +18,8 @@ namespace egdbooking_v2.Controllers
     {
         protected const string APPLICATION_CULTURE_EN = "en";
         protected const string APPLICATION_CULTURE_FR = "fr";
-        protected const string QUERY_CULTURE_EN = "eng";
-        protected const string QUERY_CULTURE_FR = "fra";
+        protected const string QUERY_CULTURE_EN = "en";
+        protected const string QUERY_CULTURE_FR = "fr";
 
         protected ApplicationDbContext db;
         public BaseController(ApplicationDbContext _db)
@@ -16,20 +27,19 @@ namespace egdbooking_v2.Controllers
             db = _db;
         }
 
-        /*
-        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             base.OnActionExecuting(filterContext);
-            string cultureName = (string)Request.QueryString["lang"];
+            string cultureName = (string)Request.Query["lang"];
             if (String.IsNullOrEmpty(cultureName))
             {
-                if (Request.UrlReferrer != null)
+                if (Request.Headers["Referer"].ToString() != null)
                 {
-                    UriBuilder ub = new UriBuilder(Request.UrlReferrer);
-                    NameValueCollection query = HttpUtility.ParseQueryString(ub.Query);
-                    if (query.Count > 0 && query.Get("lang").Count() > 0)
+                    Uri ub = new Uri(Request.GetDisplayUrl());
+                    Dictionary<string, StringValues> query = QueryHelpers.ParseQuery(ub.Query);
+                    if (query.Count > 0 && query["lang"].Count() > 0)
                     {
-                        cultureName = query.Get("lang").ToString();
+                        cultureName = query["lang"].ToString();
                     }
                     else
                     {
@@ -44,19 +54,18 @@ namespace egdbooking_v2.Controllers
 
             ViewBag.lang = cultureName;
             cultureName = cultureName.Equals(QUERY_CULTURE_FR) ? APPLICATION_CULTURE_FR : APPLICATION_CULTURE_EN;
-            CultureInfo ci = CultureInfo.GetCultureInfo(cultureName);
+            CultureInfo ci = new CultureInfo(cultureName);
 
-            Thread.CurrentThread.CurrentCulture = ci;
-            Thread.CurrentThread.CurrentUICulture = ci;
+            CultureInfo.CurrentCulture = ci;
+            CultureInfo.CurrentUICulture = ci;
         }
 
-        public ActionResult SetCulture(string lang)
+        
+        public IActionResult SetCulture(string lang)
         {
-            var Referrer = Request.UrlReferrer.ToString();
-            var ReferrerRequest = new HttpRequest(null, Referrer, null);
-            var HostName = ReferrerRequest.Url.GetLeftPart(UriPartial.Authority);
-            var AbsolutePath = ReferrerRequest.Url.AbsolutePath;
-            var ReferrerQuery = ReferrerRequest.Url.Query;
+            var uri = new Uri(Request.Headers["Referer"]);
+            var AbsolutePath = uri.AbsolutePath;
+            var ReferrerQuery = uri.Query;
             var QueryPattern = @"(lang=)([A-z]{2})";
             var MatchQuery = Regex.Match(ReferrerQuery, QueryPattern);
             string NextQuery;
@@ -64,8 +73,7 @@ namespace egdbooking_v2.Controllers
                 NextQuery = Regex.Replace(ReferrerQuery, QueryPattern, "$1" + lang);
             else
                 NextQuery = "?lang=fr";
-            return Redirect(HostName + AbsolutePath + NextQuery);
+            return Redirect(AbsolutePath + NextQuery);
         }
-        */
     }
 }
