@@ -20,14 +20,35 @@ namespace egdbooking_v2.Controllers
         // GET: Bookings
         public IActionResult Index(IFormCollection collection)
         {
-            DateTime startdate = Convert.ToDateTime(collection["startdate"]);
-            DateTime enddate = Convert.ToDateTime(collection["enddate"]);
+
+            List<Booking> BookingsDB;
+
+            if (collection["startdate"] != "" && collection["enddate"] != "")
+            {
+                DateTime startdate = Convert.ToDateTime(collection["startdate"]);
+                DateTime enddate = Convert.ToDateTime(collection["enddate"]);
+
+                BookingsDB = db.Bookings.Where(i => i.ID > 3000)
+                                        .Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
+                                        .ToList();
+
+            } else if (collection["startdate"] != "") {
+                DateTime startdate = Convert.ToDateTime(collection["startdate"]);
+                BookingsDB = db.Bookings.Where(i => i.ID > 3000)
+                                        .Where(b => (b.EndDate >= startdate))
+                                        .ToList();
+            } else if (collection["enddate"] != "")
+            {
+                DateTime enddate = Convert.ToDateTime(collection["enddate"]);
+                BookingsDB = db.Bookings.Where(i => i.ID > 3000)
+                                        .Where(b => (b.StartDate <= enddate))
+                                        .ToList();
+
+            } else {
+                BookingsDB = db.Bookings.Where(i => i.ID > 3000).ToList();
+            }
 
             BookingsViewModel ViewModel = new BookingsViewModel(Resources.Resources.Drydock, Resources.Resources.NorthJetty, Resources.Resources.SouthJetty);
-
-            List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000)
-                                                  .Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
-                                                  .ToList();
 
             ViewModel.Drydock.Bookings = BookingsDB.Where(b => (b.Section1 != null && (bool)b.Section1)
                                                     || (b.Section2 != null && (bool)b.Section2)
