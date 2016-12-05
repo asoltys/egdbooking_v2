@@ -101,6 +101,10 @@ namespace Resources {
         public static string BookingsSummaryDescription {
             get {
                 return ResourceManager.GetString("BookingsSummaryDescription", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///    Looks up a localized string similar to Booking Date.
         /// </summary>
         public static string BookingDate {
@@ -115,6 +119,10 @@ namespace Resources {
         public static string CaseSensitive {
             get {
                 return ResourceManager.GetString("CaseSensitive", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///    Looks up a localized string similar to Bookings Summary.
         /// </summary>
         public static string BookingsSummary {
@@ -471,6 +479,10 @@ namespace Resources {
         public static string Required {
             get {
                 return ResourceManager.GetString("Required", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///    Looks up a localized string similar to Section.
         /// </summary>
         public static string Section {
