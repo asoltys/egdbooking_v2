@@ -214,9 +214,7 @@
     <value>Les frais</value>
   </data>
   <data name="FeesDescription" xml:space="preserve">
-    <value>Les frais de réservation de la cale sèche d’Esquimalt sont de 4 800,00$ canadiens, plus 240,00$ de taxe de vente générale (TVG), ce qui donne en tout 5 040,00$ payables en espèces, par chèque certifié d’une banque canadienne ou par mandat international. Le 1er avril 2008, des intérêts seront appliqués sur un compte en suspens plus de 30 jours. Les demandes de réservation sont provisoires jusqu’à ce que les frais de réservation soient payés. Les frais de réservation ne sont pas remboursables.Les frais de réservation de la cale sèche d’Esquimalt sont de 4 800,00$ canadiens, plus 240,00$ de taxe de vente générale (TVG), ce qui donne en tout 5 040,00$ payables en espèces, par chèque certifié d’une banque canadienne ou par mandat international. Le 1er avril 2008, des intérêts seront appliqués sur un compte en suspens plus de 30 jours. Les demandes de réservation sont provisoires jusqu’à ce que les frais de réservation soient payés. Les frais de réservation ne sont pas remboursables.
-
-Les frais de réservation de la cale sèche d’Esquimalt sont de 4 800,00$ canadiens, plus 240,00$ de taxe de vente générale (TVG), ce qui donne en tout 5 040,00$ payables en espèces, par chèque certifié d’une banque canadienne ou par mandat international. Le 1er avril 2008, des intérêts seront appliqués sur un compte en suspens plus de 30 jours. Les demandes de réservation sont provisoires jusqu’à ce que les frais de réservation soient payés. Les frais de réservation ne sont pas remboursables.</value>
+    <value>Les frais de réservation de la cale sèche d’Esquimalt sont de 4 800,00$ canadiens, plus 240,00$ de taxe de vente générale (TVG), ce qui donne en tout 5 040,00$ payables en espèces, par chèque certifié d’une banque canadienne ou par mandat international. Le 1er avril 2008, des intérêts seront appliqués sur un compte en suspens plus de 30 jours. Les demandes de réservation sont provisoires jusqu’à ce que les frais de réservation soient payés. Les frais de réservation ne sont pas remboursables.</value>
   </data>
   <data name="ForgotPassword" xml:space="preserve">
     <value>Oubli du mot de passe</value>
@@ -277,5 +275,26 @@ Les frais de réservation de la cale sèche d’Esquimalt sont de 4 800,00$ cana
   </data>
   <data name="ToDate" xml:space="preserve">
     <value>Date de fin :</value>
+  </data>
+  <data name="BookingDate" xml:space="preserve">
+    <value>Date de la réservation</value>
+  </data>
+  <data name="BookingsSummary" xml:space="preserve">
+    <value>Résumé des réservations</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="DockingDates" xml:space="preserve">
+    <value>Dates d'amarrage</value>
+  </data>
+  <data name="NoBookings" xml:space="preserve">
+    <value>Il n'existe aucune réservation à afficher.</value>
+  </data>
+  <data name="Section" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="Vessel" xml:space="preserve">
+    <value>Navire</value>
   </data>
 </root>

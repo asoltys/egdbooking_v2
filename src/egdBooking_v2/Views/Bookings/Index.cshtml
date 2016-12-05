@@ -3,14 +3,21 @@
 @{
     if (ViewBag.lang == "fr")
     {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("fr");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
         Layout = "~/Views/Shared/_WETLayoutFra.cshtml";
     }
     else
     {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
         Layout = "~/Views/Shared/_WETLayoutEng.cshtml";
     }
-    ViewBag.Title = "Index";
-    ViewBag.isAdmin = false;//HttpContext.Current.User.IsInRole("Admin");
+    ViewBag.Title = Resources.BookingsSummary;
+    ViewBag.isAdmin = false;//HttpContext.Current.User.IsInRole("Admin")
+    ViewBag.isLoggedIn = true;//HttpContext.Current.User.IsInRole("User")
 }
 
 @section lastwrite
@@ -18,7 +25,7 @@
     @System.IO.File.GetLastWriteTime(System.IO.Path.GetFullPath(this.Path.TrimStart(new char[] { '/' }))).ToString(Resources.ShortDate)
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <ul>
     @foreach (var dock in Model.Docks)
@@ -27,30 +34,26 @@
     }
 </ul>
 
-@if (ViewBag.isAdmin)
-{
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-}
-
 @foreach (var dock in Model.Docks)
 {
     <h2><a name="@dock.DockName"></a>@dock.DockName</h2>
 
     <table class="table">
         <tr>
+            @if (ViewBag.isLoggedIn)
+            {
+                <th>
+                    @Resources.Vessel
+                </th>
+            }
             <th>
-                Vessel
+                @Resources.Section
             </th>
             <th>
-                Section
+                @Resources.DockingDates
             </th>
             <th>
-                Docking Dates
-            </th>
-            <th>
-                Booking Date
+                @Resources.BookingDate
             </th>
             @if (ViewBag.isAdmin)
             {
@@ -59,9 +62,12 @@
         </tr>
     @foreach (var item in dock.Bookings) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Vessel.Name)
-            </td>
+            @if (ViewBag.isLoggedIn)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vessel.Name)
+                </td>
+            }
             <td>
                 @foreach (var section in item.Sections) { 
                     @Html.DisplayText(section)
@@ -78,9 +84,9 @@
             @if (ViewBag.isAdmin)
             {
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    @Html.ActionLink(Resources.Edit, "Edit", new { id = item.ID }) |
+                    @Html.ActionLink(Resources.Details, "Details", new { id = item.ID }) |
+                    @Html.ActionLink(Resources.Delete, "Delete", new { id = item.ID })
                 </td>
             }
         </tr>

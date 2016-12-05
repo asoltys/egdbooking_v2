@@ -276,4 +276,25 @@
   <data name="ToDate" xml:space="preserve">
     <value>To Date:</value>
   </data>
+  <data name="BookingDate" xml:space="preserve">
+    <value>Booking Date</value>
+  </data>
+  <data name="BookingsSummary" xml:space="preserve">
+    <value>Bookings Summary</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="DockingDates" xml:space="preserve">
+    <value>Docking Dates</value>
+  </data>
+  <data name="NoBookings" xml:space="preserve">
+    <value>There are no bookings to view.</value>
+  </data>
+  <data name="Section" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="Vessel" xml:space="preserve">
+    <value>Vessel</value>
+  </data>
 </root>
