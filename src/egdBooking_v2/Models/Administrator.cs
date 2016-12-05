@@ -7,6 +7,6 @@ namespace egdbooking_v2.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int UID { get; set; }
+        public int UserId { get; set; }
     }
 }

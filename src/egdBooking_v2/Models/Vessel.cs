@@ -8,7 +8,7 @@ namespace egdbooking_v2.Models
     public partial class Vessel
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -23,7 +23,7 @@ namespace egdbooking_v2.Models
         public double? BlockTeardownTime { get; set; }
 
         [StringLength(20)]
-        public string LloydsID { get; set; }
+        public string LloydsId { get; set; }
 
         public double? Tonnage { get; set; }
 

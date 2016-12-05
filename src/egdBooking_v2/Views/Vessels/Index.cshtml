@@ -27,7 +27,7 @@
             @Html.DisplayNameFor(model => model.BlockTeardownTime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LloydsID)
+            @Html.DisplayNameFor(model => model.LloydsId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Tonnage)
@@ -62,7 +62,7 @@
             @Html.DisplayFor(modelItem => item.BlockTeardownTime)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LloydsID)
+            @Html.DisplayFor(modelItem => item.LloydsId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tonnage)
@@ -77,9 +77,9 @@
             @Html.DisplayFor(modelItem => item.EndHighlight)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

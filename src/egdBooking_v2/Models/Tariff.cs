@@ -5,9 +5,9 @@ namespace egdbooking_v2.Models
     public partial class Tariff
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
         
-        public int BookingID { get; set; }
+        public int BookingId { get; set; }
 
         public bool BookFee { get; set; }
 

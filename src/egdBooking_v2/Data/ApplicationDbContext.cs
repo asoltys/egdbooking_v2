@@ -46,7 +46,7 @@ namespace egdbooking_v2.Data
                 .Property(e => e.Name);
 
             builder.Entity<Vessel>()
-                .Property(e => e.LloydsID);
+                .Property(e => e.LloydsId);
 
             builder.Entity<Company>()
                 .Property(e => e.Name);
@@ -80,6 +80,9 @@ namespace egdbooking_v2.Data
 
             builder.Entity<Company>()
                 .Property(e => e.Fax);
+
+            builder.Entity<Tariff>()
+                .Property(e => e.Id);
 
             builder.Entity<Tariff>()
                 .Property(e => e.OtherText);

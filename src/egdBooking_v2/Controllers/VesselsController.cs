@@ -46,7 +46,7 @@ namespace egdbooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Length,Width,BlockSetupTime,BlockTeardownTime,LloydsID,Tonnage,Anonymous,Deleted,EndHighlight")] Vessel vessel)
+        public async Task<IActionResult> Create([Bind("Id,Name,Length,Width,BlockSetupTime,BlockTeardownTime,LloydsId,Tonnage,Anonymous,Deleted,EndHighlight")] Vessel vessel)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace egdbooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([Bind("ID,Name,Length,Width,BlockSetupTime,BlockTeardownTime,LloydsID,Tonnage,Anonymous,Deleted,EndHighlight")] Vessel vessel)
+        public async Task<IActionResult> Edit([Bind("Id,Name,Length,Width,BlockSetupTime,BlockTeardownTime,LloydsId,Tonnage,Anonymous,Deleted,EndHighlight")] Vessel vessel)
         {
             if (ModelState.IsValid)
             {

@@ -170,6 +170,12 @@ namespace egdbooking_v2.Data.Migrations
             );
 
             migrationBuilder.RenameColumn(
+                table: "Vessels",
+                name: "LloydsID",
+                newName: "LloydsId"
+            );
+
+            migrationBuilder.RenameColumn(
                 table: "Bookings",
                 name: "UID",
                 newName: "UserId"

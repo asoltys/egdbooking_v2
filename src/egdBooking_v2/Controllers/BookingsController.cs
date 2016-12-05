@@ -21,7 +21,7 @@ namespace egdbooking_v2.Controllers
         public IActionResult Index(IFormCollection collection)
         {
 
-            List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000).ToList();
+            List<Booking> BookingsDB = db.Bookings.Where(i => i.Id > 3000).ToList();
 
             if (collection.Count != 0)
             {
@@ -87,7 +87,7 @@ namespace egdbooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("ID,VesselID,StartDate,EndDate,BookingTime,UID,Deleted,EndHighlight,BookingTimeChange,BookingTimeChangeStatus")] Booking booking)
+        public IActionResult Create([Bind("Id,VesselId,StartDate,EndDate,BookingTime,UserId,Deleted,EndHighlight,BookingTimeChange,BookingTimeChangeStatus")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -119,7 +119,7 @@ namespace egdbooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit([Bind("ID,VNID,StartDate,EndDate,BookingTime,UID,Deleted,EndHighlight,BookingTimeChange,BookingTimeChangeStatus")] Booking booking)
+        public IActionResult Edit([Bind("Id,VesselId,StartDate,EndDate,BookingTime,UserId,Deleted,EndHighlight,BookingTimeChange,BookingTimeChangeStatus")] Booking booking)
         {
             if (ModelState.IsValid)
             {

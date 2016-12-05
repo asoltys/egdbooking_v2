@@ -17,7 +17,7 @@ namespace egdbooking_v2.Controllers
         // GET: Tariffs
         public IActionResult Index()
         {
-            return View(db.Tariffs.ToList().Where(i => i.ID < 100));
+            return View(db.Tariffs.ToList().Where(i => i.Id < 100));
         }
 
         // GET: Tariffs/Details/5
@@ -46,7 +46,7 @@ namespace egdbooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,BookingID,BookFee,FullDrain,VesselDockage,CargoDockage,WorkVesselBerthNorth,NonworkVesselBerthNorth,VesselBerthSouth,CargoStore,TopWharfage,CraneLightHook,CraneMedHook,CraneBigHook,CraneHyster,CraneGrove,Forklift,CompressPrimary,CompressSecondary,CompressPortable,Tug,FreshH2O,Electric,TieUp,Commissionaire,OvertimeLabour,LightsStandard,LightsCaisson,OtherText,Other")] Tariff tariff)
+        public async Task<IActionResult> Create([Bind("Id,BookingId,BookFee,FullDrain,VesselDockage,CargoDockage,WorkVesselBerthNorth,NonworkVesselBerthNorth,VesselBerthSouth,CargoStore,TopWharfage,CraneLightHook,CraneMedHook,CraneBigHook,CraneHyster,CraneGrove,Forklift,CompressPrimary,CompressSecondary,CompressPortable,Tug,FreshH2O,Electric,TieUp,Commissionaire,OvertimeLabour,LightsStandard,LightsCaisson,OtherText,Other")] Tariff tariff)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace egdbooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([Bind("ID,BookingID,BookFee,FullDrain,VesselDockage,CargoDockage,WorkVesselBerthNorth,NonworkVesselBerthNorth,VesselBerthSouth,CargoStore,TopWharfage,CraneLightHook,CraneMedHook,CraneBigHook,CraneHyster,CraneGrove,Forklift,CompressPrimary,CompressSecondary,CompressPortable,Tug,FreshH2O,Electric,TieUp,Commissionaire,OvertimeLabour,LightsStandard,LightsCaisson,OtherText,Other")] Tariff tariff)
+        public async Task<IActionResult> Edit([Bind("Id,BookingId,BookFee,FullDrain,VesselDockage,CargoDockage,WorkVesselBerthNorth,NonworkVesselBerthNorth,VesselBerthSouth,CargoStore,TopWharfage,CraneLightHook,CraneMedHook,CraneBigHook,CraneHyster,CraneGrove,Forklift,CompressPrimary,CompressSecondary,CompressPortable,Tug,FreshH2O,Electric,TieUp,Commissionaire,OvertimeLabour,LightsStandard,LightsCaisson,OtherText,Other")] Tariff tariff)
         {
             if (ModelState.IsValid)
             {

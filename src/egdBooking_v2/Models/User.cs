@@ -6,7 +6,7 @@ namespace egdbooking_v2.Models
     public partial class User
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(40)]

@@ -7,9 +7,9 @@ namespace egdbooking_v2.Models
 
     public partial class Booking
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
-        public int VesselID { get; set; }
+        public int VesselId { get; set; }
 
         public DateTime StartDate { get; set; }
         public string FormattedStartDate { get { return this.StartDate.ToString(Resources.AbbrevDate); } }
@@ -20,7 +20,7 @@ namespace egdbooking_v2.Models
         public DateTime BookingTime { get; set; }
         public string FormattedBookingDate { get { return this.BookingTime.ToString(Resources.AbbrevDate); } }
 
-        public int UID { get; set; }
+        public int UserId { get; set; }
 
         public bool Deleted { get; set; }
 

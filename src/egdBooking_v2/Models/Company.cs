@@ -8,7 +8,7 @@ namespace egdbooking_v2.Models
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Column(Order = 1)]
         [StringLength(75)]
