@@ -192,4 +192,88 @@
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="AllRecords" xml:space="preserve">
+    <value>To see all records, clear both fields</value>
+  </data>
+  <data name="BookingsSummaryDescription" xml:space="preserve">
+    <value>If you would like to view a public summary of bookings of the Drydock, the North Landing Wharf and the South Jetty facilities at the Esquimalt Graving Dock without signing in or registering an account, first select a facility and then, select a period of time.</value>
+  </data>
+  <data name="CaseSensitive" xml:space="preserve">
+    <value>This field is case sensitive</value>
+  </data>
+  <data name="ConsultBookingsSummary" xml:space="preserve">
+    <value>Consult the public summary of bookings</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact Esquimalt Graving Dock</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email address (yourname@domain.com)</value>
+  </data>
+  <data name="Fees" xml:space="preserve">
+    <value>Fees</value>
+  </data>
+  <data name="FeesDescription" xml:space="preserve">
+    <value>The Esquimalt Graving Dock booking fee is $4,800.00 Canadian plus $240.00 GST for a total of $5,040.00 payable in cash, certified cheque drawn on a Canadian bank or by an international money order. Effective April 1, 2008, interest will be applied on any account outstanding over 30 days. Reservation requests are tentative until the booking fee is paid. Booking fees are non-refundable.</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot your password</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>From Date:</value>
+  </data>
+  <data name="ImportantNotices" xml:space="preserve">
+    <value>Important notices about the Esquimalt Graving Dock</value>
+  </data>
+  <data name="IndexDescription" xml:space="preserve">
+    <value>Companies and individuals can book space for vessels at our facilities on a first-come, first-served basis. You can also consult the public summary of bookings. The Esquimalt Graving Dock is the largest solid-bottom commercial drydock on the West Coast of Americas, which is located in an ice-free harbour on Vancouver Island.</value>
+  </data>
+  <data name="IndexHeader" xml:space="preserve">
+    <value>Booking Space at the Esquimalt Graving Dock</value>
+  </data>
+  <data name="JumpToSignIn" xml:space="preserve">
+    <value>Sign in to book or cancel a space</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Learn more about the Esquimalt Graving Dock</value>
+  </data>
+  <data name="MoreInformation" xml:space="preserve">
+    <value>For more information</value>
+  </data>
+  <data name="OnThisPage" xml:space="preserve">
+    <value>On This Page</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register an account</value>
+  </data>
+  <data name="RegistrationDisclaimer" xml:space="preserve">
+    <value>To book space at the Esquimalt Graving Dock, you must have an account</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="SelectTimePeriod" xml:space="preserve">
+    <value>Select a time period:</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="SignInBelow" xml:space="preserve">
+    <value>If you have an account, sign in to view current listings, book or cancel a space</value>
+  </data>
+  <data name="SignInHeader" xml:space="preserve">
+    <value>Sign in to book or cancel a space</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>To Date:</value>
+  </data>
 </root>
