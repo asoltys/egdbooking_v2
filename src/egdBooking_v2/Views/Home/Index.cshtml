@@ -68,7 +68,7 @@
         <p>@Resources.AllRecords</p>
         <div class="col-md-8">
             <section id="bookingsform">
-                @using (Html.BeginForm("Index", "Bookings"))
+                @using (Html.BeginForm("Index", "Bookings", new { lang = ViewBag.lang }))
                 {
                         <fieldset>
                         <div class="form-group">
