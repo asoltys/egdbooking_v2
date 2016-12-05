@@ -4,10 +4,16 @@
 @{
     if (ViewBag.lang == "fr")
     {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("fr");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
         Layout = "~/Views/Shared/_WETLayoutFra.cshtml";
     }
     else
     {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
         Layout = "~/Views/Shared/_WETLayoutEng.cshtml";
     }
     ViewBag.Title = "Home Page";
