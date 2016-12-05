@@ -1,8 +1,16 @@
 ﻿@model egdbooking_v2.ViewModels.BookingsViewModel
 
 @{
+    if (ViewBag.lang == "fr")
+    {
+        Layout = "~/Views/Shared/_WETLayoutFra.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_WETLayoutEng.cshtml";
+    }
     ViewBag.Title = "Index";
-    //ViewBag.isAdmin = HttpContext.Current.User.IsInRole("Admin");
+    ViewBag.isAdmin = false;//HttpContext.Current.User.IsInRole("Admin");
 }
 
 @section lastwrite
@@ -19,7 +27,7 @@
     }
 </ul>
 
-@if (true)
+@if (ViewBag.isAdmin)
 {
     <p>
         @Html.ActionLink("Create New", "Create")
@@ -44,7 +52,10 @@
             <th>
                 Booking Date
             </th>
-            <th></th>
+            @if (ViewBag.isAdmin)
+            {
+                <th></th>
+            }
         </tr>
     @foreach (var item in dock.Bookings) {
         <tr>
@@ -64,11 +75,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.FormattedBookingDate)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
+            @if (ViewBag.isAdmin)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            }
         </tr>
     }
 
