@@ -38,59 +38,68 @@
 {
     <h2><a name="@dock.DockName"></a>@dock.DockName</h2>
 
-    <table class="table">
-        <tr>
-            @if (ViewBag.isLoggedIn)
-            {
-                <th>
-                    @Resources.Vessel
-                </th>
-            }
-            <th>
-                @Resources.Section
-            </th>
-            <th>
-                @Resources.DockingDates
-            </th>
-            <th>
-                @Resources.BookingDate
-            </th>
-            @if (ViewBag.isAdmin)
-            {
-                <th></th>
-            }
-        </tr>
-    @foreach (var item in dock.Bookings) {
-        <tr>
-            @if (ViewBag.isLoggedIn)
-            {
-                <td>
-                    @Html.DisplayFor(modelItem => item.Vessel.Name)
-                </td>
-            }
-            <td>
-                @foreach (var section in item.Sections) { 
-                    @Html.DisplayText(section)
+    if (dock.Bookings.ToList().Count > 0)
+    {
+        <table class="table">
+            <tr>
+                @if (ViewBag.isLoggedIn)
+                {
+                    <th>
+                        @Resources.Vessel
+                    </th>
                 }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FormattedStartDate)
-                -
-                @Html.DisplayFor(modelItem => item.FormattedEndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FormattedBookingDate)
-            </td>
-            @if (ViewBag.isAdmin)
+                <th>
+                    @Resources.Section
+                </th>
+                <th>
+                    @Resources.DockingDates
+                </th>
+                <th>
+                    @Resources.BookingDate
+                </th>
+                @if (ViewBag.isAdmin)
+                {
+                    <th></th>
+                }
+            </tr>
+            @foreach (var item in dock.Bookings)
             {
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
+                <tr>
+                    @if (ViewBag.isLoggedIn)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vessel.Name)
+                        </td>
+                    }
+                    <td>
+                        @foreach (var section in item.Sections)
+                        {
+                            @Html.DisplayText(section)
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FormattedStartDate)
+                        -
+                        @Html.DisplayFor(modelItem => item.FormattedEndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FormattedBookingDate)
+                    </td>
+                    @if (ViewBag.isAdmin)
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    }
+                </tr>
             }
-        </tr>
-    }
 
-    </table>
+        </table>
+    }
+    else
+    {
+        <p>@Resources.NoBookings</p>
+    }
 }
