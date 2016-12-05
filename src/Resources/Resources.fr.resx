@@ -278,4 +278,25 @@ Les frais de réservation de la cale sèche d’Esquimalt sont de 4 800,00$ cana
   <data name="ToDate" xml:space="preserve">
     <value>Date de fin :</value>
   </data>
+  <data name="BookingDate" xml:space="preserve">
+    <value>Date de la réservation</value>
+  </data>
+  <data name="BookingsSummary" xml:space="preserve">
+    <value>Résumé des réservations</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="DockingDates" xml:space="preserve">
+    <value>Dates d'amarrage</value>
+  </data>
+  <data name="NoBookings" xml:space="preserve">
+    <value>Il n'existe aucune réservation à afficher.</value>
+  </data>
+  <data name="Section" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="Vessel" xml:space="preserve">
+    <value>Navire</value>
+  </data>
 </root>

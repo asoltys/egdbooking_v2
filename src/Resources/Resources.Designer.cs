@@ -101,6 +101,11 @@ namespace Resources {
         public static string BookingsSummaryDescription {
             get {
                 return ResourceManager.GetString("BookingsSummaryDescription", resourceCulture);
+        ///    Looks up a localized string similar to Booking Date.
+        /// </summary>
+        public static string BookingDate {
+            get {
+                return ResourceManager.GetString("BookingDate", resourceCulture);
             }
         }
         
@@ -110,6 +115,11 @@ namespace Resources {
         public static string CaseSensitive {
             get {
                 return ResourceManager.GetString("CaseSensitive", resourceCulture);
+        ///    Looks up a localized string similar to Bookings Summary.
+        /// </summary>
+        public static string BookingsSummary {
+            get {
+                return ResourceManager.GetString("BookingsSummary", resourceCulture);
             }
         }
         
@@ -164,6 +174,24 @@ namespace Resources {
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Docking Dates.
+        /// </summary>
+        public static string DockingDates {
+            get {
+                return ResourceManager.GetString("DockingDates", resourceCulture);
             }
         }
         
@@ -366,6 +394,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to There are no bookings to view..
+        /// </summary>
+        public static string NoBookings {
+            get {
+                return ResourceManager.GetString("NoBookings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to North Landing Wharf.
         /// </summary>
         public static string NorthJetty {
@@ -434,6 +471,11 @@ namespace Resources {
         public static string Required {
             get {
                 return ResourceManager.GetString("Required", resourceCulture);
+        ///    Looks up a localized string similar to Section.
+        /// </summary>
+        public static string Section {
+            get {
+                return ResourceManager.GetString("Section", resourceCulture);
             }
         }
         
@@ -533,6 +575,15 @@ namespace Resources {
         public static string UserCompanyRequests {
             get {
                 return ResourceManager.GetString("UserCompanyRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Vessel.
+        /// </summary>
+        public static string Vessel {
+            get {
+                return ResourceManager.GetString("Vessel", resourceCulture);
             }
         }
     }

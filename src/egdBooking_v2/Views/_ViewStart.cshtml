@@ -1,8 +1,14 @@
 ﻿@if (ViewBag.lang == "fr")
 {
+    System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("fr");
+    System.Globalization.CultureInfo.CurrentCulture = ci;
+    System.Globalization.CultureInfo.CurrentUICulture = ci;
     Layout = "~/Views/Shared/_WETLayout2ColFra.cshtml";
 }
 else
 {
+    System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en");
+    System.Globalization.CultureInfo.CurrentCulture = ci;
+    System.Globalization.CultureInfo.CurrentUICulture = ci;
     Layout = "~/Views/Shared/_WETLayout2ColEng.cshtml";
 }
