@@ -21,31 +21,33 @@ namespace egdbooking_v2.Controllers
         public IActionResult Index(IFormCollection collection)
         {
 
-            List<Booking> BookingsDB;
+            List<Booking> BookingsDB = db.Bookings.Where(i => i.ID > 3000).ToList();
 
-            if (collection["startdate"] != "" && collection["enddate"] != "")
+            if (collection.Count != 0)
             {
-                DateTime startdate = Convert.ToDateTime(collection["startdate"]);
-                DateTime enddate = Convert.ToDateTime(collection["enddate"]);
 
-                BookingsDB = db.Bookings.Where(i => i.ID > 3000)
-                                        .Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
-                                        .ToList();
+                if (collection["startdate"] != "" && collection["enddate"] != "")
+                {
+                    DateTime startdate = Convert.ToDateTime(collection["startdate"]);
+                    DateTime enddate = Convert.ToDateTime(collection["enddate"]);
 
-            } else if (collection["startdate"] != "") {
-                DateTime startdate = Convert.ToDateTime(collection["startdate"]);
-                BookingsDB = db.Bookings.Where(i => i.ID > 3000)
-                                        .Where(b => (b.EndDate >= startdate))
-                                        .ToList();
-            } else if (collection["enddate"] != "")
-            {
-                DateTime enddate = Convert.ToDateTime(collection["enddate"]);
-                BookingsDB = db.Bookings.Where(i => i.ID > 3000)
-                                        .Where(b => (b.StartDate <= enddate))
-                                        .ToList();
+                    BookingsDB = db.Bookings.Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
+                                            .ToList();
 
-            } else {
-                BookingsDB = db.Bookings.Where(i => i.ID > 3000).ToList();
+                }
+                else if (collection["startdate"] != "")
+                {
+                    DateTime startdate = Convert.ToDateTime(collection["startdate"]);
+                    BookingsDB = db.Bookings.Where(b => (b.EndDate >= startdate))
+                                            .ToList();
+                }
+                else if (collection["enddate"] != "")
+                {
+                    DateTime enddate = Convert.ToDateTime(collection["enddate"]);
+                    BookingsDB = db.Bookings.Where(b => (b.StartDate <= enddate))
+                                            .ToList();
+
+                }
             }
 
             BookingsViewModel ViewModel = new BookingsViewModel(Resources.Resources.Drydock, Resources.Resources.NorthJetty, Resources.Resources.SouthJetty);

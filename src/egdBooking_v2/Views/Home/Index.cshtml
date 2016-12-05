@@ -2,6 +2,14 @@
 @model LoginViewModel
 
 @{
+    if (ViewBag.lang == "fr")
+    {
+        Layout = "~/Views/Shared/_WETLayoutFra.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_WETLayoutEng.cshtml";
+    }
     ViewBag.Title = "Home Page";
 }
 

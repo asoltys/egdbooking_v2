@@ -69,6 +69,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to To see all records, clear both fields.
+        /// </summary>
+        public static string AllRecords {
+            get {
+                return ResourceManager.GetString("AllRecords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Approve.
         /// </summary>
         public static string Approve {
@@ -87,6 +96,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to If you would like to view a public summary of bookings of the Drydock, the North Landing Wharf and the South Jetty facilities at the Esquimalt Graving Dock without signing in or registering an account, first select a facility and then, select a period of time..
+        /// </summary>
+        public static string BookingsSummaryDescription {
+            get {
+                return ResourceManager.GetString("BookingsSummaryDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to This field is case sensitive.
+        /// </summary>
+        public static string CaseSensitive {
+            get {
+                return ResourceManager.GetString("CaseSensitive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to a company.
         /// </summary>
         public static string CompanyRequest {
@@ -101,6 +128,24 @@ namespace Resources {
         public static string CompanyRequests {
             get {
                 return ResourceManager.GetString("CompanyRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Consult the public summary of bookings.
+        /// </summary>
+        public static string ConsultBookingsSummary {
+            get {
+                return ResourceManager.GetString("ConsultBookingsSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Contact Esquimalt Graving Dock.
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
             }
         }
         
@@ -146,6 +191,96 @@ namespace Resources {
         public static string EGD {
             get {
                 return ResourceManager.GetString("EGD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Email address (yourname@domain.com).
+        /// </summary>
+        public static string EmailAddress {
+            get {
+                return ResourceManager.GetString("EmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Fees.
+        /// </summary>
+        public static string Fees {
+            get {
+                return ResourceManager.GetString("Fees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to The Esquimalt Graving Dock booking fee is $4,800.00 Canadian plus $240.00 GST for a total of $5,040.00 payable in cash, certified cheque drawn on a Canadian bank or by an international money order. Effective April 1, 2008, interest will be applied on any account outstanding over 30 days. Reservation requests are tentative until the booking fee is paid. Booking fees are non-refundable..
+        /// </summary>
+        public static string FeesDescription {
+            get {
+                return ResourceManager.GetString("FeesDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Forgot your password.
+        /// </summary>
+        public static string ForgotPassword {
+            get {
+                return ResourceManager.GetString("ForgotPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to From Date:.
+        /// </summary>
+        public static string FromDate {
+            get {
+                return ResourceManager.GetString("FromDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Important notices about the Esquimalt Graving Dock.
+        /// </summary>
+        public static string ImportantNotices {
+            get {
+                return ResourceManager.GetString("ImportantNotices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Companies and individuals can book space for vessels at our facilities on a first-come, first-served basis. You can also consult the public summary of bookings. The Esquimalt Graving Dock is the largest solid-bottom commercial drydock on the West Coast of Americas, which is located in an ice-free harbour on Vancouver Island..
+        /// </summary>
+        public static string IndexDescription {
+            get {
+                return ResourceManager.GetString("IndexDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Booking Space at the Esquimalt Graving Dock.
+        /// </summary>
+        public static string IndexHeader {
+            get {
+                return ResourceManager.GetString("IndexHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Sign in to book or cancel a space.
+        /// </summary>
+        public static string JumpToSignIn {
+            get {
+                return ResourceManager.GetString("JumpToSignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Learn more about the Esquimalt Graving Dock.
+        /// </summary>
+        public static string LearnMore {
+            get {
+                return ResourceManager.GetString("LearnMore", resourceCulture);
             }
         }
         
@@ -204,6 +339,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to For more information.
+        /// </summary>
+        public static string MoreInformation {
+            get {
+                return ResourceManager.GetString("MoreInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
@@ -231,11 +375,65 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to On This Page.
+        /// </summary>
+        public static string OnThisPage {
+            get {
+                return ResourceManager.GetString("OnThisPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Password.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Register an account.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to To book space at the Esquimalt Graving Dock, you must have an account.
+        /// </summary>
+        public static string RegistrationDisclaimer {
+            get {
+                return ResourceManager.GetString("RegistrationDisclaimer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Remember Me.
+        /// </summary>
+        public static string RememberMe {
+            get {
+                return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Remove.
         /// </summary>
         public static string Remove {
             get {
                 return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Required.
+        /// </summary>
+        public static string Required {
+            get {
+                return ResourceManager.GetString("Required", resourceCulture);
             }
         }
         
@@ -249,6 +447,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Select a time period:.
+        /// </summary>
+        public static string SelectTimePeriod {
+            get {
+                return ResourceManager.GetString("SelectTimePeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to yyyy-MM-dd.
         /// </summary>
         public static string ShortDate {
@@ -258,11 +465,56 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Sign in.
+        /// </summary>
+        public static string SignIn {
+            get {
+                return ResourceManager.GetString("SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to If you have an account, sign in to view current listings, book or cancel a space.
+        /// </summary>
+        public static string SignInBelow {
+            get {
+                return ResourceManager.GetString("SignInBelow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Sign in to book or cancel a space.
+        /// </summary>
+        public static string SignInHeader {
+            get {
+                return ResourceManager.GetString("SignInHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to South Jetty.
         /// </summary>
         public static string SouthJetty {
             get {
                 return ResourceManager.GetString("SouthJetty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Submit.
+        /// </summary>
+        public static string Submit {
+            get {
+                return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to To Date:.
+        /// </summary>
+        public static string ToDate {
+            get {
+                return ResourceManager.GetString("ToDate", resourceCulture);
             }
         }
         

@@ -192,4 +192,90 @@
   <data name="Name" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="AllRecords" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="BookingsSummaryDescription" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="CaseSensitive" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="ConsultBookingsSummary" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contactez le Cale sèche d'Esquimalt</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="Fees" xml:space="preserve">
+    <value>Les frais</value>
+  </data>
+  <data name="FeesDescription" xml:space="preserve">
+    <value>Les frais de réservation de la cale sèche d’Esquimalt sont de 4 800,00$ canadiens, plus 240,00$ de taxe de vente générale (TVG), ce qui donne en tout 5 040,00$ payables en espèces, par chèque certifié d’une banque canadienne ou par mandat international. Le 1er avril 2008, des intérêts seront appliqués sur un compte en suspens plus de 30 jours. Les demandes de réservation sont provisoires jusqu’à ce que les frais de réservation soient payés. Les frais de réservation ne sont pas remboursables.Les frais de réservation de la cale sèche d’Esquimalt sont de 4 800,00$ canadiens, plus 240,00$ de taxe de vente générale (TVG), ce qui donne en tout 5 040,00$ payables en espèces, par chèque certifié d’une banque canadienne ou par mandat international. Le 1er avril 2008, des intérêts seront appliqués sur un compte en suspens plus de 30 jours. Les demandes de réservation sont provisoires jusqu’à ce que les frais de réservation soient payés. Les frais de réservation ne sont pas remboursables.
+
+Les frais de réservation de la cale sèche d’Esquimalt sont de 4 800,00$ canadiens, plus 240,00$ de taxe de vente générale (TVG), ce qui donne en tout 5 040,00$ payables en espèces, par chèque certifié d’une banque canadienne ou par mandat international. Le 1er avril 2008, des intérêts seront appliqués sur un compte en suspens plus de 30 jours. Les demandes de réservation sont provisoires jusqu’à ce que les frais de réservation soient payés. Les frais de réservation ne sont pas remboursables.</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Oubli du mot de passe</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>Date de début :</value>
+  </data>
+  <data name="ImportantNotices" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="IndexDescription" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="IndexHeader" xml:space="preserve">
+    <value>Réservation pour travaux le Cale sèche d'Esquimalt</value>
+  </data>
+  <data name="JumpToSignIn" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="MoreInformation" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="OnThisPage" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Créer un compte</value>
+  </data>
+  <data name="RegistrationDisclaimer" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Garder ma session active</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Requis</value>
+  </data>
+  <data name="SelectTimePeriod" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Entrer</value>
+  </data>
+  <data name="SignInBelow" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="SignInHeader" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Soumettre</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>Date de fin :</value>
+  </data>
 </root>
