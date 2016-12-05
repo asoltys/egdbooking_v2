@@ -25,44 +25,55 @@
         </div>
     }
 
-<h1 id="wb-cont">TBD</h1>
+<h1 id="wb-cont">@Resources.IndexHeader</h1>
 
 <div class="span-4">
 
     <br />
-    <p>TBD</p>
-    <p style="border: solid 1px gray; padding: 4px"><strong>TBD</strong><br />TBD</p>
+    <p>@Resources.IndexDescription</p>
+    <p style="border: solid 1px gray; padding: 4px"><strong>@Resources.Fees</strong><br />@Resources.FeesDescription</p>
     
-    <h2>TBD</h2>
+    <h2>@Resources.OnThisPage</h2>
 
     <ul>
-        <li>Jump to login by clicking here</li>
-        <li>Jump to bookings by clicking here</li>
-        <li>Jump to information by clicking here</li>
+        <li>@Resources.JumpToSignIn</li>
+        <li>@Resources.ConsultBookingsSummary</li>
+        <li>@Resources.MoreInformation</li>
     </ul>
 
     <!-- Div so link above can jump to this point (login) -->
     <div id="login"></div>
-    <h2>Login Header</h2>
+    <h2>@Resources.SignInHeader</h2>
+    <p><strong>@Resources.RegistrationDisclaimer</strong></p>
+    <ul><li>@Resources.Register</li></ul>
+    <br />
+    <p><strong>@Resources.SignInBelow</strong></p>
+    <br />
+    <br />
+
+    <ul><li>@Resources.ForgotPassword</li></ul>
 
     <!-- Div so link above can jump to this point (bookings) -->
     <div id="bookings"></div>
-    <h2>Bookings Header</h2>
+    <h2>@Resources.ConsultBookingsSummary</h2>
+    <p>@Resources.BookingsSummaryDescription</p>
     <div class="row">
+        <p><strong>@Resources.SelectTimePeriod</strong></p>
+        <p>@Resources.AllRecords</p>
         <div class="col-md-8">
             <section id="bookingsform">
                 @using (Html.BeginForm("Index", "Bookings"))
                 {
                         <fieldset>
                         <div class="form-group">
-                            <label for="startdate">Start date<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
+                            <label for="startdate">@Resources.FromDate<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
                             <input class="form-control" type="date" id="startdate" name="startdate" />
                         </div>
                         <div class="form-group">
-                            <label for="enddate">End date<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
+                            <label for="enddate">@Resources.ToDate<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
                             <input class="form-control" type="date" id="enddate" name="enddate" />
                         </div>
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="@Resources.Submit" />
                     </fieldset>
                 }
             </section>
@@ -72,11 +83,11 @@
 
     <!-- Div so link above can jump to this point (information) -->
     <div id="information"></div>
-    <h2>TBD</h2>
+    <h2>@Resources.MoreInformation</h2>
     <ul>
-        <li><a href="http://www.tpsgc-pwgsc.gc.ca/biens-property/cse-egd/index-eng.html">TBD</a></li>
-        <li><a href="http://www.tpsgc-pwgsc.gc.ca/biens-property/cse-egd/avis-notices-eng.html">TBD</a></li>
-        <li><a href="http://www.tpsgc-pwgsc.gc.ca/biens-property/cse-egd/cn-cu-eng.html">TBD</a></li>
+        <li><a href="http://www.tpsgc-pwgsc.gc.ca/biens-property/cse-egd/index-eng.html">@Resources.LearnMore</a></li>
+        <li><a href="http://www.tpsgc-pwgsc.gc.ca/biens-property/cse-egd/avis-notices-eng.html">@Resources.ImportantNotices</a></li>
+        <li><a href="http://www.tpsgc-pwgsc.gc.ca/biens-property/cse-egd/cn-cu-eng.html">@Resources.Contact</a></li>
     </ul>
 
 </div>
