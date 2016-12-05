@@ -8,8 +8,8 @@ using egdbooking_v2.Data;
 namespace egdbooking_v2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20161202191604_MoveBlockSetupTime")]
-    partial class MoveBlockSetupTime
+    [Migration("20161203013231_InitialSchemaChangesFromCurrentProduction")]
+    partial class InitialSchemaChangesFromCurrentProduction
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -266,7 +266,7 @@ namespace egdbooking_v2.Data.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Users");
+                    b.ToTable("EGDUsers");
                 });
 
             modelBuilder.Entity("egdbooking_v2.Models.Vessel", b =>

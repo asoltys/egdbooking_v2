@@ -265,7 +265,7 @@ namespace egdbooking_v2.Data.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Users");
+                    b.ToTable("EGDUsers");
                 });
 
             modelBuilder.Entity("egdbooking_v2.Models.Vessel", b =>
