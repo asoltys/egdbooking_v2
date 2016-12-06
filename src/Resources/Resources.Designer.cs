@@ -679,5 +679,14 @@ namespace Resources {
                 return ResourceManager.GetString("Vessel", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to You are here:.
+        /// </summary>
+        public static string YouAreHere {
+            get {
+                return ResourceManager.GetString("YouAreHere", resourceCulture);
+            }
+        }
     }
 }

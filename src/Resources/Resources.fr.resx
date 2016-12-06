@@ -324,4 +324,7 @@
   <data name="RegistrationDescription" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="YouAreHere" xml:space="preserve">
+    <value>Vous êtes ici :</value>
+  </data>
 </root>
