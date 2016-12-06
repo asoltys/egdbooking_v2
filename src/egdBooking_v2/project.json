@@ -46,7 +46,9 @@
     "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
     "Microsoft.EntityFrameworkCore.Design": "1.1.0",
     "Resources": "1.0.0-*",
-    "BCrypt.Net-Core": "1.1.0"
+    "BCrypt.Net-Core": "1.1.0",
+    "Microsoft.TypeScript.Compiler": "2.0.6",
+    "Microsoft.TypeScript.MSBuild": "2.0.6"
   },
 
   "tools": {
@@ -96,7 +98,10 @@
 
   "scripts": {
     "prepublish": [ "bower install" ],
-    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ],
+    "precompile": [
+      "dotnet bundle watch"
+    ]
   },
 
   "tooling": {
