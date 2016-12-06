@@ -336,4 +336,10 @@
   <data name="YouAreHere" xml:space="preserve">
     <value>Vous êtes ici :</value>
   </data>
+  <data name="NavAccount" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="NavAccountForgotPassword" xml:space="preserve">
+    <value>TBD</value>
+  </data>
 </root>

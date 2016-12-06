@@ -456,6 +456,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Account Management.
+        /// </summary>
+        public static string NavAccount {
+            get {
+                return ResourceManager.GetString("NavAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Forgot Password.
+        /// </summary>
+        public static string NavAccountForgotPassword {
+            get {
+                return ResourceManager.GetString("NavAccountForgotPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Admin.
         /// </summary>
         public static string NavAdmin {
