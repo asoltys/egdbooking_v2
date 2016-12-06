@@ -96,15 +96,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to If you would like to view a public summary of bookings of the Drydock, the North Landing Wharf and the South Jetty facilities at the Esquimalt Graving Dock without signing in or registering an account, first select a facility and then, select a period of time..
-        /// </summary>
-        public static string BookingsSummaryDescription {
-            get {
-                return ResourceManager.GetString("BookingsSummaryDescription", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///    Looks up a localized string similar to Booking Date.
         /// </summary>
         public static string BookingDate {
@@ -114,20 +105,29 @@ namespace Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to This field is case sensitive.
-        /// </summary>
-        public static string CaseSensitive {
-            get {
-                return ResourceManager.GetString("CaseSensitive", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///    Looks up a localized string similar to Bookings Summary.
         /// </summary>
         public static string BookingsSummary {
             get {
                 return ResourceManager.GetString("BookingsSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to If you would like to view a public summary of bookings of the Drydock, the North Landing Wharf and the South Jetty facilities at the Esquimalt Graving Dock without signing in or registering an account, first select a facility and then, select a period of time..
+        /// </summary>
+        public static string BookingsSummaryDescription {
+            get {
+                return ResourceManager.GetString("BookingsSummaryDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to This field is case sensitive.
+        /// </summary>
+        public static string CaseSensitive {
+            get {
+                return ResourceManager.GetString("CaseSensitive", resourceCulture);
             }
         }
         
@@ -330,6 +330,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Manage your Esquimalt Graving Dock account.
+        /// </summary>
+        public static string ManageYourAccount {
+            get {
+                return ResourceManager.GetString("ManageYourAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Government of Canada, Public Works and Government Services, Real Property Branch.
         /// </summary>
         public static string MetaCreator {
@@ -481,7 +490,7 @@ namespace Resources {
                 return ResourceManager.GetString("Required", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///    Looks up a localized string similar to Section.
         /// </summary>

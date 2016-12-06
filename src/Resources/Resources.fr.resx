@@ -297,4 +297,7 @@
   <data name="Vessel" xml:space="preserve">
     <value>Navire</value>
   </data>
+  <data name="ManageYourAccount" xml:space="preserve">
+    <value>TBD</value>
+  </data>
 </root>
