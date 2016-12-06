@@ -159,6 +159,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Conduct a new search.
+        /// </summary>
+        public static string ConductNewSearch {
+            get {
+                return ResourceManager.GetString("ConductNewSearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Consult the public summary of bookings.
         /// </summary>
         public static string ConsultBookingsSummary {
