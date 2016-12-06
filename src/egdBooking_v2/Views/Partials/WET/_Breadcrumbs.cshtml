@@ -1,4 +1,19 @@
-﻿<nav role="navigation" id="wb-bc" property="breadcrumb">
+﻿@{
+    if (ViewBag.lang == "fr")
+    {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("fr");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
+    }
+    else
+    {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
+    }
+}
+
+<nav role="navigation" id="wb-bc" property="breadcrumb">
     <h2>@Resources.YouAreHere</h2>
     <div class="container">
         <div class="row">
@@ -30,18 +45,18 @@
                     //TODO: Develop better breadcrumbs
                 }
                 <li>
-                    @Html.ActionLink("Home", "Index", "Home", new { lang = ViewBag.lang }, null)
+                    @Html.ActionLink(Resources.ResourceManager.GetString("Nav" + "Home"), "Index", "Home", new { lang = ViewBag.lang }, null)
                 </li>
                 @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
                 {
                     <li>
-                        @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString(), new { lang = ViewBag.lang }, null)
+                        @Html.ActionLink(Resources.ResourceManager.GetString("Nav" + ViewContext.RouteData.Values["controller"].ToString()), "Index", ViewContext.RouteData.Values["controller"].ToString(), new { lang = ViewBag.lang }, null)
                     </li>
                 }
                 @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
                 {
                     <li>
-                        @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { lang = ViewBag.lang }, null)
+                        @Html.ActionLink(Resources.ResourceManager.GetString("Nav" + ViewContext.RouteData.Values["action"].ToString()), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { lang = ViewBag.lang }, null)
                     </li>
                 }
             </ol>

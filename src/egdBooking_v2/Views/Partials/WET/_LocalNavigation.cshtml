@@ -1,11 +1,26 @@
-﻿<nav class="wb-sec col-md-3 col-md-pull-9" typeof="SiteNavigationElement" id="wb-sec" role="navigation">
+﻿@{
+    if (ViewBag.lang == "fr")
+    {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("fr");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
+    }
+    else
+    {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
+    }
+}
+
+<nav class="wb-sec col-md-3 col-md-pull-9" typeof="SiteNavigationElement" id="wb-sec" role="navigation">
     <h2 id="wb-sec-h" class="wb-inv">@Resources.SectionMenu</h2>
     <section class="list-group menu list-unstyled">
         <h3>@Resources.EGD</h3>
         <ul class="list-group menu list-unstyled">
-            <li>@Html.ActionLink(Resources.Home, "Index", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            <li>@Html.ActionLink(Resources.Bookings, "Index", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            <li>@Html.ActionLink(Resources.Admin, "Index", "Admin", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            <li>@Html.ActionLink(Resources.NavHome, "Index", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            <li>@Html.ActionLink(Resources.NavBookings, "Index", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            <li>@Html.ActionLink(Resources.NavAdmin, "Index", "Admin", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
         </ul>
     </section>
 </nav>

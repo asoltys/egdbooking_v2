@@ -324,13 +324,13 @@
   <data name="RegistrationDescription" xml:space="preserve">
     <value>TBD</value>
   </data>
-  <data name="Admin" xml:space="preserve">
+  <data name="NavAdmin" xml:space="preserve">
     <value>TBD</value>
   </data>
-  <data name="Bookings" xml:space="preserve">
+  <data name="NavBookings" xml:space="preserve">
     <value>TBD</value>
   </data>
-  <data name="Home" xml:space="preserve">
+  <data name="NavHome" xml:space="preserve">
     <value>TBD</value>
   </data>
   <data name="YouAreHere" xml:space="preserve">

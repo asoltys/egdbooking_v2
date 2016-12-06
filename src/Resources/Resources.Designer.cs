@@ -69,15 +69,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Admin.
-        /// </summary>
-        public static string Admin {
-            get {
-                return ResourceManager.GetString("Admin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///    Looks up a localized string similar to To see all records, clear both fields.
         /// </summary>
         public static string AllRecords {
@@ -119,15 +110,6 @@ namespace Resources {
         public static string BookingDate {
             get {
                 return ResourceManager.GetString("BookingDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Bookings.
-        /// </summary>
-        public static string Bookings {
-            get {
-                return ResourceManager.GetString("Bookings", resourceCulture);
             }
         }
         
@@ -321,15 +303,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Home.
-        /// </summary>
-        public static string Home {
-            get {
-                return ResourceManager.GetString("Home", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///    Looks up a localized string similar to If you have forgotten your password, submit your email address. You will receive an email with a new password..
         /// </summary>
         public static string IfForgotPassword {
@@ -479,6 +452,33 @@ namespace Resources {
         public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Admin.
+        /// </summary>
+        public static string NavAdmin {
+            get {
+                return ResourceManager.GetString("NavAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Bookings.
+        /// </summary>
+        public static string NavBookings {
+            get {
+                return ResourceManager.GetString("NavBookings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Home.
+        /// </summary>
+        public static string NavHome {
+            get {
+                return ResourceManager.GetString("NavHome", resourceCulture);
             }
         }
         
