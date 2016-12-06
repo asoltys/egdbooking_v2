@@ -45,21 +45,49 @@
                     //TODO: Develop better breadcrumbs
                 }
                 <li>
-                    @Html.ActionLink(Resources.ResourceManager.GetString("Nav" + "Home"), "Index", "Home", new { lang = ViewBag.lang }, null)
+                    @if (Resources.ResourceManager.GetString("Nav" + "Home") != null)
+                    {
+                        @Html.ActionLink(Resources.ResourceManager.GetString("Nav" + "Home"), "Index", "Home", new { lang = ViewBag.lang }, null)
+                    }
+                    else
+                    {
+                        @Html.ActionLink("TO ADD TO RESOURCES: Nav" + "Home", "Index", "Home", new { lang = ViewBag.lang }, null)
+                    }
+
                 </li>
                 @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
                 {
                     <li>
-                        @Html.ActionLink(Resources.ResourceManager.GetString("Nav" + ViewContext.RouteData.Values["controller"].ToString()), "Index", ViewContext.RouteData.Values["controller"].ToString(), new { lang = ViewBag.lang }, null)
+                        @if (Resources.ResourceManager.GetString("Nav" + ViewContext.RouteData.Values["controller"].ToString()) != null)
+                        {
+                            @Html.ActionLink(Resources.ResourceManager.GetString("Nav" + ViewContext.RouteData.Values["controller"].ToString()), "Index", ViewContext.RouteData.Values["controller"].ToString(), new { lang = ViewBag.lang }, null)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("TO ADD TO RESOURCES: Nav" + ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString(), new { lang = ViewBag.lang }, null)
+                        }
                     </li>
                 }
                 @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
                 {
                     <li>
-                        @Html.ActionLink(Resources.ResourceManager.GetString("Nav" + ViewContext.RouteData.Values["action"].ToString()), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { lang = ViewBag.lang }, null)
+                        @if (Resources.ResourceManager.GetString("Nav" + ViewContext.RouteData.Values["controller"].ToString() + ViewContext.RouteData.Values["action"].ToString()) != null)
+                        {
+                            @Html.ActionLink(Resources.ResourceManager.GetString("Nav" + ViewContext.RouteData.Values["controller"].ToString() + ViewContext.RouteData.Values["action"].ToString()), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { lang = ViewBag.lang }, null)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("TO ADD TO RESOURCES: Nav" + ViewContext.RouteData.Values["controller"].ToString() + ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString(), new { lang = ViewBag.lang }, null)
+                        }
                     </li>
                 }
             </ol>
         </div>
     </div>
 </nav>
+
+@{ 
+    // To have your page display correctly in the breadcrumbs, you must:
+    // add a resource for the controller that contains the actions (format: NavController), this is used for the Index action
+    // add resources for the actions within the controller that are navigable (format: NavControllerAction), this is used for every action that isn't Index
+}
