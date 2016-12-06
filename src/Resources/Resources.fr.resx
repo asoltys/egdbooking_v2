@@ -336,6 +336,12 @@
   <data name="YouAreHere" xml:space="preserve">
     <value>Vous êtes ici :</value>
   </data>
+  <data name="BookingsIndex" xml:space="preserve">
+    <value>Résumé des réservations publique de la Cale sèche d'Esquimalt</value>
+  </data>
+  <data name="BookingsIndexDescription" xml:space="preserve">
+    <value>Trouvez un résumé des réservations publique de la Cale sèche d'Esquimalt.</value>
+  </data>
   <data name="NavAccount" xml:space="preserve">
     <value>TBD</value>
   </data>

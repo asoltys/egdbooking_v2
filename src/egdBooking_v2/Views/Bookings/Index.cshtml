@@ -25,7 +25,8 @@
     @System.IO.File.GetLastWriteTime(System.IO.Path.GetFullPath(this.Path.TrimStart(new char[] { '/' }))).ToString(Resources.ShortDate)
 }
 
-<h2>@ViewBag.Title</h2>
+<h2>@Resources.BookingsIndex</h2>
+<p>@Resources.BookingsIndexDescription</p>
 
 <ul>
     @foreach (var dock in Model.Docks)

@@ -21,7 +21,7 @@ namespace egdbooking_v2.Controllers
         public IActionResult Index(IFormCollection collection)
         {
 
-            List<Booking> BookingsDB = db.Bookings.Where(i => i.Id > 3000).ToList();
+            List<Booking> BookingsDB = db.Bookings.Where(i => (i.Id > 3000)).ToList();
 
             if (collection.Count != 0)
             {
@@ -31,20 +31,20 @@ namespace egdbooking_v2.Controllers
                     DateTime startdate = Convert.ToDateTime(collection["startdate"]);
                     DateTime enddate = Convert.ToDateTime(collection["enddate"]);
 
-                    BookingsDB = db.Bookings.Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
+                    BookingsDB = BookingsDB.Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
                                             .ToList();
 
                 }
                 else if (collection["startdate"] != "")
                 {
                     DateTime startdate = Convert.ToDateTime(collection["startdate"]);
-                    BookingsDB = db.Bookings.Where(b => (b.EndDate >= startdate))
+                    BookingsDB = BookingsDB.Where(b => (b.EndDate >= startdate))
                                             .ToList();
                 }
                 else if (collection["enddate"] != "")
                 {
                     DateTime enddate = Convert.ToDateTime(collection["enddate"]);
-                    BookingsDB = db.Bookings.Where(b => (b.StartDate <= enddate))
+                    BookingsDB = BookingsDB.Where(b => (b.StartDate <= enddate))
                                             .ToList();
 
                 }

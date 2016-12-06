@@ -114,6 +114,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Esquimalt Graving Dock public bookings summary.
+        /// </summary>
+        public static string BookingsIndex {
+            get {
+                return ResourceManager.GetString("BookingsIndex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Find a public summary of bookings at the Esquimalt Graving Dock..
+        /// </summary>
+        public static string BookingsIndexDescription {
+            get {
+                return ResourceManager.GetString("BookingsIndexDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Bookings Summary.
         /// </summary>
         public static string BookingsSummary {

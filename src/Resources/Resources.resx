@@ -342,4 +342,10 @@
   <data name="NavAccountForgotPassword" xml:space="preserve">
     <value>Forgot Password</value>
   </data>
+  <data name="BookingsIndex" xml:space="preserve">
+    <value>Esquimalt Graving Dock public bookings summary</value>
+  </data>
+  <data name="BookingsIndexDescription" xml:space="preserve">
+    <value>Find a public summary of bookings at the Esquimalt Graving Dock.</value>
+  </data>
 </root>
