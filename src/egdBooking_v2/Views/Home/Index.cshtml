@@ -51,14 +51,13 @@
     <div id="login"></div>
     <h2>@Resources.SignInHeader</h2>
     <p><strong>@Resources.RegistrationDisclaimer</strong></p>
-    <ul><li>@Resources.Register</li></ul>
+    <ul><li><a href="@Url.Action("ForgotPassword", "Account", new { lang = ViewBag.lang })#ajout-add">@Resources.Register</a></li></ul>
     <br />
     <p><strong>@Resources.SignInBelow</strong></p>
     <br />
     <br />
 
-    <ul><li>@Html.ActionLink(@Resources.ForgotPassword, "ForgotPassword", "Account", new { lang = ViewBag.lang })</li></ul>
-
+    <ul><li><a href="@Url.Action("ForgotPassword", "Account", new { lang = ViewBag.lang })#oubli-forgot">@Resources.ForgotPassword</a></li></ul>
     <!-- Div so link above can jump to this point (bookings) -->
     <div id="bookings"></div>
     <h2>@Resources.ConsultBookingsSummary</h2>
