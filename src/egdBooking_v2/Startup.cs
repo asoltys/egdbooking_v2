@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using egdbooking_v2.Models;
 using egdbooking_v2.Services;
 using egdbooking_v2.Data;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace egdbooking_v2
 {
@@ -37,6 +38,10 @@ namespace egdbooking_v2
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("SQLServer")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddMvc();
 
