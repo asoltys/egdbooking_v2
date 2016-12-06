@@ -32,5 +32,11 @@ namespace egdbooking_v2.Controllers
         {
             return View();
         }
+
+        [Route("home/test")]
+        public IActionResult Gantt()
+        {
+            return View();
+        }
     }
 }
