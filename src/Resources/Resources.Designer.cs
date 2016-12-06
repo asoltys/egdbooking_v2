@@ -69,6 +69,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Admin.
+        /// </summary>
+        public static string Admin {
+            get {
+                return ResourceManager.GetString("Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to To see all records, clear both fields.
         /// </summary>
         public static string AllRecords {
@@ -110,6 +119,15 @@ namespace Resources {
         public static string BookingDate {
             get {
                 return ResourceManager.GetString("BookingDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Bookings.
+        /// </summary>
+        public static string Bookings {
+            get {
+                return ResourceManager.GetString("Bookings", resourceCulture);
             }
         }
         
@@ -299,6 +317,15 @@ namespace Resources {
         public static string FromDate {
             get {
                 return ResourceManager.GetString("FromDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
             }
         }
         

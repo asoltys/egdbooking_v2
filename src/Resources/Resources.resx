@@ -324,6 +324,15 @@
   <data name="RegistrationDescription" xml:space="preserve">
     <value>Submit the following information to create an account to be able to book space at the Esquimalt Graving Dock.</value>
   </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Bookings" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
   <data name="YouAreHere" xml:space="preserve">
     <value>You are here:</value>
   </data>

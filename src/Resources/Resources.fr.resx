@@ -324,6 +324,15 @@
   <data name="RegistrationDescription" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="Admin" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="Bookings" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>TBD</value>
+  </data>
   <data name="YouAreHere" xml:space="preserve">
     <value>Vous êtes ici :</value>
   </data>
