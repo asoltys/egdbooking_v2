@@ -300,4 +300,7 @@
   <data name="ManageYourAccount" xml:space="preserve">
     <value>Manage your Esquimalt Graving Dock account</value>
   </data>
+  <data name="Booked" xml:space="preserve">
+    <value>Booked</value>
+  </data>
 </root>

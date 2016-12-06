@@ -300,4 +300,7 @@
   <data name="ManageYourAccount" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="Booked" xml:space="preserve">
+    <value>Réservé</value>
+  </data>
 </root>

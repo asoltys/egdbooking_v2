@@ -41,30 +41,32 @@ namespace egdbooking_v2.Models
 
         public bool? SouthJetty { get; set; }
 
-        public List<string> Sections {
-            get {
-                List<string> sections = new List<string>();
-                if (Section1.HasValue) {
-                    if ((bool)Section1) {
-                        sections.Add("Section 1");
-                    }
-                }
-                if (Section2.HasValue)
-                {
-                    if ((bool)Section2)
-                    {
-                        sections.Add("Section 2");
-                    }
-                }
-                if (Section3.HasValue)
-                {
-                    if ((bool)Section3)
-                    {
-                        sections.Add("Section 3");
-                    }
-                }
+        public string Sections
+        {
+            get
+            {
+                string returnstr = "";
 
-                return sections;
+                if ((NorthJetty.HasValue && NorthJetty == true) || (SouthJetty.HasValue && SouthJetty == true))
+                {
+                    returnstr = Resources.Booked;
+                }
+                else
+                {
+                    bool?[] sections = { Section1, Section2, Section3 };
+                    for (int i = 0; i < sections.Length; i++)
+                    {
+                        if (sections[i].HasValue && sections[i] == true)
+                        {
+                            if (returnstr.Length > 0)
+                            {
+                                returnstr += " & ";
+                            }
+                            returnstr += (i + 1).ToString();
+                        }
+                    }
+                }
+                return returnstr;
             }
         }
 

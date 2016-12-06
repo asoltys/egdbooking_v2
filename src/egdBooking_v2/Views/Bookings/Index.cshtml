@@ -72,10 +72,7 @@
                         </td>
                     }
                     <td>
-                        @foreach (var section in item.Sections)
-                        {
-                            @Html.DisplayText(section)
-                        }
+                        @Html.DisplayFor(modelItem => item.Sections)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.FormattedStartDate)
