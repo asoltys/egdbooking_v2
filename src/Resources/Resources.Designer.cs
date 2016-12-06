@@ -303,6 +303,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to If you have forgotten your password, submit your email address. You will receive an email with a new password..
+        /// </summary>
+        public static string IfForgotPassword {
+            get {
+                return ResourceManager.GetString("IfForgotPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to If you no longer have access to this email, please contact the system administrator..
+        /// </summary>
+        public static string IfNoEmailAccess {
+            get {
+                return ResourceManager.GetString("IfNoEmailAccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Important notices about the Esquimalt Graving Dock.
         /// </summary>
         public static string ImportantNotices {
@@ -353,6 +371,15 @@ namespace Resources {
         public static string LongDate {
             get {
                 return ResourceManager.GetString("LongDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to You can register an account to book space at the Esquimalt Graving Dock or retrieve your forgotten password..
+        /// </summary>
+        public static string ManageAccountDescription {
+            get {
+                return ResourceManager.GetString("ManageAccountDescription", resourceCulture);
             }
         }
         
@@ -479,6 +506,15 @@ namespace Resources {
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Submit the following information to create an account to be able to book space at the Esquimalt Graving Dock..
+        /// </summary>
+        public static string RegistrationDescription {
+            get {
+                return ResourceManager.GetString("RegistrationDescription", resourceCulture);
             }
         }
         

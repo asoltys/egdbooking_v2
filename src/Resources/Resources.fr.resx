@@ -312,4 +312,16 @@
   <data name="SignInToBookSpace" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="IfForgotPassword" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="IfNoEmailAccess" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="ManageAccountDescription" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="RegistrationDescription" xml:space="preserve">
+    <value>TBD</value>
+  </data>
 </root>
