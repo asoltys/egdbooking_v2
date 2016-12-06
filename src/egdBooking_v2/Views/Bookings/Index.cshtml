@@ -104,6 +104,13 @@
 <h2>@Resources.ConductNewSearch</h2>
 <ul>
     <li>
-        @Html.ActionLink(Resources.ConsultBookingsSummary, "Index", "Home", new { lang = ViewBag.lang })
+        @Html.ActionLink(Resources.ConsultBookingsSummary, "Index", "Home", null, null, "bookings", new { lang = ViewBag.lang }, null)
+    </li>
+</ul>
+
+<h2>@Resources.BookSpace</h2>
+<ul>
+    <li>
+        @Html.ActionLink(Resources.SignInToBookSpace, "Index", "Home", null, null, "login", new { lang = ViewBag.lang }, null)
     </li>
 </ul>

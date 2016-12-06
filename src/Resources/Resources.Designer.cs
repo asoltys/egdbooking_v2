@@ -132,6 +132,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Book space.
+        /// </summary>
+        public static string BookSpace {
+            get {
+                return ResourceManager.GetString("BookSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to This field is case sensitive.
         /// </summary>
         public static string CaseSensitive {
@@ -569,6 +578,15 @@ namespace Resources {
         public static string SignInHeader {
             get {
                 return ResourceManager.GetString("SignInHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Sign in to book a space.
+        /// </summary>
+        public static string SignInToBookSpace {
+            get {
+                return ResourceManager.GetString("SignInToBookSpace", resourceCulture);
             }
         }
         

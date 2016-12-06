@@ -303,7 +303,13 @@
   <data name="Booked" xml:space="preserve">
     <value>Booked</value>
   </data>
+  <data name="BookSpace" xml:space="preserve">
+    <value>Book space</value>
+  </data>
   <data name="ConductNewSearch" xml:space="preserve">
     <value>Conduct a new search</value>
+  </data>
+  <data name="SignInToBookSpace" xml:space="preserve">
+    <value>Sign in to book a space</value>
   </data>
 </root>
