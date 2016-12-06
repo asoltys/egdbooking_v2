@@ -2,11 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using egdbooking_v2.Data;
-using egdbooking_v2.Models;
 using Newtonsoft.Json;
 
 namespace src.ApiControllers

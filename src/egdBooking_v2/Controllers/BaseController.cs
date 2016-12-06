@@ -3,14 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Globalization;
-using System.Threading;
 using System.Linq;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http.Extensions;
 using System.Text.RegularExpressions;
-using Microsoft.AspNetCore.Http;
 
 namespace egdbooking_v2.Controllers
 {
