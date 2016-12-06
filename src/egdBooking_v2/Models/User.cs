@@ -1,5 +1,6 @@
 namespace egdbooking_v2.Models
 {
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -30,5 +31,7 @@ namespace egdbooking_v2.Models
         public string Role { get; set; }
 
         public bool? SeenNotice { get; set; }
+
+        public virtual ICollection<UserCompany> UserCompanies { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 namespace egdbooking_v2.Models
 {
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -49,5 +50,8 @@ namespace egdbooking_v2.Models
 
         [StringLength(32)]
         public string Fax { get; set; }
+
+        public virtual ICollection<UserCompany> UserCompanies { get; set; }
+        public virtual ICollection<VesselCompany> VesselCompanies { get; set; }
     }
 }

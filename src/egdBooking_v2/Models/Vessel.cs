@@ -18,10 +18,6 @@ namespace egdbooking_v2.Models
 
         public double? Width { get; set; }
 
-        public double? BlockSetupTime { get; set; }
-
-        public double? BlockTeardownTime { get; set; }
-
         [StringLength(20)]
         public string LloydsId { get; set; }
 
@@ -34,5 +30,6 @@ namespace egdbooking_v2.Models
         public DateTime? EndHighlight { get; set; }
 
         public virtual ICollection<Booking> Bookings { get; set; }
+        public virtual ICollection<VesselCompany> VesselCompanies { get; set; }
     }
 }

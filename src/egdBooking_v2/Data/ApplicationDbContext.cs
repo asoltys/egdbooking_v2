@@ -86,6 +86,32 @@ namespace egdbooking_v2.Data
 
             builder.Entity<Tariff>()
                 .Property(e => e.OtherText);
+
+            builder.Entity<UserCompany>()
+                .HasKey(t => new { t.CompanyId, t.UserId});
+
+            builder.Entity<UserCompany>()
+                .HasOne(p => p.User)
+                .WithMany(p => p.UserCompanies)
+                .HasForeignKey(p => p.UserId);
+
+            builder.Entity<UserCompany>()
+                .HasOne(p => p.Company)
+                .WithMany(p => p.UserCompanies)
+                .HasForeignKey(p=> p.CompanyId);
+
+            builder.Entity<VesselCompany>()
+                .HasKey(t => new { t.CompanyId, t.VesselId});
+
+            builder.Entity<VesselCompany>()
+                .HasOne(p => p.Vessel)
+                .WithMany(p => p.VesselCompanies)
+                .HasForeignKey(p => p.VesselId);
+
+            builder.Entity<VesselCompany>()
+                .HasOne(p => p.Company)
+                .WithMany(p => p.VesselCompanies)
+                .HasForeignKey(p => p.CompanyId);
         }
     }
 }
