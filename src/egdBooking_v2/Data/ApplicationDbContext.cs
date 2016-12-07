@@ -112,6 +112,11 @@ namespace egdbooking_v2.Data
                 .HasOne(p => p.Company)
                 .WithMany(p => p.VesselCompanies)
                 .HasForeignKey(p => p.CompanyId);
+
+            builder.Entity<Booking>()
+                .HasOne(e => e.Vessel)
+                .WithMany(e => e.Bookings)
+                .HasForeignKey(e => e.VesselId);
         }
     }
 }
