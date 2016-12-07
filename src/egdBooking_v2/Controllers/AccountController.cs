@@ -10,11 +10,12 @@ using egdbooking_v2.Models;
 using egdbooking_v2.Services;
 using egdbooking_v2.Models.AccountViewModels;
 using egdbooking_v2.Controllers;
+using egdbooking_v2.Data;
 
 namespace core.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -23,11 +24,12 @@ namespace core.Controllers
         private readonly ILogger _logger;
 
         public AccountController(
+            ApplicationDbContext db,
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory) : base(db)
         {
             _userManager = userManager;
             _signInManager = signInManager;
