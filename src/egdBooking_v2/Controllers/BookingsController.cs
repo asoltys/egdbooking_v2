@@ -58,6 +58,13 @@ namespace egdbooking_v2.Controllers
                 }
             }
 
+            // TODO: This causes the process to slow down significantly and shouldn't be necessary,
+            //          but it's needed temporarily because of broken relations in the database 
+            foreach (Booking booking in BookingsDB)
+            {
+                booking.Vessel = db.Vessels.SingleOrDefault(v => (v.Id == booking.VesselId));
+            }
+
             BookingsViewModel ViewModel = new BookingsViewModel(Resources.Resources.Drydock, Resources.Resources.NorthJetty, Resources.Resources.SouthJetty);
 
             ViewModel.Drydock.Bookings = BookingsDB.Where(b => (b.Section1 != null && (bool)b.Section1)
