@@ -21,7 +21,7 @@ namespace egdbooking_v2.Controllers
         public IActionResult Index(IFormCollection collection)
         {
 
-            List<Booking> BookingsDB = db.Bookings.Where(i => (i.Id > 3000)).ToList();
+            List<Booking> BookingsDB = db.Bookings.Include(c=> c.Vessel).Where(i => (i.Id > 3000)).ToList();
             DateTime startdate;
             DateTime enddate;
 
@@ -56,13 +56,6 @@ namespace egdbooking_v2.Controllers
                                             .ToList();
 
                 }
-            }
-
-            // TODO: This causes the process to slow down significantly and shouldn't be necessary,
-            //          but it's needed temporarily because of broken relations in the database 
-            foreach (Booking booking in BookingsDB)
-            {
-                booking.Vessel = db.Vessels.SingleOrDefault(v => (v.Id == booking.VesselId));
             }
 
             BookingsViewModel ViewModel = new BookingsViewModel(Resources.Resources.Drydock, Resources.Resources.NorthJetty, Resources.Resources.SouthJetty);
