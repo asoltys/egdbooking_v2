@@ -12,32 +12,25 @@
 {
     <p>
         @Html.Raw(string.Format(Resources.NeedingApproval, 
-        ((int)ViewBag.companies == 1) ? 
-            Html.ActionLink(string.Format(Resources.CompanyRequest), "Approve", "Companies", new { lang = ViewBag.lang }, null)
-        :
-            Html.ActionLink(string.Format(Resources.CompanyRequests, (int)ViewBag.companies), "Approve", "Companies", new { lang = ViewBag.lang }, null)
-        ))
+            "<a href='" + Url.Action("Approve", "Companies", new { lang = ViewBag.lang }).ToString() + "'>" +
+            (((int)ViewBag.companies == 1) ? string.Format(Resources.CompanyRequest) : string.Format(Resources.CompanyRequests, (int)ViewBag.companies)) +
+            "</a>"))
     </p>
 }
-
-@if ((int)ViewBag.users > 0)
-{
-    <p>
-        @Html.Raw(string.Format(Resources.NeedingApproval, 
-        ((int)ViewBag.users == 1) ?
-            Html.ActionLink(string.Format(Resources.UserCompanyRequest), "Approve", "Users", new { lang = ViewBag.lang }, null)
-        :
-            Html.ActionLink(string.Format(Resources.UserCompanyRequests, (int)ViewBag.users), "Approve", "Users", new { lang = ViewBag.lang }, null)
-        ))
-    </p>
+@{ 
+    //TODO: Add quick link for approving users
 }
 
 <h2>Bookings</h2>
 <div class="container">
-    TBD
-    @{ 
-        //TODO: Implement dock admin views
-    }
+    <p>
+        @Html.ActionLink(Resources.DockManagement, "DockManagement", "Bookings", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+        @Html.ActionLink(Resources.DockCalendar, "DockCalendar", "Bookings", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    </p>
+    <p>
+        @Html.ActionLink(Resources.JettyManagement, "JettyManagement", "Bookings", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+        @Html.ActionLink(Resources.JettyCalendar, "JettyCalendar", "Bookings", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    </p>
 </div>
 
 <h2>Users</h2>

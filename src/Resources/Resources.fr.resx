@@ -348,4 +348,16 @@
   <data name="NavAccountForgotPassword" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="DockCalendar" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="DockManagement" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="JettyCalendar" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="JettyManagement" xml:space="preserve">
+    <value>TBD</value>
+  </data>
 </root>

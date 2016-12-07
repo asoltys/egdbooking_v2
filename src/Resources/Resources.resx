@@ -348,4 +348,16 @@
   <data name="BookingsIndexDescription" xml:space="preserve">
     <value>Find a public summary of bookings at the Esquimalt Graving Dock.</value>
   </data>
+  <data name="DockCalendar" xml:space="preserve">
+    <value>Drydock Calendar</value>
+  </data>
+  <data name="DockManagement" xml:space="preserve">
+    <value>Drydock Booking Management</value>
+  </data>
+  <data name="JettyCalendar" xml:space="preserve">
+    <value>Jetty Calendar</value>
+  </data>
+  <data name="JettyManagement" xml:space="preserve">
+    <value>Jetty Booking Management</value>
+  </data>
 </root>

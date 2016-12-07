@@ -9,7 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace Resources {
+    using System;
     using System.Reflection;
+    
     
     /// <summary>
     ///    A strongly-typed resource class, for looking up localized strings, etc.
@@ -238,11 +240,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Drydock Calendar.
+        /// </summary>
+        public static string DockCalendar {
+            get {
+                return ResourceManager.GetString("DockCalendar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Docking Dates.
         /// </summary>
         public static string DockingDates {
             get {
                 return ResourceManager.GetString("DockingDates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Drydock Booking Management.
+        /// </summary>
+        public static string DockManagement {
+            get {
+                return ResourceManager.GetString("DockManagement", resourceCulture);
             }
         }
         
@@ -360,6 +380,24 @@ namespace Resources {
         public static string IndexHeader {
             get {
                 return ResourceManager.GetString("IndexHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Jetty Calendar.
+        /// </summary>
+        public static string JettyCalendar {
+            get {
+                return ResourceManager.GetString("JettyCalendar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Jetty Booking Management.
+        /// </summary>
+        public static string JettyManagement {
+            get {
+                return ResourceManager.GetString("JettyManagement", resourceCulture);
             }
         }
         
