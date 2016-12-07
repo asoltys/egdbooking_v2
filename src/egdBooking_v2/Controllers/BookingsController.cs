@@ -22,14 +22,20 @@ namespace egdbooking_v2.Controllers
         {
 
             List<Booking> BookingsDB = db.Bookings.Where(i => (i.Id > 3000)).ToList();
+            DateTime startdate;
+            DateTime enddate;
 
             if (collection.Count != 0)
             {
 
                 if (collection["startdate"] != "" && collection["enddate"] != "")
                 {
-                    DateTime startdate = Convert.ToDateTime(collection["startdate"]);
-                    DateTime enddate = Convert.ToDateTime(collection["enddate"]);
+
+                    startdate = Convert.ToDateTime(collection["startdate"]);
+                    enddate = Convert.ToDateTime(collection["enddate"]);
+
+                    ViewBag.EndDate = enddate;
+                    ViewBag.StartDate = startdate;
 
                     BookingsDB = BookingsDB.Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
                                             .ToList();
@@ -37,13 +43,15 @@ namespace egdbooking_v2.Controllers
                 }
                 else if (collection["startdate"] != "")
                 {
-                    DateTime startdate = Convert.ToDateTime(collection["startdate"]);
+                    startdate = Convert.ToDateTime(collection["startdate"]);
+                    ViewBag.StartDate = startdate;
                     BookingsDB = BookingsDB.Where(b => (b.EndDate >= startdate))
                                             .ToList();
                 }
                 else if (collection["enddate"] != "")
                 {
-                    DateTime enddate = Convert.ToDateTime(collection["enddate"]);
+                    enddate = Convert.ToDateTime(collection["enddate"]);
+                    ViewBag.EndDate = enddate;
                     BookingsDB = BookingsDB.Where(b => (b.StartDate <= enddate))
                                             .ToList();
 
