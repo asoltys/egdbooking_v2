@@ -129,5 +129,17 @@ namespace egdbooking_v2.Controllers
         {
             return View(await db.Companies.Where(c => !c.Approved).ToListAsync());
         }
+
+        // POST: Companies/Approve
+        [HttpPost, ActionName("Approve")]
+        public async Task<IActionResult> ApproveConfirmed(int id, string abbrev)
+        {
+            Company company = await db.Companies.FindAsync(id);
+            company.Approved = true;
+            company.Deleted = false;
+            company.Abbreviation = abbrev.ToUpper();
+            await db.SaveChangesAsync();
+            return RedirectToAction("Approve");
+        }
     }
 }

@@ -5,11 +5,10 @@
 
 <h2>Approve</h2>
 
-<table>
+<table class="table">
     <thead>
         <tr>
-            <th>@Resources.Name</th>
-            <th></th>
+            <th style="width: 60%">@Resources.Name</th>
             <th></th>
             <th></th>
         </tr>
@@ -18,10 +17,25 @@
         @foreach(var company in Model)
         {
             <tr>
-                <td>@Html.ActionLink(company.Name, "Details", "Companies", new { id = company.Id }, null)</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>
+                    @Html.ActionLink(company.Name, "Details", "Companies", new { id = company.Id }, null)
+                </td>
+                <td>
+                    @using (Html.BeginForm("Approve", "Companies", FormMethod.Post, new { @class = "form-inline" }))
+                    {
+                        <label for="abbrev" class="control-label">Abbrev.:</label>
+                        <input type="text" name="abbrev" id="abbrev" maxlength="3" size="1" class="form-control" />
+                        <input type="hidden" name="id" value="@company.Id" />
+                        <input type="submit" value="Approve" class="btn btn-default" />
+                    }
+                </td>
+                <td>
+                    @using (Html.BeginForm("Delete", "Companies", FormMethod.Post, new { @class = "form-inline" }))
+                    {
+                        <input type="hidden" name="id" value="@company.Id" />
+                        <input type="submit" value="Delete" class="btn btn-default" />
+                    }
+                </td>
             </tr>
         }
     </tbody>

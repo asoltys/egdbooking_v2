@@ -546,6 +546,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Companies.
+        /// </summary>
+        public static string NavCompanies {
+            get {
+                return ResourceManager.GetString("NavCompanies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Approve.
+        /// </summary>
+        public static string NavCompaniesApprove {
+            get {
+                return ResourceManager.GetString("NavCompaniesApprove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Home.
         /// </summary>
         public static string NavHome {
