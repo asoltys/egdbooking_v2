@@ -22,19 +22,18 @@
 }
 
 <h2>Bookings</h2>
-<div class="container">
-    <p>
+<div class="btn-group">
         @Html.ActionLink(Resources.DockManagement, "DockManagement", "Bookings", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
         @Html.ActionLink(Resources.DockCalendar, "DockCalendar", "Bookings", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
-    </p>
-    <p>
-        @Html.ActionLink(Resources.JettyManagement, "JettyManagement", "Bookings", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
-        @Html.ActionLink(Resources.JettyCalendar, "JettyCalendar", "Bookings", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
-    </p>
+</div>
+<br /><br />
+<div class="btn-group">
+    @Html.ActionLink(Resources.JettyManagement, "JettyManagement", "Bookings", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.JettyCalendar, "JettyCalendar", "Bookings", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
 </div>
 
 <h2>Users</h2>
-<div class="container">
+<div class="btn-group">
     @Html.ActionLink(Resources.Create, "Create", "Users", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Edit, "Edit", "Users", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Approve, "Approve", "Users", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
@@ -42,21 +41,21 @@
 </div>
 
 <h2>Administrators</h2>
-<div class="container">
+<div class="btn-group">
     @Html.ActionLink(Resources.Create, "Create", "Admin", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Remove, "Remove", "Admin", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
 </div>
 
 <h2>Companies</h2>
-<div class="container">
+<div class="btn-group">
     @Html.ActionLink(Resources.Create, "Create", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
-    @Html.ActionLink(Resources.Edit, "Edit", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink(Resources.Edit, "EditIndex", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Approve, "Approve", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Delete, "Delete", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
 </div>
 
 <h2>Vessels</h2>
-<div class="container">
+<div class="btn-group">
     @Html.ActionLink(Resources.Create, "Create", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Edit, "Edit", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Delete, "Delete", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
