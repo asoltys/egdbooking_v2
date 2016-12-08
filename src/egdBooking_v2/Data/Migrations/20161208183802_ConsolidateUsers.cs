@@ -9,7 +9,6 @@ namespace egdbooking_v2.Data.Migrations
 {
     public partial class ConsolidateUsers : Migration
     {
-        private readonly UserManager<ApplicationUser> _userManager;
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql(@"
