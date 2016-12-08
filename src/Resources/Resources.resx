@@ -369,4 +369,7 @@
   <data name="NavCompaniesApprove" xml:space="preserve">
     <value>Approve</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
 </root>

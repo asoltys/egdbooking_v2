@@ -168,6 +168,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to This field is case sensitive.
         /// </summary>
         public static string CaseSensitive {

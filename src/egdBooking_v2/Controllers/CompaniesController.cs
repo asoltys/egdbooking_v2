@@ -58,6 +58,12 @@ namespace egdbooking_v2.Controllers
             return View(company);
         }
 
+        // GET: Companies/EditIndex
+        public IActionResult EditIndex()
+        {
+            return View(db.Companies.ToList());
+        }
+
         // GET: Companies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -78,7 +84,7 @@ namespace egdbooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([Bind("CompanyId,Name,Approved,Deleted,Name_f,Address1,Address2,City,Province,Country,Zip,Phone,Abbreviation,Fax")] Company company)
+        public async Task<IActionResult> Edit([Bind("Id,Name,Approved,Deleted,Name_f,Address1,Address2,City,Province,Country,Zip,Phone,Abbreviation,Fax")] Company company)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +93,11 @@ namespace egdbooking_v2.Controllers
                 return RedirectToAction("Index");
             }
             return View(company);
+        }
+
+        public IActionResult DeleteIndex()
+        {
+            return View(db.Companies.ToList());
         }
 
         // GET: Companies/Delete/5
@@ -110,7 +121,8 @@ namespace egdbooking_v2.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             Company company = await db.Companies.FindAsync(id);
-            db.Companies.Remove(company);
+            //db.Companies.Remove(company);
+            company.Deleted = true;
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
