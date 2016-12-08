@@ -627,6 +627,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Tariff of Dock Charges.
+        /// </summary>
+        public static string NavHomeTariff {
+            get {
+                return ResourceManager.GetString("NavHomeTariff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Vessels.
+        /// </summary>
+        public static string NavVessels {
+            get {
+                return ResourceManager.GetString("NavVessels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to You have {0} that need to be approved..
         /// </summary>
         public static string NeedingApproval {
@@ -839,6 +857,15 @@ namespace Resources {
         public static string Submit {
             get {
                 return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Schedule 1 Tariff of Dock Charges.
+        /// </summary>
+        public static string Tariff {
+            get {
+                return ResourceManager.GetString("Tariff", resourceCulture);
             }
         }
         

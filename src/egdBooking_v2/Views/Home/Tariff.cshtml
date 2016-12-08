@@ -1,0 +1,19 @@
+﻿@{ 
+    ViewBag.Title = Resources.Tariff;
+}
+
+@section lastwrite
+{
+    @System.IO.File.GetLastWriteTime(System.IO.Path.GetFullPath(this.Path.TrimStart(new char[] { '/' }))).ToString(Resources.ShortDate)
+}
+
+<h1>@Resources.Tariff</h1>
+
+@if (ViewBag.lang == "fr")
+{
+    @Html.Partial("~/Views/Partials/_TariffEng.cshtml")
+}
+else
+{
+    @Html.Partial("~/Views/Partials/_TariffEng.cshtml")
+}

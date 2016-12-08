@@ -393,4 +393,13 @@
   <data name="NoBookingsBefore" xml:space="preserve">
     <value>There are no bookings to view prior to {0}</value>
   </data>
+  <data name="Tariff" xml:space="preserve">
+    <value>Schedule 1 Tariff of Dock Charges</value>
+  </data>
+  <data name="NavHomeTariff" xml:space="preserve">
+    <value>Tariff of Dock Charges</value>
+  </data>
+  <data name="NavVessels" xml:space="preserve">
+    <value>Vessels</value>
+  </data>
 </root>

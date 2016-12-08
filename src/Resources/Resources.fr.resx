@@ -393,4 +393,13 @@
   <data name="NoBookingsBefore" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="Tariff" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="NavHomeTariff" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="NavVessels" xml:space="preserve">
+    <value>TBD</value>
+  </data>
 </root>

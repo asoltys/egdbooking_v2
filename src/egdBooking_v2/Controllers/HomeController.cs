@@ -33,6 +33,11 @@ namespace egdbooking_v2.Controllers
             return View();
         }
 
+        public IActionResult Tariff()
+        {
+            return View();
+        }
+
         [Route("home/test")]
         public IActionResult Gantt()
         {
