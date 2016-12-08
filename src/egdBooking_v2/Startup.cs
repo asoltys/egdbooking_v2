@@ -8,6 +8,8 @@ using egdbooking_v2.Models;
 using egdbooking_v2.Services;
 using egdbooking_v2.Data;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using src.Classes;
 
 namespace egdbooking_v2
 {
@@ -49,6 +51,7 @@ namespace egdbooking_v2
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddTransient<IPasswordHasher<ApplicationUser>, BCryptPasswordHasher>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
