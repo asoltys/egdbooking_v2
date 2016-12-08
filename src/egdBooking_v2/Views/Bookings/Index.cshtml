@@ -35,6 +35,8 @@
     }
 </ul>
 
+<p><strong>@Resources.ConductNewSearch</strong></p>
+
 <div class="col-md-8" style="width: 100%; padding-bottom: 25px">
     <section id="bookingsform">
         @using (Html.BeginForm("Index", "Bookings", new { lang = ViewBag.lang }))
@@ -54,26 +56,33 @@
     </section>
 </div>
 
-@{
-    if (ViewBag.StartDate != null && ViewBag.EndDate != null)
-    {
-        <p><strong>Displaying bookings between @ViewBag.StartDate.ToString(Resources.ShortDate) and @ViewBag.EndDate.ToString(Resources.ShortDate)</strong></p>
-    } else if (ViewBag.StartDate != null)
-    {
-        <p><strong>Displaying bookings from @ViewBag.StartDate.ToString(Resources.ShortDate) onwards</strong></p>
-    } else if (ViewBag.EndDate != null)
-    {
-        <p><strong>Displaying bookings prior to @ViewBag.EndDate.ToString(Resources.ShortDate)</strong></p>
-    } else
-    {
-        <p><strong>Displaying all bookings</strong></p>
-    }
-}
-
 
 @foreach (var dock in Model.Docks)
 {
+    <div style="width: 50%">
     <h2><a name="@dock.DockName"></a>@dock.DockName</h2>
+    </div>
+        <div style="text-align: right">
+            @{
+                if (ViewBag.StartDate != null && ViewBag.EndDate != null)
+                {
+            <p><strong>Displaying bookings between @ViewBag.StartDate.ToString(Resources.ShortDate) and @ViewBag.EndDate.ToString(Resources.ShortDate)</strong></p>
+                }
+                else if (ViewBag.StartDate != null)
+                {
+            <p><strong>Displaying bookings from @ViewBag.StartDate.ToString(Resources.ShortDate) onwards</strong></p>
+                }
+                else if (ViewBag.EndDate != null)
+                {
+            <p><strong>Displaying bookings prior to @ViewBag.EndDate.ToString(Resources.ShortDate)</strong></p>
+                }
+                else
+                {
+            <p><strong>Displaying all bookings</strong></p>
+                    }
+                }
+
+        </div>
 
     if (dock.Bookings.ToList().Count > 0)
     {

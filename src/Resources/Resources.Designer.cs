@@ -204,7 +204,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Conduct a new search.
+        ///    Looks up a localized string similar to If you would like to conduct a new search, you may select new dates below..
         /// </summary>
         public static string ConductNewSearch {
             get {

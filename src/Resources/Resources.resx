@@ -307,7 +307,7 @@
     <value>Book space</value>
   </data>
   <data name="ConductNewSearch" xml:space="preserve">
-    <value>Conduct a new search</value>
+    <value>If you would like to conduct a new search, you may select new dates below.</value>
   </data>
   <data name="SignInToBookSpace" xml:space="preserve">
     <value>Sign in to book a space</value>
