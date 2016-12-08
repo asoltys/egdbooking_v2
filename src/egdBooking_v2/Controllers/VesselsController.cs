@@ -4,6 +4,7 @@ using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace egdbooking_v2.Controllers
 {
@@ -57,6 +58,12 @@ namespace egdbooking_v2.Controllers
             return View(vessel);
         }
 
+        // GET: Vessels/EditIndex
+        public IActionResult EditIndex()
+        {
+            return View(db.Vessels.ToList());
+        }
+
         // GET: Vessels/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -86,6 +93,11 @@ namespace egdbooking_v2.Controllers
                 return RedirectToAction("Index");
             }
             return View(vessel);
+        }
+
+        public IActionResult DeleteIndex()
+        {
+            return View(db.Vessels.ToList());
         }
 
         // GET: Vessels/Delete/5
