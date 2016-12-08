@@ -23,7 +23,7 @@
                 <td>
                     @using (Html.BeginForm("Approve", "Companies", FormMethod.Post, new { @class = "form-inline" }))
                     {
-                        <label for="abbrev" class="control-label">Abbrev.:</label>
+                        <label for="abbrev" class="control-label">@Resources.Abbrev</label>
                         <input type="text" name="abbrev" id="abbrev" maxlength="3" size="1" class="form-control" />
                         <input type="hidden" name="id" value="@company.Id" />
                         <input type="submit" value="Approve" class="btn btn-default" />

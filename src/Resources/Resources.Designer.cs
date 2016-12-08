@@ -60,6 +60,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Abbrev.:.
+        /// </summary>
+        public static string Abbrev {
+            get {
+                return ResourceManager.GetString("Abbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to MMM d, yyyy.
         /// </summary>
         public static string AbbrevDate {

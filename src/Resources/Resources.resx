@@ -360,6 +360,9 @@
   <data name="JettyManagement" xml:space="preserve">
     <value>Jetty Booking Management</value>
   </data>
+  <data name="Abbrev" xml:space="preserve">
+    <value>Abbrev.:</value>
+  </data>
   <data name="NavCompanies" xml:space="preserve">
     <value>Companies</value>
   </data>
