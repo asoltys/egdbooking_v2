@@ -46,7 +46,7 @@ namespace egdbooking_v2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CompanyId,Name,Approved,Deleted,Name_f,Address1,Address2,City,Province,Country,Zip,Phone,Abbreviation,Fax")] Company company)
+        public async Task<IActionResult> Create([Bind("Id,Name,Approved,Deleted,Name_f,Address1,Address2,City,Province,Country,Zip,Phone,Abbreviation,Fax")] Company company)
         {
             if (ModelState.IsValid)
             {
