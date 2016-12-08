@@ -36,7 +36,7 @@ namespace egdbooking_v2.Data.Migrations
                 Password AS PasswordHash,
                 NULL AS PhoneNumber,
                 'false' AS PhoneNumberConfirmed,
-                NULL AS SecurityStamp,
+                NEWID() AS SecurityStamp,
                 'false' AS TwoFactorEnabled,
                 Email AS UserName
               FROM Users
