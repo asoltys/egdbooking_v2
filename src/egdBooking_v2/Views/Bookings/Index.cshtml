@@ -66,20 +66,24 @@
             @{
                 if (ViewBag.StartDate != null && ViewBag.EndDate != null)
                 {
-            <p><strong>Displaying bookings between @ViewBag.StartDate.ToString(Resources.ShortDate) and @ViewBag.EndDate.ToString(Resources.ShortDate)</strong></p>
+            <p><strong>@String.Format(Resources.DisplayBookingsBetween, ViewBag.StartDate.ToString(Resources.ShortDate), ViewBag.EndDate.ToString(Resources.ShortDate))</strong></p>
+                    ViewBag.NoBookings = @String.Format(Resources.NoBookingsBetween, ViewBag.StartDate.ToString(Resources.ShortDate), ViewBag.EndDate.ToString(Resources.ShortDate));
                 }
                 else if (ViewBag.StartDate != null)
                 {
-            <p><strong>Displaying bookings from @ViewBag.StartDate.ToString(Resources.ShortDate) onwards</strong></p>
+            <p><strong>@String.Format(Resources.DisplayBookingsAfter, ViewBag.StartDate.ToString(Resources.ShortDate))</strong></p>
+                    ViewBag.NoBookings = @String.Format(Resources.NoBookingsAfter, ViewBag.StartDate.ToString(Resources.ShortDate));
                 }
                 else if (ViewBag.EndDate != null)
                 {
-            <p><strong>Displaying bookings prior to @ViewBag.EndDate.ToString(Resources.ShortDate)</strong></p>
+            <p><strong>@String.Format(Resources.DisplayBookingsBefore, ViewBag.EndDate.ToString(Resources.ShortDate))</strong></p>
+                    ViewBag.NoBookings = @String.Format(Resources.NoBookingsBefore, ViewBag.EndDate.ToString(Resources.ShortDate));
                 }
                 else
                 {
-            <p><strong>Displaying all bookings</strong></p>
-                    }
+            <p><strong>@Resources.DisplayAllBookings</strong></p>
+                    ViewBag.NoBookings = Resources.NoBookingsAll;
+                }
                 }
 
         </div>
@@ -143,7 +147,7 @@
     }
     else
     {
-        <p>@Resources.NoBookings</p>
+        <p>@ViewBag.NoBookings</p>
     }
 }
 

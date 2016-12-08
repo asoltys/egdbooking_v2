@@ -288,8 +288,8 @@
   <data name="DockingDates" xml:space="preserve">
     <value>Docking Dates</value>
   </data>
-  <data name="NoBookings" xml:space="preserve">
-    <value>There are no bookings to view.</value>
+  <data name="NoBookingsBetween" xml:space="preserve">
+    <value>There are no bookings to view between {0} and {1}.</value>
   </data>
   <data name="Section" xml:space="preserve">
     <value>Section</value>
@@ -371,5 +371,26 @@
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="DisplayAllBookings" xml:space="preserve">
+    <value>Displaying all bookings</value>
+  </data>
+  <data name="DisplayBookingsAfter" xml:space="preserve">
+    <value>Displaying bookings from {0} onwards</value>
+  </data>
+  <data name="DisplayBookingsBefore" xml:space="preserve">
+    <value>Displaying bookings prior to {0}</value>
+  </data>
+  <data name="DisplayBookingsBetween" xml:space="preserve">
+    <value>Displaying bookings between {0} and {1}</value>
+  </data>
+  <data name="NoBookingsAfter" xml:space="preserve">
+    <value>There are no bookings to view from {0} onwards</value>
+  </data>
+  <data name="NoBookingsAll" xml:space="preserve">
+    <value>There are no bookings to view</value>
+  </data>
+  <data name="NoBookingsBefore" xml:space="preserve">
+    <value>There are no bookings to view prior to {0}</value>
   </data>
 </root>

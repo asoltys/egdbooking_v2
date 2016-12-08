@@ -258,6 +258,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Displaying all bookings.
+        /// </summary>
+        public static string DisplayAllBookings {
+            get {
+                return ResourceManager.GetString("DisplayAllBookings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Displaying bookings from {0} onwards.
+        /// </summary>
+        public static string DisplayBookingsAfter {
+            get {
+                return ResourceManager.GetString("DisplayBookingsAfter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Displaying bookings prior to {0}.
+        /// </summary>
+        public static string DisplayBookingsBefore {
+            get {
+                return ResourceManager.GetString("DisplayBookingsBefore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Displaying bookings between {0} and {1}.
+        /// </summary>
+        public static string DisplayBookingsBetween {
+            get {
+                return ResourceManager.GetString("DisplayBookingsBetween", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Drydock Calendar.
         /// </summary>
         public static string DockCalendar {
@@ -600,11 +636,38 @@ namespace Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to There are no bookings to view..
+        ///    Looks up a localized string similar to There are no bookings to view from {0} onwards.
         /// </summary>
-        public static string NoBookings {
+        public static string NoBookingsAfter {
             get {
-                return ResourceManager.GetString("NoBookings", resourceCulture);
+                return ResourceManager.GetString("NoBookingsAfter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to There are no bookings to view.
+        /// </summary>
+        public static string NoBookingsAll {
+            get {
+                return ResourceManager.GetString("NoBookingsAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to There are no bookings to view prior to {0}.
+        /// </summary>
+        public static string NoBookingsBefore {
+            get {
+                return ResourceManager.GetString("NoBookingsBefore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to There are no bookings to view between {0} and {1}..
+        /// </summary>
+        public static string NoBookingsBetween {
+            get {
+                return ResourceManager.GetString("NoBookingsBetween", resourceCulture);
             }
         }
         

@@ -289,7 +289,7 @@
     <value>Dates d'amarrage</value>
   </data>
   <data name="NoBookings" xml:space="preserve">
-    <value>Il n'existe aucune réservation à afficher.</value>
+    <value>TBD</value>
   </data>
   <data name="Section" xml:space="preserve">
     <value>Section</value>
@@ -370,6 +370,27 @@
     <value>TBD</value>
   </data>
   <data name="Cancel" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="DisplayAllBookings" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="DisplayBookingsAfter" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="DisplayBookingsBefore" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="DisplayBookingsBetween" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="NoBookingsAfter" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="NoBookingsAll" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="NoBookingsBefore" xml:space="preserve">
     <value>TBD</value>
   </data>
 </root>
