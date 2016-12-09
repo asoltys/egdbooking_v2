@@ -256,7 +256,7 @@
     <value>Garder ma session active</value>
   </data>
   <data name="Required" xml:space="preserve">
-    <value>Requis</value>
+    <value>(Requis)</value>
   </data>
   <data name="SelectTimePeriod" xml:space="preserve">
     <value>TBD</value>

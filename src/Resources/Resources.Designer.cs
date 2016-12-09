@@ -177,7 +177,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to This field is case sensitive.
+        ///    Looks up a localized string similar to (This field is case sensitive).
         /// </summary>
         public static string CaseSensitive {
             get {

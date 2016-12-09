@@ -57,21 +57,25 @@
     <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="Email" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
+            <label asp-for="Email" class="col-md-2 control-label" style="width: 100%; text-align: left">
+                <span style="color: red">*</span>&nbsp;@Resources.EmailAddress&nbsp;<span title="" style="color: red">(@Resources.Required)</span><br /><span style="font-weight: normal">@Resources.CaseSensitive</span>
+                <div class="col-md-10">
+                    <input asp-for="Email" class="form-control" style="width: 350px" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </label>
         </div>
         <div class="form-group">
-            <label asp-for="Password" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
+            <label asp-for="Password" class="col-md-2 control-label" style="width: 100%; text-align: left">
+                <span style="color: red">*</span>&nbsp;@Resources.Password&nbsp;<span title="" style="color: red">(@Resources.Required)</span><br /><span style="font-weight: normal">@Resources.CaseSensitive</span>
+                <div class="col-md-10">
+                    <input asp-for="Password" class="form-control" style="width: 350px;" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </label>
         </div>
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-2 col-md-10" style="margin-left: 0px">
                 <div class="checkbox">
                     <label asp-for="RememberMe">
                         <input asp-for="RememberMe" />
@@ -81,8 +85,8 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <button type="submit" class="btn btn-default">Log in</button>
+            <div class="col-md-offset-2 col-md-10" style="margin-left: 0px">
+                <button type="submit" class="btn btn-primary">Sign in</button>
             </div>
         </div>
     </form>

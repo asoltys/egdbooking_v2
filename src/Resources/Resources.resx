@@ -199,7 +199,7 @@
     <value>If you would like to view a public summary of bookings of the Drydock, the North Landing Wharf and the South Jetty facilities at the Esquimalt Graving Dock without signing in or registering an account, first select a facility and then, select a period of time.</value>
   </data>
   <data name="CaseSensitive" xml:space="preserve">
-    <value>This field is case sensitive</value>
+    <value>(This field is case sensitive)</value>
   </data>
   <data name="ConsultBookingsSummary" xml:space="preserve">
     <value>Consult the public summary of bookings</value>
