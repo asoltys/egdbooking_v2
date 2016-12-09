@@ -59,33 +59,41 @@
 
 @foreach (var dock in Model.Docks)
 {
-    <div style="text-align: left">
-    <h2><a name="@dock.DockName">@dock.DockName</a></h2>
-    </div>
-                if (ViewBag.StartDate != null && ViewBag.EndDate != null)
-                {
-                    ViewBag.Displayinfo = @String.Format(Resources.DisplayBookingsBetween, ViewBag.StartDate.ToString(Resources.ShortDate), ViewBag.EndDate.ToString(Resources.ShortDate));
-                    ViewBag.NoBookings = @String.Format(Resources.NoBookingsBetween, ViewBag.StartDate.ToString(Resources.ShortDate), ViewBag.EndDate.ToString(Resources.ShortDate));
-                }
-                else if (ViewBag.StartDate != null)
-                {
-                    ViewBag.Displayinfo = @String.Format(Resources.DisplayBookingsAfter, ViewBag.StartDate.ToString(Resources.ShortDate));
-                    ViewBag.NoBookings = @String.Format(Resources.NoBookingsAfter, ViewBag.StartDate.ToString(Resources.ShortDate));
-                }
-                else if (ViewBag.EndDate != null)
-                {
-                    ViewBag.Displayinfo = @String.Format(Resources.DisplayBookingsBefore, ViewBag.EndDate.ToString(Resources.ShortDate));
-                    ViewBag.NoBookings = @String.Format(Resources.NoBookingsBefore, ViewBag.EndDate.ToString(Resources.ShortDate));
-                }
-                else
-                {
-                    ViewBag.Displayinfo = Resources.DisplayAllBookings;
-                    ViewBag.NoBookings = Resources.NoBookingsAll;
-                }
+    if (dock.Bookings.ToList().Count > 0)
+    {
+        <div style="float: left">
+            <h2><a name="@dock.DockName">@dock.DockName</a></h2>
+        </div>
+    }
+    else
+    {
+        <h2><a name="@dock.DockName">@dock.DockName</a></h2>
+    }
+
+    if (ViewBag.StartDate != null && ViewBag.EndDate != null)
+    {
+        ViewBag.Displayinfo = @String.Format(Resources.DisplayBookingsBetween, ViewBag.StartDate.ToString(Resources.ShortDate), ViewBag.EndDate.ToString(Resources.ShortDate));
+        ViewBag.NoBookings = @String.Format(Resources.NoBookingsBetween, ViewBag.StartDate.ToString(Resources.ShortDate), ViewBag.EndDate.ToString(Resources.ShortDate));
+    }
+    else if (ViewBag.StartDate != null)
+    {
+        ViewBag.Displayinfo = @String.Format(Resources.DisplayBookingsAfter, ViewBag.StartDate.ToString(Resources.ShortDate));
+        ViewBag.NoBookings = @String.Format(Resources.NoBookingsAfter, ViewBag.StartDate.ToString(Resources.ShortDate));
+    }
+    else if (ViewBag.EndDate != null)
+    {
+        ViewBag.Displayinfo = @String.Format(Resources.DisplayBookingsBefore, ViewBag.EndDate.ToString(Resources.ShortDate));
+        ViewBag.NoBookings = @String.Format(Resources.NoBookingsBefore, ViewBag.EndDate.ToString(Resources.ShortDate));
+    }
+    else
+    {
+        ViewBag.Displayinfo = Resources.DisplayAllBookings;
+        ViewBag.NoBookings = Resources.NoBookingsAll;
+    }
 
     if (dock.Bookings.ToList().Count > 0)
     {
-        <div style="float: right">
+        <div style="float: right; padding-top: 45px">
             <p><strong>@ViewBag.DisplayInfo</strong></p>
         </div>
         <table class="table">
