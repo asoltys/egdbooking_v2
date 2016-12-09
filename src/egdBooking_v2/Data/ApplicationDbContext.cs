@@ -27,20 +27,20 @@ namespace egdbooking_v2.Data
             builder.Entity<Booking>()
                 .Property(e => e.Status);
 
-            builder.Entity<User>()
-                .Property(e => e.FirstName);
+            builder.Entity<ApplicationUser>(entity =>
+            {
+                entity.ToTable(name: "AspNetUsers");
+            });
 
-            builder.Entity<User>()
-                .Property(e => e.LastName);
-
-            builder.Entity<User>()
-                .Property(e => e.Password);
-
-            builder.Entity<User>()
-                .Property(e => e.Email);
-
-            builder.Entity<User>()
-                .Property(e => e.Role);
+            builder.Entity<User>(entity =>
+            {
+                entity.ToTable(name: "Users");
+                entity.Property(e => e.FirstName);
+                entity.Property(e => e.LastName);
+                entity.Property(e => e.Password);
+                entity.Property(e => e.Email);
+                entity.Property(e => e.Role);
+            });
 
             builder.Entity<Vessel>()
                 .Property(e => e.Name);

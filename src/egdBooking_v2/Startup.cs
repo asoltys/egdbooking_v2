@@ -10,6 +10,8 @@ using egdbooking_v2.Data;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using src.Classes;
+using src.Data;
+using System.Security.Claims;
 
 namespace egdbooking_v2
 {
@@ -50,6 +52,19 @@ namespace egdbooking_v2
 
             services.AddMvc();
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                    "AllUsers",
+                    policy => policy.RequireRole("Admin", "User"));
+                options.AddPolicy(
+                    "Admin",
+                    policy => policy.RequireRole("Admin"));
+                options.AddPolicy(
+                    "User",
+                    policy => policy.RequireRole("User"));
+            });
+
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
@@ -74,6 +89,7 @@ namespace egdbooking_v2
 
             app.UseStaticFiles();
             app.UseIdentity();
+            SeedData.Initialize(app.ApplicationServices);
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
