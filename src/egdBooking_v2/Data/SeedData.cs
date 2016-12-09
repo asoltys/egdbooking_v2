@@ -32,13 +32,9 @@ namespace src.Data
                     Role = egdUser.Role
                 }).ToList();
 
-            if (userRoleMap.Count() >= egdUsers.Count)
-            {
-                //return;
-            }
-
             var userManager = serviceProvider.GetService<UserManager<ApplicationUser>>();
             var roleManager = serviceProvider.GetService<RoleManager<IdentityRole>>();
+            int dbRoleCount = 0;
             foreach (String role in ROLES)
             {
                 // this blocks the loop, even though the method is async 
@@ -49,7 +45,16 @@ namespace src.Data
                     newRole.Name = role;
                     await roleManager.CreateAsync(newRole);
                     await roleManager.AddClaimAsync(newRole, new Claim(ClaimTypes.Role, newRole.Name));
+                } else
+                {
+                    dbRoleCount++;
+                    continue;
                 }
+            }
+
+            if (dbRoleCount >= 2)
+            {
+                return;
             }
 
             foreach (var userRole in userRoleMap)
