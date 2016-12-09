@@ -18,6 +18,7 @@
   {
     "outputFileName": "wwwroot/scripts/GanttPlugin.js",
     "inputFiles": [
+      "wwwroot/scripts/BookingData.js",
       "wwwroot/scripts/Gantt.js",
       "wwwroot/scripts/Utils.js"
     ],

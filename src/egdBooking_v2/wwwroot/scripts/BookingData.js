@@ -13,7 +13,6 @@ var SimpleBookingData = (function () {
     };
     return SimpleBookingData;
 }());
-exports.SimpleBookingData = SimpleBookingData;
 var SimpleRow = (function () {
     function SimpleRow() {
         this.bookings = [];
@@ -29,5 +28,4 @@ var SimpleRow = (function () {
     };
     return SimpleRow;
 }());
-exports.SimpleRow = SimpleRow;
 //# sourceMappingURL=BookingData.js.map

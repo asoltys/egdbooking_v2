@@ -3,7 +3,9 @@
 *@
 @{
 }
+
+<div id="gantt-container"></div>
 <script type="text/javascript" src="~/scripts/GanttPlugin.min.js"></script>
 <script type="text/javascript">
-    new Gantt();
+    new Gantt.initializer('http://localhost:23001/api/bookings', 'gantt-container');
 </script>

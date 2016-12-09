@@ -4,7 +4,7 @@ interface Serializable<T> {
     deserialize(input: Object): T;
 }
 
-export class SimpleBookingData implements Serializable<SimpleBookingData> {
+class SimpleBookingData implements Serializable<SimpleBookingData> {
     id: number;
     vesselId: number;
     startDate: Date;
@@ -23,7 +23,7 @@ export class SimpleBookingData implements Serializable<SimpleBookingData> {
     }
 }
 
-export class SimpleRow implements Serializable<SimpleRow> {
+class SimpleRow implements Serializable<SimpleRow> {
     id: number;
     description: string;
     bookings: SimpleBookingData[] = [];

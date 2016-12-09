@@ -8,7 +8,12 @@ var Utils = (function () {
         request.onload = function () {
             if (request.status >= 200 && request.status < 400) {
                 // Success!
-                callback(request.responseText);
+                if (typeof callback === 'undefined') {
+                    return request.responseText;
+                }
+                else {
+                    callback(request.responseText);
+                }
             }
             else {
             }
