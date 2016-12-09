@@ -96,9 +96,10 @@
     <div id="bookings"></div>
     <h2>@Resources.ConsultBookingsSummary</h2>
     <p>@Resources.BookingsSummaryDescription</p>
-    <div class="row">
+    <br />
+    <div class="row" style="margin-left: 0px">
         <p><strong>@Resources.SelectTimePeriod</strong></p>
-        <p>@Resources.AllRecords</p>
+        <p>@Resources.AllRecords</p>  
         <div class="col-md-8">
             <section id="bookingsform">
                 @using (Html.BeginForm("Index", "Bookings", new { lang = ViewBag.lang }))
