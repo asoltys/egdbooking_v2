@@ -1,0 +1,16 @@
+﻿@model IEnumerable<string>
+@{
+    ViewBag.Title = Resources.Notices;
+}
+
+@section lastwrite
+{
+    @System.IO.File.GetLastWriteTime(System.IO.Path.GetFullPath(this.Path.TrimStart(new char[] { '/' }))).ToString(Resources.ShortDate)
+}
+
+<h1>@Resources.Notices</h1>
+
+@foreach (string filename in Model)
+{   
+    @Html.Partial("~/Views/Partials/Notices/" + filename)
+}

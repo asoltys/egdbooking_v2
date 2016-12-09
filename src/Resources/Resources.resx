@@ -402,4 +402,10 @@
   <data name="NavVessels" xml:space="preserve">
     <value>Vessels</value>
   </data>
+  <data name="NavHomeNotices" xml:space="preserve">
+    <value>Important Notices</value>
+  </data>
+  <data name="Notices" xml:space="preserve">
+    <value>Important Notices</value>
+  </data>
 </root>

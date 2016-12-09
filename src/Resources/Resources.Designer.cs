@@ -627,6 +627,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Important Notices.
+        /// </summary>
+        public static string NavHomeNotices {
+            get {
+                return ResourceManager.GetString("NavHomeNotices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Tariff of Dock Charges.
         /// </summary>
         public static string NavHomeTariff {
@@ -695,6 +704,15 @@ namespace Resources {
         public static string NorthJetty {
             get {
                 return ResourceManager.GetString("NorthJetty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Important Notices.
+        /// </summary>
+        public static string Notices {
+            get {
+                return ResourceManager.GetString("Notices", resourceCulture);
             }
         }
         

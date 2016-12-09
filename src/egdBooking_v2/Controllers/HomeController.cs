@@ -1,5 +1,8 @@
 ﻿using egdbooking_v2.Data;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace egdbooking_v2.Controllers
 {
@@ -36,6 +39,19 @@ namespace egdbooking_v2.Controllers
         public IActionResult Tariff()
         {
             return View();
+        }
+
+        public IActionResult Notices()
+        {
+            DirectoryInfo Dir = new DirectoryInfo(Path.GetFullPath("Views/Partials/Notices"));
+            List<FileInfo> Files = Dir.GetFiles("*" + ((ViewBag.lang == "fr") ? "Fra" : "Eng") + ".cshtml").OfType<FileInfo>().ToList();
+            Files = Files.OrderByDescending(f => f.CreationTime).ToList();
+            List<string> notices = new List<string>();
+            foreach (FileInfo file in Files)
+            {
+                notices.Add(file.Name);
+            }
+            return View(notices);
         }
 
         [Route("home/test")]
