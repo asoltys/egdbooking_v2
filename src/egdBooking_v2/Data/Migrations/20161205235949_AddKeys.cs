@@ -90,8 +90,6 @@ namespace egdbooking_v2.Data.Migrations
             migrationBuilder.DropForeignKey("FK_VesselCompanies_Companies_CompanyId", "VesselCompanies");
             migrationBuilder.DropForeignKey("FK_VesselCompanies_Vessels_VesselId", "VesselCompanies");
             migrationBuilder.DropForeignKey("FK_Bookings_Vessels_VesselId", "Bookings");
-            migrationBuilder.DropForeignKey("FK_Vessels_Users_UserId", "Users");
-            migrationBuilder.DropForeignKey("FK_UserCompanies_Users_UserId", "Users");
             migrationBuilder.DropForeignKey("FK_Tariffs_Bookings_BookingId", "Tariffs");
 
             migrationBuilder.DropPrimaryKey("PK_Vessels", "Vessels");
