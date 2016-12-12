@@ -141,6 +141,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Booking manage.
+        /// </summary>
+        public static string BookingsManage {
+            get {
+                return ResourceManager.GetString("BookingsManage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Bookings Summary.
         /// </summary>
         public static string BookingsSummary {

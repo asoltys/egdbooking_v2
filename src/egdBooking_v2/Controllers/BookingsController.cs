@@ -8,13 +8,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System;
+using Microsoft.AspNetCore.Identity;
 
 namespace egdbooking_v2.Controllers
 {
     public class BookingsController : BaseController
     {
-        public BookingsController(ApplicationDbContext db) : base(db)
+
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public BookingsController(ApplicationDbContext db, UserManager<ApplicationUser> userManager) : base(db)
         {
+            _userManager = userManager;
         }
 
         // GET: Bookings
@@ -24,6 +29,7 @@ namespace egdbooking_v2.Controllers
             List<Booking> BookingsDB = db.Bookings.Include(c=> c.Vessel).Where(i => (i.Id > 3000)).ToList();
             DateTime startdate;
             DateTime enddate;
+
 
             if (collection.Count != 0)
             {

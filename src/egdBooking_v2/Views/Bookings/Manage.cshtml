@@ -26,6 +26,7 @@
     {
 
         ViewBag.isAdmin = false;//HttpContext.Current.User.IsInRole("Admin")
+
     }
 
     ViewBag.isLoggedIn = true;//HttpContext.Current.User.IsInRole("User")
@@ -36,8 +37,7 @@
     @System.IO.File.GetLastWriteTime(System.IO.Path.GetFullPath(this.Path.TrimStart(new char[] { '/' }))).ToString(Resources.ShortDate)
 }
 
-<h1>@Resources.BookingsIndex</h1>
-<p>@Resources.BookingsIndexDescription</p>
+<h1>@Resources.BookingsManage</h1>
 
 <ul>
     @foreach (var dock in Model.Docks)
@@ -66,6 +66,8 @@
         }
     </section>
 </div>
+
+<!--This is just for debugging purposes-->
 
 @if (ViewBag.IsAdmin)
 {
