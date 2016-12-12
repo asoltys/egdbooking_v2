@@ -408,4 +408,7 @@
   <data name="Notices" xml:space="preserve">
     <value>Important Notices</value>
   </data>
+  <data name="NavBookingsManage" xml:space="preserve">
+    <value>Manage</value>
+  </data>
 </root>

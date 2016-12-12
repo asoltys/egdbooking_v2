@@ -1,5 +1,179 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model egdbooking_v2.ViewModels.BookingsViewModel
+
 @{
+    if (ViewBag.lang == "fr")
+    {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("fr");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
+        Layout = "~/Views/Shared/_WETLayout2ColFra.cshtml";
+    }
+    else
+    {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
+        Layout = "~/Views/Shared/_WETLayout2ColEng.cshtml";
+    }
+    ViewBag.Title = Resources.BookingsSummary;
+
+    if (User.IsInRole("Admin"))
+    {
+        ViewBag.IsAdmin = true;
+
+    }
+    else
+    {
+
+        ViewBag.isAdmin = false;//HttpContext.Current.User.IsInRole("Admin")
+    }
+
+    ViewBag.isLoggedIn = true;//HttpContext.Current.User.IsInRole("User")
+}
+
+@section lastwrite
+{
+    @System.IO.File.GetLastWriteTime(System.IO.Path.GetFullPath(this.Path.TrimStart(new char[] { '/' }))).ToString(Resources.ShortDate)
+}
+
+<h1>@Resources.BookingsIndex</h1>
+<p>@Resources.BookingsIndexDescription</p>
+
+<ul>
+    @foreach (var dock in Model.Docks)
+    {
+        <li><a href="#@dock.DockName">@dock.DockName</a></li>
+    }
+</ul>
+
+<p><strong>@Resources.ConductNewSearch</strong></p>
+
+<div class="col-md-8" style="width: 100%; padding-bottom: 25px">
+    <section id="bookingsform">
+        @using (Html.BeginForm("Manage", "Bookings", new { lang = ViewBag.lang }))
+        {
+            <fieldset>
+                <div class="form-group">
+                    <label for="startdate">@Resources.FromDate<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
+                    <input class="form-control" type="date" id="startdate" name="startdate" />
+                </div>
+                <div class="form-group">
+                    <label for="enddate">@Resources.ToDate<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
+                    <input class="form-control" type="date" id="enddate" name="enddate" />
+                </div>
+                <button class="btn btn-primary" type="submit">@Resources.Submit</button>
+            </fieldset>
+        }
+    </section>
+</div>
+
+@if (ViewBag.IsAdmin)
+{
+    <p>You are logged in as an admin.</p>
+
+} else
+{
+    <p>not logged in</p>
+
+}
+
+
+@foreach (var dock in Model.Docks)
+{
+    if (dock.Bookings.ToList().Count > 0)
+    {
+        <div style="float: left">
+            <h2><a name="@dock.DockName">@dock.DockName</a></h2>
+        </div>
+    }
+    else
+    {
+        <h2><a name="@dock.DockName">@dock.DockName</a></h2>
+    }
+
+    if (ViewBag.StartDate != null && ViewBag.EndDate != null)
+    {
+        ViewBag.Displayinfo = @String.Format(Resources.DisplayBookingsBetween, ViewBag.StartDate.ToString(Resources.ShortDate), ViewBag.EndDate.ToString(Resources.ShortDate));
+        ViewBag.NoBookings = @String.Format(Resources.NoBookingsBetween, ViewBag.StartDate.ToString(Resources.ShortDate), ViewBag.EndDate.ToString(Resources.ShortDate));
+    }
+    else if (ViewBag.StartDate != null)
+    {
+        ViewBag.Displayinfo = @String.Format(Resources.DisplayBookingsAfter, ViewBag.StartDate.ToString(Resources.ShortDate));
+        ViewBag.NoBookings = @String.Format(Resources.NoBookingsAfter, ViewBag.StartDate.ToString(Resources.ShortDate));
+    }
+    else if (ViewBag.EndDate != null)
+    {
+        ViewBag.Displayinfo = @String.Format(Resources.DisplayBookingsBefore, ViewBag.EndDate.ToString(Resources.ShortDate));
+        ViewBag.NoBookings = @String.Format(Resources.NoBookingsBefore, ViewBag.EndDate.ToString(Resources.ShortDate));
+    }
+    else
+    {
+        ViewBag.Displayinfo = Resources.DisplayAllBookings;
+        ViewBag.NoBookings = Resources.NoBookingsAll;
+    }
+
+    if (dock.Bookings.ToList().Count > 0)
+    {
+        <div style="float: right; padding-top: 45px">
+            <p><strong>@ViewBag.DisplayInfo</strong></p>
+        </div>
+        <table class="table">
+            <tr>
+                @if (ViewBag.isLoggedIn)
+                {
+                    <th style="width: 350px">
+                        @Resources.Vessel
+                    </th>
+                }
+                <th style="width: 130px">
+                    @Resources.Section
+                </th>
+                <th style="width: 420px">
+                    @Resources.DockingDates
+                </th>
+                <th style="width: 150px">
+                    @Resources.BookingDate
+                </th>
+                @if (ViewBag.isAdmin)
+                {
+                    <th style="width: 80px"></th>
+                }
+            </tr>
+            @foreach (var item in dock.Bookings)
+            {
+                <tr>
+                    @if (ViewBag.isLoggedIn)
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vessel.Name)
+                        </td>
+                    }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sections)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FormattedStartDate)
+                        -
+                        @Html.DisplayFor(modelItem => item.FormattedEndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FormattedBookingDate)
+                    </td>
+                    @if (ViewBag.isAdmin)
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "Bookings", new { lang = ViewBag.lang, id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", "Bookings", new { lang = ViewBag.lang, id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", "Bookings", new { lang = ViewBag.lang, id = item.Id })
+                        </td>
+                    }
+                </tr>
+            }
+
+        </table>
+    }
+    else
+    {
+        <p>@ViewBag.NoBookings</p>
+    }
 }

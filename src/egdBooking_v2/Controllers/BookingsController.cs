@@ -172,5 +172,57 @@ namespace egdbooking_v2.Controllers
             }
             base.Dispose(disposing);
         }
+
+        // GET: Bookings/Manage
+        public IActionResult Manage(IFormCollection collection)
+        {
+
+            List<Booking> BookingsDB = db.Bookings.Include(c => c.Vessel).Where(i => (i.Id > 3000)).ToList();
+            DateTime startdate;
+            DateTime enddate;
+
+            if (collection.Count != 0)
+            {
+
+                if (collection["startdate"] != "" && collection["enddate"] != "")
+                {
+
+                    startdate = Convert.ToDateTime(collection["startdate"]);
+                    enddate = Convert.ToDateTime(collection["enddate"]);
+
+                    ViewBag.EndDate = enddate;
+                    ViewBag.StartDate = startdate;
+
+                    BookingsDB = BookingsDB.Where(b => ((b.StartDate >= startdate && b.StartDate <= enddate) || (b.EndDate >= startdate && b.EndDate <= enddate)))
+                                            .ToList();
+
+                }
+                else if (collection["startdate"] != "")
+                {
+                    startdate = Convert.ToDateTime(collection["startdate"]);
+                    ViewBag.StartDate = startdate;
+                    BookingsDB = BookingsDB.Where(b => (b.EndDate >= startdate))
+                                            .ToList();
+                }
+                else if (collection["enddate"] != "")
+                {
+                    enddate = Convert.ToDateTime(collection["enddate"]);
+                    ViewBag.EndDate = enddate;
+                    BookingsDB = BookingsDB.Where(b => (b.StartDate <= enddate))
+                                            .ToList();
+
+                }
+            }
+
+            BookingsViewModel ViewModel = new BookingsViewModel(Resources.Resources.Drydock, Resources.Resources.NorthJetty, Resources.Resources.SouthJetty);
+
+            ViewModel.Drydock.Bookings = BookingsDB.Where(b => (b.Section1 != null && (bool)b.Section1)
+                                                    || (b.Section2 != null && (bool)b.Section2)
+                                                    || (b.Section3 != null && (bool)b.Section3)).OrderBy(b => b.StartDate).ToList();
+            ViewModel.NorthJetty.Bookings = BookingsDB.Where(b => (b.NorthJetty != null && (bool)b.NorthJetty)).OrderBy(b => b.StartDate).ToList();
+            ViewModel.SouthJetty.Bookings = BookingsDB.Where(b => (b.SouthJetty != null && (bool)b.SouthJetty)).OrderBy(b => b.StartDate).ToList();
+
+            return View(ViewModel);
+        }
     }
 }

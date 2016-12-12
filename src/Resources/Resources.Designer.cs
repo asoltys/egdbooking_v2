@@ -600,6 +600,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Manage.
+        /// </summary>
+        public static string NavBookingsManage {
+            get {
+                return ResourceManager.GetString("NavBookingsManage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Companies.
         /// </summary>
         public static string NavCompanies {
