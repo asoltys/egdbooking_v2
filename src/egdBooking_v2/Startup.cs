@@ -89,7 +89,7 @@ namespace egdbooking_v2
 
             app.UseStaticFiles();
             app.UseIdentity();
-            SeedData.Initialize(app.ApplicationServices);
+            //SeedData.Initialize(app.ApplicationServices);
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
