@@ -65,11 +65,11 @@
                     <div class="tabpanels">
                         <details id="${this.ganttId}-chart-tab" open="open">
                             <summary>Chart</summary>
-                            <div id="${this.chartContainerId}" class="row"></div>
+                            <div id="${this.chartContainerId}" class="container-fluid"></div>
                         </details>
                         <details id="${this.ganttId}-accessible-tab">
                             <summary>Text</summary>
-                            <div id="${this.accessibleContainerId}" class="row"></div>
+                            <div id="${this.accessibleContainerId}" class="container-fluid"></div>
                         </details>
                     </div>
                 </div>
@@ -77,10 +77,24 @@
             document.getElementById(this.ganttId).innerHTML = markup;
             this.chartContainer = document.getElementById(this.chartContainerId);
             this.accessibleContainer = document.getElementById(this.accessibleContainerId);
+            Utils.trigger(this.ganttId, "wb-init.wb-tabs");
         }
 
         renderChart() {
+            this.addRow();
             console.log(data);
+        }
+
+        // addRow returns a selectorId: string
+        addRow(): string {
+            const markup = `
+<div class="row">
+    <div class="col-sm-3">1</div>
+    <div class="col-sm-9">2</div>
+</div>
+            `;
+            this.chartContainer.innerHTML = markup;
+            return;
         }
 
         renderAccessible() {

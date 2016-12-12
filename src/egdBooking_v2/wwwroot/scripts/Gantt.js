@@ -46,13 +46,21 @@ var Gantt;
             this.container.innerHTML = markup;
         };
         UI.prototype.addTabs = function () {
-            var markup = "\n                <div id=\"" + this.ganttId + "-tabs\" class=\"wb-tabs print-active\">\n                    <div class=\"tabpanels\">\n                        <details id=\"" + this.ganttId + "-chart-tab\" open=\"open\">\n                            <summary>Chart</summary>\n                            <div id=\"" + this.chartContainerId + "\" class=\"row\"></div>\n                        </details>\n                        <details id=\"" + this.ganttId + "-accessible-tab\">\n                            <summary>Text</summary>\n                            <div id=\"" + this.accessibleContainerId + "\" class=\"row\"></div>\n                        </details>\n                    </div>\n                </div>\n            ";
+            var markup = "\n                <div id=\"" + this.ganttId + "-tabs\" class=\"wb-tabs print-active\">\n                    <div class=\"tabpanels\">\n                        <details id=\"" + this.ganttId + "-chart-tab\" open=\"open\">\n                            <summary>Chart</summary>\n                            <div id=\"" + this.chartContainerId + "\" class=\"container-fluid\"></div>\n                        </details>\n                        <details id=\"" + this.ganttId + "-accessible-tab\">\n                            <summary>Text</summary>\n                            <div id=\"" + this.accessibleContainerId + "\" class=\"container-fluid\"></div>\n                        </details>\n                    </div>\n                </div>\n            ";
             document.getElementById(this.ganttId).innerHTML = markup;
             this.chartContainer = document.getElementById(this.chartContainerId);
             this.accessibleContainer = document.getElementById(this.accessibleContainerId);
+            Utils.trigger(this.ganttId, "wb-init.wb-tabs");
         };
         UI.prototype.renderChart = function () {
+            this.addRow();
             console.log(data);
+        };
+        // addRow returns a selectorId: string
+        UI.prototype.addRow = function () {
+            var markup = "\n<div class=\"row\">\n    <div class=\"col-sm-3\">1</div>\n    <div class=\"col-sm-9\">2</div>\n</div>\n            ";
+            this.chartContainer.innerHTML = markup;
+            return;
         };
         UI.prototype.renderAccessible = function () {
         };

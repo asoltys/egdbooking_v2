@@ -117,6 +117,18 @@ var Utils = (function () {
         };
         request.send();
     };
+    Utils.trigger = function (elemId, eventType) {
+        var event;
+        if (document.createEvent) {
+            event = document.createEvent("HTMLEvents");
+            event.initEvent(eventType, true, true);
+        }
+        else {
+            throw new Error("document.createEvent is not supported in this browser...");
+        }
+        event.eventName = eventType;
+        document.getElementById(elemId).dispatchEvent(event);
+    };
     return Utils;
 }());
 //# sourceMappingURL=Utils.js.map

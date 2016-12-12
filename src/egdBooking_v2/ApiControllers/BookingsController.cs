@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using egdbooking_v2.Data;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Cors;
 
 namespace src.ApiControllers
 {
@@ -52,6 +53,7 @@ namespace src.ApiControllers
 
         // GET: api/Bookings
         [HttpGet]
+        [EnableCors("AllowAll")]
         public List<SimpleRow> GetBookings()
         {
             List<SimpleBooking> simpleBookings = new List<SimpleBooking>();

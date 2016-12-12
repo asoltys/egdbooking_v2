@@ -40,6 +40,11 @@ namespace egdbooking_v2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => {
+                options.AddPolicy("AllowAll",
+                    builder => builder.AllowAnyOrigin());
+            });
+
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("SQLServer")));
@@ -89,6 +94,7 @@ namespace egdbooking_v2
 
             app.UseStaticFiles();
             app.UseIdentity();
+            app.UseCors("AllowAll");
             //SeedData.Initialize(app.ApplicationServices);
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715

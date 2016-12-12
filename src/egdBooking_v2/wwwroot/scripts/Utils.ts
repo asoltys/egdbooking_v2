@@ -1,5 +1,4 @@
 ﻿'use strict';
-
 class Utils {
     constructor() {
     }
@@ -25,7 +24,19 @@ class Utils {
         request.onerror = function () {
             // There was a connection error of some sort
         };
-
         request.send();
+    }
+
+    static trigger(elemId: string, eventType: string): void {
+        var event;
+
+        if (document.createEvent) {
+            event = document.createEvent("HTMLEvents");
+            event.initEvent(eventType, true, true);
+        } else {
+            throw new Error("document.createEvent is not supported in this browser...");
+        }
+        event.eventName = eventType;
+        document.getElementById(elemId).dispatchEvent(event);
     }
 }
