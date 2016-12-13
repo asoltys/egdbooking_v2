@@ -6,14 +6,22 @@
         System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("fr");
         System.Globalization.CultureInfo.CurrentCulture = ci;
         System.Globalization.CultureInfo.CurrentUICulture = ci;
-        Layout = "~/Views/Shared/_WETLayoutFra.cshtml";
+        if (User.IsInRole("Admin")) {
+          Layout = "~/Views/Shared/_WETLayout2ColFra.cshtml";
+        } else {
+          Layout = "~/Views/Shared/_WETLayoutFra.cshtml";
+        }
     }
     else
     {
         System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en");
         System.Globalization.CultureInfo.CurrentCulture = ci;
         System.Globalization.CultureInfo.CurrentUICulture = ci;
-        Layout = "~/Views/Shared/_WETLayoutEng.cshtml";
+        if (User.IsInRole("Admin")) {
+          Layout = "~/Views/Shared/_WETLayout2ColEng.cshtml";
+        } else {
+          Layout = "~/Views/Shared/_WETLayoutEng.cshtml";
+        }
     }
     ViewBag.Title = Resources.BookingsSummary;
     ViewBag.isAdmin = false;//HttpContext.Current.User.IsInRole("Admin")
