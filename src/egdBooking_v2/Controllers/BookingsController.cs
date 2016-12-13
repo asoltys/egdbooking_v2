@@ -16,10 +16,12 @@ namespace egdbooking_v2.Controllers
     {
 
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public BookingsController(ApplicationDbContext db, UserManager<ApplicationUser> userManager) : base(db)
+        public BookingsController(ApplicationDbContext db, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager) : base(db)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         // GET: Bookings
@@ -30,6 +32,8 @@ namespace egdbooking_v2.Controllers
             DateTime startdate;
             DateTime enddate;
 
+            if (_signInManager.IsSignedIn(User)) ViewBag.isLoggedIn = true;
+            else ViewBag.isLoggedIn = false;
 
             if (collection.Count != 0)
             {

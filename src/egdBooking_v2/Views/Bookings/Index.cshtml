@@ -6,7 +6,7 @@
         System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("fr");
         System.Globalization.CultureInfo.CurrentCulture = ci;
         System.Globalization.CultureInfo.CurrentUICulture = ci;
-        if (User.IsInRole("Admin")) {
+        if (ViewBag.isLoggedIn) {
           Layout = "~/Views/Shared/_WETLayout2ColFra.cshtml";
         } else {
           Layout = "~/Views/Shared/_WETLayoutFra.cshtml";
@@ -17,7 +17,7 @@
         System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en");
         System.Globalization.CultureInfo.CurrentCulture = ci;
         System.Globalization.CultureInfo.CurrentUICulture = ci;
-        if (User.IsInRole("Admin")) {
+        if (ViewBag.isLoggedIn) {
           Layout = "~/Views/Shared/_WETLayout2ColEng.cshtml";
         } else {
           Layout = "~/Views/Shared/_WETLayoutEng.cshtml";
@@ -25,7 +25,7 @@
     }
     ViewBag.Title = Resources.BookingsSummary;
     ViewBag.isAdmin = false;//HttpContext.Current.User.IsInRole("Admin")
-    ViewBag.isLoggedIn = true;//HttpContext.Current.User.IsInRole("User")
+    //ViewBag.isLoggedIn = true;//HttpContext.Current.User.IsInRole("User")
 }
 
 @section lastwrite
