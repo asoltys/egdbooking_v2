@@ -99,7 +99,7 @@ namespace src.ApiControllers
             result.Add(new SimpleRow()
             {
                 Id = result.Count,
-                desc = "North Jetty",
+                desc = "North Landing Wharf",
                 bookings = simpleBookings.Where(sb => sb.NJ == true).ToList()
             });
             result.Add(new SimpleRow()
