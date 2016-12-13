@@ -64,7 +64,7 @@ namespace core.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Manage", "Bookings", new { lang = ViewBag.lang });
                 }
                 if (result.RequiresTwoFactor)
                 {

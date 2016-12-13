@@ -187,6 +187,8 @@ namespace egdbooking_v2.Controllers
             DateTime startdate;
             DateTime enddate;
 
+            ViewBag.ID = _userManager.GetUserId(User);
+
             if (collection.Count != 0)
             {
 
