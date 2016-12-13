@@ -39,6 +39,8 @@
 
 <h1>@Resources.BookingsManage</h1>
 
+<p>Welcome @User.Identity.Name</p>
+
 <ul>
     @foreach (var dock in Model.Docks)
     {
@@ -73,13 +75,15 @@
 {
     <p>You are logged in as an admin.</p>
 
+} else if (User.IsInRole("User"))
+{
+    <p>You are logged in as a user</p>
+
 } else
 {
     <p>not logged in</p>
 
 }
-
-<p>@ViewBag.ID</p>
 
 
 @foreach (var dock in Model.Docks)

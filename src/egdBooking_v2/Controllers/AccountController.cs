@@ -64,7 +64,13 @@ namespace core.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
-                    return RedirectToAction("Manage", "Bookings", new { lang = ViewBag.lang });
+                    if (User.IsInRole("Admin"))
+                    {
+                        return RedirectToAction("Index", "Admin", new { lang = ViewBag.lang });
+                    } else
+                    {
+                        return RedirectToAction("Manage", "Bookings", new { lang = ViewBag.lang });
+                    }
                 }
                 if (result.RequiresTwoFactor)
                 {
