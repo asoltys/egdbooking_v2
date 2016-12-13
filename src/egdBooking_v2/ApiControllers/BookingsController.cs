@@ -57,7 +57,9 @@ namespace src.ApiControllers
         public List<SimpleRow> GetBookings()
         {
             List<SimpleBooking> simpleBookings = new List<SimpleBooking>();
-            var bookings = _context.Bookings.AsEnumerable();
+            var bookings = _context.Bookings.AsEnumerable()
+                .Where(b => b.StartDate >= DateTime.Now.AddDays(-30))
+                .Where(b => b.Status.Equals("C") || b.Status.Equals("T"));
             foreach (var booking in bookings)
             {
                 simpleBookings.Add(new SimpleBooking()
