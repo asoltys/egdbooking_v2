@@ -1,4 +1,5 @@
 ﻿using egdbooking_v2.Data;
+using egdbooking_v2.Models.AccountViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.IO;
@@ -12,9 +13,9 @@ namespace egdbooking_v2.Controllers
         {
         }
 
-        public IActionResult Index()
+        public IActionResult Index(LoginViewModel model)
         {            
-            return View();
+            return View(model);
         }
 
         public IActionResult About()

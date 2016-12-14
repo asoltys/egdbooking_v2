@@ -84,12 +84,14 @@ namespace core.Controllers
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    return View(model);
+                    //return View(model);
+                    return RedirectToAction("Index", "Home", new { lang = ViewBag.lang, model = model });
                 }
             }
 
             // If we got this far, something failed, redisplay form
             return View(model);
+            
         }
 
         //
