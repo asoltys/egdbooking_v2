@@ -27,7 +27,6 @@ namespace egdbooking_v2.Controllers
         // GET: Bookings
         public IActionResult Index(IFormCollection collection)
         {
-
             List<Booking> BookingsDB = db.Bookings.Include(c=> c.Vessel).Where(i => (i.Id > 3000)).ToList();
             DateTime startdate;
             DateTime enddate;

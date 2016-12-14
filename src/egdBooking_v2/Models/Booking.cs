@@ -19,7 +19,7 @@ namespace egdbooking_v2.Models
         public DateTime BookingTime { get; set; }
         public string FormattedBookingDate { get { return this.BookingTime.ToString(Resources.AbbrevDate); } }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         public bool Deleted { get; set; }
 
