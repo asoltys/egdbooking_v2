@@ -75,15 +75,21 @@
 {
     <p>You are logged in as an admin.</p>
 
-} else if (User.IsInRole("User"))
+}
+else if (User.IsInRole("User"))
 {
     <p>You are logged in as a user</p>
 
-} else
+}
+else
 {
     <p>not logged in</p>
 
 }
+
+<div style="text-align: left">
+<p>@Html.ActionLink(Resources.SubmitBookingRequest, "Create", "Bookings", new { lang = ViewBag.lang })</p>
+</div>
 
 
 @foreach (var dock in Model.Docks)

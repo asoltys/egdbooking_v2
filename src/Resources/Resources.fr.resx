@@ -414,4 +414,7 @@
   <data name="BookingsManage" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="SubmitBookingRequest" xml:space="preserve">
+    <value>TBD</value>
+  </data>
 </root>

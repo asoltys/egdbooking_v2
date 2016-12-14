@@ -11,6 +11,16 @@
         System.Globalization.CultureInfo.CurrentCulture = ci;
         System.Globalization.CultureInfo.CurrentUICulture = ci;
     }
+
+    if (User.IsInRole("Admin"))
+    {
+        ViewBag.IsAdmin = true;
+
+    } else
+    {
+        ViewBag.IsAdmin = false;
+
+    }
 }
 
 <nav class="wb-sec col-md-3 col-md-pull-9" typeof="SiteNavigationElement" id="wb-sec" role="navigation">
@@ -20,7 +30,11 @@
         <ul class="list-group menu list-unstyled">
             <li>@Html.ActionLink(Resources.NavHome, "Index", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavBookings, "Index", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            <li>@Html.ActionLink(Resources.NavAdmin, "Index", "Admin", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            @if (ViewBag.IsAdmin)
+            {
+                <li>@Html.ActionLink(Resources.NavAdmin, "Index", "Admin", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+
+            }
             <li>@Html.ActionLink(Resources.NavHomeNotices, "Notices", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavHomeTariff, "Tariff", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
         </ul>

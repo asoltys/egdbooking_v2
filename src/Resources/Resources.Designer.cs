@@ -897,6 +897,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Submit a new booking request.
+        /// </summary>
+        public static string SubmitBookingRequest {
+            get {
+                return ResourceManager.GetString("SubmitBookingRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Schedule 1 Tariff of Dock Charges.
         /// </summary>
         public static string Tariff {
