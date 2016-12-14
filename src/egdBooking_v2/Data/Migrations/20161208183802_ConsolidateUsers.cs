@@ -12,12 +12,19 @@ namespace egdbooking_v2.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql(@"
-                WITH CTE AS(
-                   SELECT [Email], [Id], RN = ROW_NUMBER()
+                WITH Temp AS(
+                   SELECT [Email], [Id], count = ROW_NUMBER()
                    OVER(PARTITION BY Email ORDER BY Id DESC)
-                   FROM dbo.Users
+                   FROM Users
                 )
-                DELETE FROM CTE WHERE RN > 1
+                UPDATE Users 
+                SET Email = Email + (SELECT CAST(count AS varchar(4)) 
+                FROM Temp 
+                WHERE Temp.Id = Users.Id);
+
+                UPDATE Users 
+                SET email = LEFT(email, LEN(email) - 1) 
+                WHERE RIGHT(email, 1) = '1'
             ");
 
             migrationBuilder.AddColumn<int>(
@@ -50,6 +57,12 @@ namespace egdbooking_v2.Data.Migrations
                 nullable: true
             );
 
+            migrationBuilder.AddColumn<bool>(
+                name: "Deleted",
+                table: "AspNetUsers",
+                defaultValue: 0
+            );
+
             migrationBuilder.Sql(@"
                 INSERT INTO AspNetUsers
                 SELECT
@@ -72,9 +85,9 @@ namespace egdbooking_v2.Data.Migrations
                   FirstName AS FirstName,
                   LastName AS LastName,
                   ReadOnly AS ReadOnly,
-                  Role AS Role
+                  Role AS Role,
+                  Deleted AS Deleted
                 FROM Users
-                WHERE Deleted = 0
             ");
 
             migrationBuilder.Sql(@"
@@ -113,19 +126,41 @@ namespace egdbooking_v2.Data.Migrations
                 oldType: "int"
             );
 
+            migrationBuilder.AlterColumn<string>(
+                table: "Bookings",
+                name: "UserId",
+                type: "nvarchar(450)",
+                oldType: "int"
+            );
+
             migrationBuilder.Sql(@"
-                DELETE FROM UserCompanies WHERE UserId NOT IN (SELECT Id FROM AspNetUsers);
                 UPDATE UserCompanies SET UserCompanies.UserId = (
                     SELECT AspNetUsers.Id 
                     FROM AspNetUsers 
                     WHERE AspNetUsers.UserId = UserCompanies.UserId
                 );
+
+                UPDATE Bookings SET Bookings.UserId = (
+                    SELECT AspNetUsers.Id 
+                    FROM AspNetUsers 
+                    WHERE AspNetUsers.UserId = Bookings.UserId
+                );
             ");
 
             migrationBuilder.AddPrimaryKey("PK_UserCompanies", "UserCompanies", new[] {"UserId", "CompanyId"});
+
             migrationBuilder.AddForeignKey(
                 name: "FK_UserCompanies_Users_UserId", 
                 table: "UserCompanies",
+                column: "UserID",
+                principalTable: "AspNetUsers",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade
+            );
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Bookings_Users_UserId", 
+                table: "Bookings",
                 column: "UserID",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id",
