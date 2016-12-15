@@ -43,7 +43,8 @@
     "Microsoft.EntityFrameworkCore.Design": "1.1.0",
     "BCrypt.Net-Core": "1.1.0",
     "Microsoft.TypeScript.Compiler": "2.0.6",
-    "Microsoft.TypeScript.MSBuild": "2.0.6"
+    "Microsoft.TypeScript.MSBuild": "2.0.6",
+    "iTextSharp-LGPL": "4.1.6"
   },
 
   "tools": {

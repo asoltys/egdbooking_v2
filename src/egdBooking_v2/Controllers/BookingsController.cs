@@ -9,6 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System;
 using Microsoft.AspNetCore.Identity;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace egdbooking_v2.Controllers
 {
@@ -234,6 +237,63 @@ namespace egdbooking_v2.Controllers
             ViewModel.SouthJetty.Bookings = BookingsDB.Where(b => (b.SouthJetty != null && (bool)b.SouthJetty)).OrderBy(b => b.StartDate).ToList();
 
             return View(ViewModel);
+        }
+
+        public FileStreamResult Pdf()
+        {
+            // TODO: This is currently just some example code to generate a PDF, will need to build up the Schedule 1 form and integrate it.
+
+            // Set up the document and the MS to write it to and create the PDF writer instance
+            MemoryStream ms = new MemoryStream();
+            Document document = new Document(PageSize.LETTER);
+            PdfWriter writer = PdfWriter.GetInstance(document, ms);
+
+            // Open the PDF document
+            document.Open();
+
+            // Set up fonts used in the document
+            Font font_heading = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 16, Font.BOLD);
+            Font font_body = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 9);
+
+            // Create the heading paragraph
+            Paragraph heading_paragraph;
+            heading_paragraph = new Paragraph();
+
+            // Create the chunk with the heading font
+            Phrase heading_phrase = new Phrase(Resources.Resources.EGD, font_heading);
+            heading_paragraph.Add(heading_phrase);
+
+            // Add a horizontal line below the headig text and add it to the paragraph
+            iTextSharp.text.pdf.draw.VerticalPositionMark seperator = new iTextSharp.text.pdf.draw.LineSeparator();
+            seperator.Offset = -6f;
+            heading_paragraph.Add(seperator);
+
+            // Add paragraph to document
+            document.Add(heading_paragraph);
+
+            // Create the body paragraph
+            Paragraph body_paragraph;
+            body_paragraph = new Paragraph();
+            body_paragraph.SpacingBefore = 20f;
+
+            // Create the chunk with the heading font
+            Phrase body_phrase = new Phrase(Resources.Resources.Tariff, font_body);
+            body_paragraph.Add(body_phrase);
+
+            // Add paragraph to document
+            document.Add(body_paragraph);
+
+            // Close the PDF document
+            document.Close();
+
+            // Start output from beginning of stream
+            byte[] file = ms.ToArray();
+            MemoryStream output = new MemoryStream();
+            output.Write(file, 0, file.Length);
+            output.Position = 0;
+
+            // Return the output stream
+            return new FileStreamResult(output, "application/pdf");
         }
     }
 }
