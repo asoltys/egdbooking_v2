@@ -6,7 +6,7 @@
     @System.IO.File.GetLastWriteTime(System.IO.Path.GetFullPath(this.Path.TrimStart(new char[] { '/' }))).ToString(Resources.ShortDate)
 }
 
-<h1>@ViewBag.Title</h1>
+<h1>@Resources.AdminHeader</h1>
 
 @if ((int)ViewBag.companies > 0)
 {

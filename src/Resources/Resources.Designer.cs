@@ -78,6 +78,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Administrative Functions.
+        /// </summary>
+        public static string AdminHeader {
+            get {
+                return ResourceManager.GetString("AdminHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to To see all records, clear both fields.
         /// </summary>
         public static string AllRecords {

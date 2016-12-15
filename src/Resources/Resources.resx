@@ -414,6 +414,9 @@
   <data name="BookingsManage" xml:space="preserve">
     <value>Booking manage</value>
   </data>
+  <data name="AdminHeader" xml:space="preserve">
+    <value>Administrative Functions</value>
+  </data>
   <data name="SubmitBookingRequest" xml:space="preserve">
     <value>Submit a new booking request</value>
   </data>
