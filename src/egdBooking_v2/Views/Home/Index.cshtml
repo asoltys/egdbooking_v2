@@ -54,7 +54,7 @@
     <div id="login"></div>
     <h2>@Resources.SignInHeader</h2>
     <p><strong>@Resources.RegistrationDisclaimer</strong></p>
-    <ul><li><a href="@Url.Action("ForgotPassword", "Account", new { lang = ViewBag.lang })#ajout-add">@Resources.Register</a></li></ul>
+    <ul><li><a href="@Url.Action("Manage", "Account", new { lang = ViewBag.lang })#ajout-add">@Resources.Register</a></li></ul>
     <br />
     <p><strong>@Resources.SignInBelow</strong></p>
     <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
@@ -94,7 +94,7 @@
         </div>
     </form>
 
-    <ul><li><a href="@Url.Action("ForgotPassword", "Account", new { lang = ViewBag.lang })#oubli-forgot">@Resources.ForgotPassword</a></li></ul>
+    <ul><li><a href="@Url.Action("Manage", "Account", new { lang = ViewBag.lang })#oubli-forgot">@Resources.ForgotPassword</a></li></ul>
     <!-- Div so link above can jump to this point (bookings) -->
     <div id="bookings"></div>
     <h2>@Resources.ConsultBookingsSummary</h2>

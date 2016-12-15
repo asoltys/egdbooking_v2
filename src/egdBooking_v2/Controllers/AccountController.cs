@@ -452,6 +452,16 @@ namespace core.Controllers
             }
         }
 
+        //
+        // GET: /Account/Manage
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Manage(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
         #region Helpers
 
         private void AddErrors(IdentityResult result)
