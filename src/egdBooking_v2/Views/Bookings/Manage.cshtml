@@ -150,6 +150,9 @@ else
                 <th style="width: 150px">
                     @Resources.BookingDate
                 </th>
+                <th style="width: 60px">
+                    Status
+                </th>
                 @if (ViewBag.isAdmin)
                 {
                     <th style="width: 80px"></th>
@@ -174,6 +177,9 @@ else
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.FormattedBookingDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
                     </td>
                     @if (ViewBag.isAdmin)
                     {
