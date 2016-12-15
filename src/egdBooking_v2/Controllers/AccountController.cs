@@ -66,9 +66,11 @@ namespace core.Controllers
                     _logger.LogInformation(1, "User logged in.");
                     if (User.IsInRole("Admin"))
                     {
+                        ViewBag.isAdmin = true;
                         return RedirectToAction("Index", "Admin", new { lang = ViewBag.lang });
                     } else
                     {
+                        ViewBag.isAdmin = false;
                         return RedirectToAction("Manage", "Bookings", new { lang = ViewBag.lang });
                     }
                 }

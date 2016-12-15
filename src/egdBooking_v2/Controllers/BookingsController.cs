@@ -193,7 +193,14 @@ namespace egdbooking_v2.Controllers
             DateTime startdate;
             DateTime enddate;
 
-            ViewBag.ID = _userManager.GetUserId(User);
+            if (User.IsInRole("User"))
+            {
+                ViewBag.ID = _userManager.GetUserId(User);
+                var userID = _userManager.GetUserId(User);
+                BookingsDB = BookingsDB.Where(i => (i.UserId == userID)).ToList();
+            }
+
+            
 
             if (collection.Count != 0)
             {
