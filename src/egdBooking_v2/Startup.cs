@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using src.Classes;
 using src.Data;
 using System.Security.Claims;
+using src.Helpers;
 
 namespace egdbooking_v2
 {
@@ -73,6 +74,11 @@ namespace egdbooking_v2
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            services.AddMvc(o =>
+            {
+                o.Filters.Add(new CultureSettingResourceFilter());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
