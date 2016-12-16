@@ -420,4 +420,88 @@
   <data name="AdminHeader" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="FormAftDraft" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormAgentAddress" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormAgentName" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormBerthageDates" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormBerthagePurpose" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormDockmasterName" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormDrydockDates" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormDrydockPurpose" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormEngines" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormExplosiveMatter" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormExtremeBreadth" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormFloorRiseAmidships" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormForwardDraft" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormFuelType" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormGrossTonnage" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormKeel" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormMasterAddress" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormMasterName" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormOverallLength" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormOwnerAddress" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormOwnerName" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormPerpendicularsLength" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormRegistryPort" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormVesselName" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormVesselType" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormSchedule1" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormTitle" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="FormUndersigned" xml:space="preserve">
+    <value>TBD</value>
+  </data>
 </root>

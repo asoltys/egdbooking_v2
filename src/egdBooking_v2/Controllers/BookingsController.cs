@@ -262,25 +262,27 @@ namespace egdbooking_v2.Controllers
             document.Open();
 
             // Set up fonts used in the document
-            Font normal = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL);
-            Font bold = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD);
+            int font_size = 12;
+            Font normal = FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.NORMAL);
+            Font bold = FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.BOLD);
+            Font underline = FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE);
             string singlespace = "\n";
             string doublespace = "\n\n";
 
             PdfPTable page = new PdfPTable(1);
             page.WidthPercentage = 100;
 
-            PdfPCell header_cell = new PdfPCell(new Paragraph(new Chunk("SCHEDULE 1".ToUpper() + doublespace, normal)));
+            PdfPCell header_cell = new PdfPCell(new Paragraph(new Chunk(Resources.Resources.FormSchedule1.ToUpper() + doublespace, normal)));
             header_cell.HorizontalAlignment = Element.ALIGN_CENTER;
             header_cell.BorderWidth = 0;
             page.AddCell(header_cell);
 
-            PdfPCell title_cell = new PdfPCell(new Paragraph(new Chunk("APPLICATION FOR THE USE OF ESQUIMALT GRAVING DOCK, PUBLIC WORKS AND GOVERNMENT SERVICES CANADA, VICTORIA, BRITISH COLUMBIA".ToUpper() + doublespace, bold)));
+            PdfPCell title_cell = new PdfPCell(new Paragraph(new Chunk(Resources.Resources.FormTitle.ToUpper() + doublespace, bold)));
             title_cell.HorizontalAlignment = Element.ALIGN_CENTER;
             title_cell.BorderWidth = 0;
             page.AddCell(title_cell);
 
-            PdfPCell undersigned_cell = new PdfPCell(new Paragraph(new Chunk("I (We), the undersigned, hereby make application for use of the facilities within the Esquimalt Graving Dock as indicated below:" + singlespace, normal)));
+            PdfPCell undersigned_cell = new PdfPCell(new Paragraph(new Chunk(Resources.Resources.FormUndersigned + ":" + singlespace, normal)));
             undersigned_cell.BorderWidth = 0;
             page.AddCell(undersigned_cell);
 
@@ -288,19 +290,19 @@ namespace egdbooking_v2.Controllers
 
             List<Phrase> left_phrases = new List<Phrase>();
             left_phrases.Add(new Phrase(new Chunk(singlespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Dates of Dry-dock" + ": " + model.DrydockDates + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Purpose of Dry-dock" + ": " + model.DrydockPurpose + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Dates of Berthage (NLW)" + ": " + model.BerthageDates + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Purpose of Berthage" + ": " + model.BerthagePurpose + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Master's Name" + ": " + model.MasterName + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Agent's Name" + ": " + model.AgentName + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Dockmaster's Name" + ": " + model.DockmasterName + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Length, Overall" + ": " + model.OverallLength + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Breadth, Extreme" + ": " + model.ExtremeBreadth + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Draft, Aft" + ": " + model.AftDraft + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Engines (Steam/Gasoline/Oil)" + ": " + model.Engines + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("Keel (Bar/Flat, if bar, state depth)" + ": " + model.Keel + doublespace, normal)));
-            left_phrases.Add(new Phrase(new Chunk("If there any explosive matter on board describe" + ": " + model.ExplosiveMatter + doublespace, normal)));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormDrydockDates, model.DrydockDates, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormDrydockPurpose, model.DrydockPurpose, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormBerthageDates, model.BerthageDates, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormBerthagePurpose, model.BerthagePurpose, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormMasterName, model.MasterName, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormAgentName, model.AgentName, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormDockmasterName, model.DockmasterName, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormOverallLength, model.OverallLength, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormExtremeBreadth, model.ExtremeBreadth, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormAftDraft, model.AftDraft, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormEngines, model.Engines, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormKeel, model.Keel, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormExplosiveMatter, model.ExplosiveMatter, font_size));
             Paragraph left_paragraph = new Paragraph();
             foreach (Phrase phrase in left_phrases)
                 left_paragraph.Add(phrase);
@@ -308,18 +310,18 @@ namespace egdbooking_v2.Controllers
 
             List<Phrase> right_phrases = new List<Phrase>();
             right_phrases.Add(new Phrase(new Chunk(singlespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Name of Vessel" + ": " + model.VesselName + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Owner's Name" + ": " + model.OwnerName + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Port of Registry" + ": " + model.RegistryPort + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Owner's Address" + ": " + model.OwnerAddress + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Master's Address" + ": " + model.MasterAddress + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Agent's Address" + ": " + model.AgentAddress + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Gross Tonnage" + ": " + model.GrossTonnage + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Length between Perpendiculars" + ": " + model.PerpendicularsLength + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Draft, Forward" + ": " + model.ForwardDraft + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Type of Vessel (screw, sailing, not self-propelled, etc.)" + ": " + model.VesselType + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Fuel Type" + ": " + model.FuelType + doublespace, normal)));
-            right_phrases.Add(new Phrase(new Chunk("Rise of Floor Amidships" + ": " + model.FloorRiseAmidships + doublespace, normal)));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormVesselName, model.VesselName, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormOwnerName, model.OwnerName, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormRegistryPort, model.RegistryPort, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormOwnerAddress, model.OwnerAddress, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormMasterAddress, model.MasterAddress, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormAgentAddress, model.AgentAddress, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormGrossTonnage, model.GrossTonnage, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormPerpendicularsLength, model.PerpendicularsLength, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormForwardDraft, model.ForwardDraft, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormVesselType, model.VesselType, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormFuelType, model.FuelType, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormFloorRiseAmidships, model.FloorRiseAmidships, font_size));
             Paragraph right_paragraph = new Paragraph();
             foreach (Phrase phrase in right_phrases)
                 right_paragraph.Add(phrase);
@@ -342,6 +344,35 @@ namespace egdbooking_v2.Controllers
 
             // Return the output stream
             return new FileStreamResult(output, "application/pdf");
+        }
+
+        private Phrase FormInfoField(string label, string value, int font_size)
+        {
+            string space = " "; // &#160; (aka &nbsp;)
+
+            value = space + value;
+            Phrase p = new Phrase();
+            Chunk clabel = new Chunk(label + ": ", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.NORMAL));
+            Chunk cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+            if (clabel.GetWidthPoint() > 180)
+            {
+                while (cvalue.GetWidthPoint() < 260)
+                {
+                    value += space;
+                    cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+                }
+            }
+            else
+            {
+                while (clabel.GetWidthPoint() + cvalue.GetWidthPoint() < 260)
+                {
+                    value += space;
+                    cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+                }
+            }
+            p.Add(clabel);
+            p.Add(cvalue);
+            return p;
         }
     }
 }
