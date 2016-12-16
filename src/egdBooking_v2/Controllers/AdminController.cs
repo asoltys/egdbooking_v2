@@ -12,7 +12,7 @@ namespace egdbooking_v2.Controllers
         }
 
         // GET: Admin
-        public IActionResult Index()
+        public IActionResult Menu()
         {
             ViewBag.users = db.Users.Count();
             ViewBag.companies = db.Companies.Where(c => !c.Approved).Count();

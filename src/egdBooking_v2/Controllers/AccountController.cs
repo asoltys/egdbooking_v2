@@ -67,7 +67,7 @@ namespace core.Controllers
                     if (User.IsInRole("Admin"))
                     {
                         ViewBag.isAdmin = true;
-                        return RedirectToAction("Index", "Admin", new { lang = ViewBag.lang });
+                        return RedirectToAction("Menu", "Admin", new { lang = ViewBag.lang });
                     } else
                     {
                         ViewBag.isAdmin = false;
