@@ -534,4 +534,10 @@
   <data name="Index" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="AdminAdd" xml:space="preserve">
+    <value>TBD {0} TBD</value>
+  </data>
+  <data name="AdminRemove" xml:space="preserve">
+    <value>TBD {0} TBD</value>
+  </data>
 </root>

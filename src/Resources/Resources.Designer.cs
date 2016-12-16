@@ -87,11 +87,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Are you sure you want to make {0} an administrator?.
+        /// </summary>
+        public static string AdminAdd {
+            get {
+                return ResourceManager.GetString("AdminAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Administrative Functions.
         /// </summary>
         public static string AdminHeader {
             get {
                 return ResourceManager.GetString("AdminHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Are you sure you want to remove {0} from administration?.
+        /// </summary>
+        public static string AdminRemove {
+            get {
+                return ResourceManager.GetString("AdminRemove", resourceCulture);
             }
         }
         

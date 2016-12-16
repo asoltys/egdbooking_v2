@@ -534,4 +534,10 @@
   <data name="Index" xml:space="preserve">
     <value>Index</value>
   </data>
+  <data name="AdminAdd" xml:space="preserve">
+    <value>Are you sure you want to make {0} an administrator?</value>
+  </data>
+  <data name="AdminRemove" xml:space="preserve">
+    <value>Are you sure you want to remove {0} from administration?</value>
+  </data>
 </root>
