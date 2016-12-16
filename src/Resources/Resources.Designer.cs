@@ -78,6 +78,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Add New Vessel.
+        /// </summary>
+        public static string AddNewVessel {
+            get {
+                return ResourceManager.GetString("AddNewVessel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Administrative Functions.
         /// </summary>
         public static string AdminHeader {
@@ -353,6 +362,15 @@ namespace Resources {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Edit Profile.
+        /// </summary>
+        public static string EditProfile {
+            get {
+                return ResourceManager.GetString("EditProfile", resourceCulture);
             }
         }
         
@@ -659,6 +677,15 @@ namespace Resources {
         public static string FromDate {
             get {
                 return ResourceManager.GetString("FromDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Bookings Chart.
+        /// </summary>
+        public static string GanttChart {
+            get {
+                return ResourceManager.GetString("GanttChart", resourceCulture);
             }
         }
         
@@ -1059,6 +1086,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Request Booking.
+        /// </summary>
+        public static string RequestBooking {
+            get {
+                return ResourceManager.GetString("RequestBooking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Required.
         /// </summary>
         public static string Required {
@@ -1136,6 +1172,15 @@ namespace Resources {
         public static string SignInToBookSpace {
             get {
                 return ResourceManager.GetString("SignInToBookSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Sign Out.
+        /// </summary>
+        public static string SignOut {
+            get {
+                return ResourceManager.GetString("SignOut", resourceCulture);
             }
         }
         

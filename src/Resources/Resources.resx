@@ -504,4 +504,19 @@
   <data name="FormUndersigned" xml:space="preserve">
     <value>I (We), the undersigned, hereby make application for use of the facilities within the Esquimalt Graving Dock as indicated below</value>
   </data>
+  <data name="AddNewVessel" xml:space="preserve">
+    <value>Add New Vessel</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="GanttChart" xml:space="preserve">
+    <value>Bookings Chart</value>
+  </data>
+  <data name="RequestBooking" xml:space="preserve">
+    <value>Request Booking</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
 </root>

@@ -28,15 +28,21 @@
     <section class="list-group menu list-unstyled">
         <h3>@Resources.EGD</h3>
         <ul class="list-group menu list-unstyled">
-            <li>@Html.ActionLink(Resources.NavHome, "Index", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            @*<li>@Html.ActionLink(Resources.NavHome, "Index", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>*@
+            <li>@Html.ActionLink(Resources.BookingsManage, "Manage", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavBookings, "Index", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             @if (ViewBag.IsAdmin)
             {
                 <li>@Html.ActionLink(Resources.NavAdmin, "Index", "Admin", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
 
             }
+            <li>@Html.ActionLink(Resources.GanttChart, "Gantt", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            <li>@Html.ActionLink(Resources.RequestBooking, "Create", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            <li>@Resources.AddNewVessel</li>
+            <li>@Html.ActionLink(Resources.EditProfile, "Edit", "Users", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavHomeNotices, "Notices", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavHomeTariff, "Tariff", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            <li>@Html.ActionLink(Resources.SignOut, "LogOff", "Account", null, new { @class = "list-group-item" })</li>
         </ul>
     </section>
 </nav>
