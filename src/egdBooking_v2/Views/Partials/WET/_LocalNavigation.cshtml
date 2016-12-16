@@ -33,7 +33,7 @@
             <li>@Html.ActionLink(Resources.NavBookings, "Index", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             @if (ViewBag.IsAdmin)
             {
-                <li>@Html.ActionLink(Resources.NavAdmin, "Index", "Admin", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+                <li>@Html.ActionLink(Resources.NavAdmin, "Menu", "Admin", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
 
             }
             <li>@Html.ActionLink(Resources.GanttChart, "Gantt", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
