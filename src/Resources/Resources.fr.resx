@@ -420,4 +420,19 @@
   <data name="AdminHeader" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="AddNewVessel" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="GanttChart" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="RequestBooking" xml:space="preserve">
+    <value>TBD</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>TBD</value>
+  </data>
 </root>
