@@ -62,7 +62,7 @@
   },
 
   "frameworks": {
-    "net461": {
+    "net46": {
       "dependencies": {
         "Resources": {
           "target": "project"
