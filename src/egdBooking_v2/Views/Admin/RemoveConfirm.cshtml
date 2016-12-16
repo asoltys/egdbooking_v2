@@ -1,0 +1,19 @@
+﻿@model ApplicationUser
+
+@{
+    ViewBag.title = Resources.Remove;
+}
+
+<h2>@Resources.Remove</h2>
+
+@using (Html.BeginForm("Remove", "Admin", FormMethod.Get))
+{
+    <input type="hidden" name="lang" value="@ViewBag.lang" />
+    <input type="hidden" name="id" value="@Model.Id" />
+    <text>@string.Format(Resources.AdminRemove, Model.Email)</text>
+    <br /><br />
+    <input type="submit" value="@Resources.Remove" class="btn btn-primary" />
+}
+<br />
+@Html.ActionLink(Resources.Back, "RemoveIndex", "Admin", new { lang = ViewBag.lang }, null)&nbsp;&nbsp;&nbsp;&nbsp;
+@Html.ActionLink(Resources.Remove, "Menu", "Admin", new { lang = ViewBag.lang }, null)

@@ -1,0 +1,19 @@
+﻿@model ApplicationUser
+
+@{
+    ViewBag.title = Resources.Create;
+}
+
+<h2>@Resources.Create</h2>
+
+@using (Html.BeginForm("Add", "Admin", FormMethod.Get))
+{
+    <input type="hidden" name="lang" value="@ViewBag.lang" />
+    <input type="hidden" name="id" value="@Model.Id" />
+    <text>@string.Format(Resources.AdminAdd, Model.Email)</text>
+    <br /><br />
+    <input type="submit" value="@Resources.Create" class="btn btn-primary" />
+}
+<br />
+@Html.ActionLink(Resources.Back, "AddIndex", "Admin", new { lang = ViewBag.lang }, null)&nbsp;&nbsp;&nbsp;&nbsp;
+@Html.ActionLink(Resources.Cancel, "Menu", "Admin", new { lang = ViewBag.lang }, null)

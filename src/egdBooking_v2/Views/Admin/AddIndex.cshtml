@@ -1,0 +1,21 @@
+@model IList<ApplicationUser>
+
+@{
+    ViewBag.title = Resources.Create;
+}
+
+<h2>@Resources.Create</h2>
+
+@using (Html.BeginForm("AddConfirm", "Admin", FormMethod.Get, new { @class = "form-inline" }))
+{
+    <input type="hidden" name="lang" value="@ViewBag.lang" />
+    <select class="form-control" name="id">
+        @foreach (var item in Model.OrderBy(u => u.Email))
+        {
+            <option value="@item.Id">@item.UserName</option>
+        }
+    </select>
+    <input type="submit" value="@Resources.Create" class="btn btn-primary" />
+}
+<br />
+@Html.ActionLink(Resources.Cancel, "Menu", "Admin", new { lang = ViewBag.lang }, null)
