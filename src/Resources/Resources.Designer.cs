@@ -753,6 +753,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Index.
+        /// </summary>
+        public static string Index {
+            get {
+                return ResourceManager.GetString("Index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Companies and individuals can book space for vessels at our facilities on a first-come, first-served basis. You can also consult the public summary of bookings. The Esquimalt Graving Dock is the largest solid-bottom commercial drydock on the West Coast of Americas, which is located in an ice-free harbour on Vancouver Island..
         /// </summary>
         public static string IndexDescription {

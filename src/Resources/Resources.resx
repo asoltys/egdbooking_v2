@@ -531,4 +531,7 @@
   <data name="FormSpecialFeatures" xml:space="preserve">
     <value>Special features of ship, such as the length of "cut up" forward and aft, camber of keel, if any, and underwater form (State if "usual"; if "unusual", give particulars)</value>
   </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
 </root>
