@@ -246,10 +246,13 @@ namespace egdbooking_v2.Controllers
             return View(ViewModel);
         }
 
-        public FileStreamResult Pdf()
+        public IActionResult Form()
         {
-            // TODO: This is currently just some example code to generate a PDF, will need to build up the Schedule 1 form and integrate it.
+            return View();
+        }
 
+        public FileStreamResult Pdf(FormViewModel model)
+        {
             // Set up the document and the MS to write it to and create the PDF writer instance
             MemoryStream ms = new MemoryStream();
             Document document = new Document(PageSize.LETTER);
@@ -259,36 +262,74 @@ namespace egdbooking_v2.Controllers
             document.Open();
 
             // Set up fonts used in the document
-            Font font_heading = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 16, Font.BOLD);
-            Font font_body = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 9);
+            Font normal = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL);
+            Font bold = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD);
+            string singlespace = "\n";
+            string doublespace = "\n\n";
 
-            // Create the heading paragraph
-            Paragraph heading_paragraph;
-            heading_paragraph = new Paragraph();
+            PdfPTable page = new PdfPTable(1);
+            page.WidthPercentage = 100;
 
-            // Create the chunk with the heading font
-            Phrase heading_phrase = new Phrase(Resources.Resources.EGD, font_heading);
-            heading_paragraph.Add(heading_phrase);
+            PdfPCell header_cell = new PdfPCell(new Paragraph(new Chunk("SCHEDULE 1".ToUpper() + doublespace, normal)));
+            header_cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            header_cell.BorderWidth = 0;
+            page.AddCell(header_cell);
 
-            // Add a horizontal line below the headig text and add it to the paragraph
-            iTextSharp.text.pdf.draw.VerticalPositionMark seperator = new iTextSharp.text.pdf.draw.LineSeparator();
-            seperator.Offset = -6f;
-            heading_paragraph.Add(seperator);
+            PdfPCell title_cell = new PdfPCell(new Paragraph(new Chunk("APPLICATION FOR THE USE OF ESQUIMALT GRAVING DOCK, PUBLIC WORKS AND GOVERNMENT SERVICES CANADA, VICTORIA, BRITISH COLUMBIA".ToUpper() + doublespace, bold)));
+            title_cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            title_cell.BorderWidth = 0;
+            page.AddCell(title_cell);
 
-            // Add paragraph to document
-            document.Add(heading_paragraph);
+            PdfPCell undersigned_cell = new PdfPCell(new Paragraph(new Chunk("I (We), the undersigned, hereby make application for use of the facilities within the Esquimalt Graving Dock as indicated below:" + singlespace, normal)));
+            undersigned_cell.BorderWidth = 0;
+            page.AddCell(undersigned_cell);
 
-            // Create the body paragraph
-            Paragraph body_paragraph;
-            body_paragraph = new Paragraph();
-            body_paragraph.SpacingBefore = 20f;
+            PdfPTable info_table = new PdfPTable(2);
 
-            // Create the chunk with the heading font
-            Phrase body_phrase = new Phrase(Resources.Resources.Tariff, font_body);
-            body_paragraph.Add(body_phrase);
+            List<Phrase> left_phrases = new List<Phrase>();
+            left_phrases.Add(new Phrase(new Chunk(singlespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Dates of Dry-dock" + ": " + model.DrydockDates + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Purpose of Dry-dock" + ": " + model.DrydockPurpose + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Dates of Berthage (NLW)" + ": " + model.BerthageDates + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Purpose of Berthage" + ": " + model.BerthagePurpose + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Master's Name" + ": " + model.MasterName + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Agent's Name" + ": " + model.AgentName + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Dockmaster's Name" + ": " + model.DockmasterName + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Length, Overall" + ": " + model.OverallLength + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Breadth, Extreme" + ": " + model.ExtremeBreadth + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Draft, Aft" + ": " + model.AftDraft + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Engines (Steam/Gasoline/Oil)" + ": " + model.Engines + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("Keel (Bar/Flat, if bar, state depth)" + ": " + model.Keel + doublespace, normal)));
+            left_phrases.Add(new Phrase(new Chunk("If there any explosive matter on board describe" + ": " + model.ExplosiveMatter + doublespace, normal)));
+            Paragraph left_paragraph = new Paragraph();
+            foreach (Phrase phrase in left_phrases)
+                left_paragraph.Add(phrase);
+            info_table.AddCell(new PdfPCell(left_paragraph));
 
-            // Add paragraph to document
-            document.Add(body_paragraph);
+            List<Phrase> right_phrases = new List<Phrase>();
+            right_phrases.Add(new Phrase(new Chunk(singlespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Name of Vessel" + ": " + model.VesselName + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Owner's Name" + ": " + model.OwnerName + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Port of Registry" + ": " + model.RegistryPort + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Owner's Address" + ": " + model.OwnerAddress + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Master's Address" + ": " + model.MasterAddress + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Agent's Address" + ": " + model.AgentAddress + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Gross Tonnage" + ": " + model.GrossTonnage + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Length between Perpendiculars" + ": " + model.PerpendicularsLength + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Draft, Forward" + ": " + model.ForwardDraft + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Type of Vessel (screw, sailing, not self-propelled, etc.)" + ": " + model.VesselType + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Fuel Type" + ": " + model.FuelType + doublespace, normal)));
+            right_phrases.Add(new Phrase(new Chunk("Rise of Floor Amidships" + ": " + model.FloorRiseAmidships + doublespace, normal)));
+            Paragraph right_paragraph = new Paragraph();
+            foreach (Phrase phrase in right_phrases)
+                right_paragraph.Add(phrase);
+            info_table.AddCell(new PdfPCell(right_paragraph));
+
+            PdfPCell info_cell = new PdfPCell(info_table);
+            page.AddCell(info_cell);
+            
+            // Add to document
+            document.Add(page);
 
             // Close the PDF document
             document.Close();
