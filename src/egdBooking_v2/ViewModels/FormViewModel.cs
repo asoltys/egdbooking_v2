@@ -36,5 +36,10 @@ namespace egdbooking_v2.ViewModels
         public string FuelType { get; set; }
         public string FloorRiseAmidships { get; set; }
 
+        public string DangerousGoods { get; set; }
+        public string OilLeak { get; set; }
+        public string SpecialFeatures { get; set; }
+        public string AdditionalLength { get; set; }
+
     }
 }

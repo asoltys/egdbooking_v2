@@ -420,6 +420,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Do you require additional length on the North Landing Wharf other than for the vessel described above?  If so, give details below.
+        /// </summary>
+        public static string FormAdditionalLength {
+            get {
+                return ResourceManager.GetString("FormAdditionalLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Draft, Aft.
         /// </summary>
         public static string FormAftDraft {
@@ -461,6 +470,15 @@ namespace Resources {
         public static string FormBerthagePurpose {
             get {
                 return ResourceManager.GetString("FormBerthagePurpose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Is this vessel carrying or did carry any flammable material or dangerous cargo?  If so, describe materials below and attach a copy of the gas free certificate supplied from a marine chemist..
+        /// </summary>
+        public static string FormDangerousGoods {
+            get {
+                return ResourceManager.GetString("FormDangerousGoods", resourceCulture);
             }
         }
         
@@ -582,6 +600,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Is there any oil escaping from the vessel?  (If so, to what extent?).
+        /// </summary>
+        public static string FormOilLeak {
+            get {
+                return ResourceManager.GetString("FormOilLeak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Length, Overall.
         /// </summary>
         public static string FormOverallLength {
@@ -632,6 +659,15 @@ namespace Resources {
         public static string FormSchedule1 {
             get {
                 return ResourceManager.GetString("FormSchedule1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Special features of ship, such as the length of &quot;cut up&quot; forward and aft, camber of keel, if any, and underwater form (State if &quot;usual&quot;; if &quot;unusual&quot;, give particulars).
+        /// </summary>
+        public static string FormSpecialFeatures {
+            get {
+                return ResourceManager.GetString("FormSpecialFeatures", resourceCulture);
             }
         }
         

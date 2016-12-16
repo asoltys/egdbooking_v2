@@ -519,4 +519,16 @@
   <data name="SignOut" xml:space="preserve">
     <value>Sign Out</value>
   </data>
+  <data name="FormAdditionalLength" xml:space="preserve">
+    <value>Do you require additional length on the North Landing Wharf other than for the vessel described above?  If so, give details below</value>
+  </data>
+  <data name="FormDangerousGoods" xml:space="preserve">
+    <value>Is this vessel carrying or did carry any flammable material or dangerous cargo?  If so, describe materials below and attach a copy of the gas free certificate supplied from a marine chemist.</value>
+  </data>
+  <data name="FormOilLeak" xml:space="preserve">
+    <value>Is there any oil escaping from the vessel?  (If so, to what extent?)</value>
+  </data>
+  <data name="FormSpecialFeatures" xml:space="preserve">
+    <value>Special features of ship, such as the length of "cut up" forward and aft, camber of keel, if any, and underwater form (State if "usual"; if "unusual", give particulars)</value>
+  </data>
 </root>

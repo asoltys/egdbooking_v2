@@ -329,7 +329,12 @@ namespace egdbooking_v2.Controllers
 
             PdfPCell info_cell = new PdfPCell(info_table);
             page.AddCell(info_cell);
-            
+
+            page.AddCell(FormField(singlespace + Resources.Resources.FormDangerousGoods + singlespace, model.DangerousGoods, font_size));
+            page.AddCell(FormField(Resources.Resources.FormOilLeak + " ", model.OilLeak, font_size));
+            page.AddCell(FormField(Resources.Resources.FormSpecialFeatures + singlespace, model.SpecialFeatures, font_size));
+            page.AddCell(FormField(Resources.Resources.FormAdditionalLength + singlespace, model.AdditionalLength, font_size));
+
             // Add to document
             document.Add(page);
 
@@ -350,7 +355,7 @@ namespace egdbooking_v2.Controllers
         {
             string space = " "; // &#160; (aka &nbsp;)
 
-            value = space + value;
+            value = space + space + value;
             Phrase p = new Phrase();
             Chunk clabel = new Chunk(label + ": ", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.NORMAL));
             Chunk cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
@@ -373,6 +378,36 @@ namespace egdbooking_v2.Controllers
             p.Add(clabel);
             p.Add(cvalue);
             return p;
+        }
+
+        private PdfPCell FormField(string label, string value, int font_size)
+        {
+            string space = " "; // &#160; (aka &nbsp;)
+            value = space + space + value;
+            Phrase p = new Phrase();
+            PdfPCell c = new PdfPCell(p);
+            c.BorderWidth = 0;
+            Chunk clabel = new Chunk(label, FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.NORMAL));
+            Chunk cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+            if (clabel.GetWidthPoint() > 440)
+            {
+                while (cvalue.GetWidthPoint() < 520)
+                {
+                    value += space;
+                    cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+                }
+            }
+            else
+            {
+                while (clabel.GetWidthPoint() + cvalue.GetWidthPoint() < 520)
+                {
+                    value += space;
+                    cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+                }
+            }
+            p.Add(clabel);
+            p.Add(cvalue);
+            return c;
         }
     }
 }
