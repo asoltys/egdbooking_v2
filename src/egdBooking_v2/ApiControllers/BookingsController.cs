@@ -23,6 +23,7 @@ namespace src.ApiControllers
             public DateTime ED { get; set; } // EndDate
             public DateTime BT { get; set; } // BookingTime
             public string ST { get; set; } // Status
+            public string TT { get; set; } // Tooltip
 
             [JsonIgnore]
             public Boolean S1 { get; set; } // Section1?
@@ -57,7 +58,9 @@ namespace src.ApiControllers
         public List<SimpleRow> GetBookings()
         {
             List<SimpleBooking> simpleBookings = new List<SimpleBooking>();
-            var bookings = _context.Bookings.AsEnumerable()
+            var bookings = _context.Bookings
+                .Include(b => b.Vessel)
+                .AsEnumerable()
                 .Where(b => b.StartDate >= DateTime.Now.AddDays(-30))
                 .Where(b => b.Status.Equals("C") || b.Status.Equals("T"));
             foreach (var booking in bookings)
@@ -70,6 +73,7 @@ namespace src.ApiControllers
                     ED = booking.EndDate,
                     BT = booking.BookingTime,
                     ST = booking.Status,
+                    TT = String.Format("{0}", booking.Vessel.Name),
                     S1 = booking.Section1 ?? false,
                     S2 = booking.Section2 ?? false,
                     S3 = booking.Section3 ?? false,
