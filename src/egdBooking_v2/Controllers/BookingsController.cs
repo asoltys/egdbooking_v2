@@ -30,7 +30,7 @@ namespace egdbooking_v2.Controllers
         // GET: Bookings
         public IActionResult Index(IFormCollection collection)
         {
-            List<Booking> BookingsDB = db.Bookings.Include(c=> c.Vessel).Where(i => (i.Id > 3000)).ToList();
+            List<Booking> BookingsDB = db.Bookings.Include(c=> c.Vessel).Where(i => ((i.Id > 3000 && i.Status =="C"))).ToList();
             DateTime startdate;
             DateTime enddate;
 
@@ -193,7 +193,14 @@ namespace egdbooking_v2.Controllers
             DateTime startdate;
             DateTime enddate;
 
-            ViewBag.ID = _userManager.GetUserId(User);
+            if (User.IsInRole("User"))
+            {
+                ViewBag.ID = _userManager.GetUserId(User);
+                var userID = _userManager.GetUserId(User);
+                BookingsDB = BookingsDB.Where(i => (i.UserId == userID)).ToList();
+            }
+
+            
 
             if (collection.Count != 0)
             {
@@ -239,10 +246,13 @@ namespace egdbooking_v2.Controllers
             return View(ViewModel);
         }
 
-        public FileStreamResult Pdf()
+        public IActionResult Form()
         {
-            // TODO: This is currently just some example code to generate a PDF, will need to build up the Schedule 1 form and integrate it.
+            return View();
+        }
 
+        public FileStreamResult Pdf(FormViewModel model)
+        {
             // Set up the document and the MS to write it to and create the PDF writer instance
             MemoryStream ms = new MemoryStream();
             Document document = new Document(PageSize.LETTER);
@@ -252,36 +262,81 @@ namespace egdbooking_v2.Controllers
             document.Open();
 
             // Set up fonts used in the document
-            Font font_heading = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 16, Font.BOLD);
-            Font font_body = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 9);
+            int font_size = 12;
+            Font normal = FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.NORMAL);
+            Font bold = FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.BOLD);
+            Font underline = FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE);
+            string singlespace = "\n";
+            string doublespace = "\n\n";
 
-            // Create the heading paragraph
-            Paragraph heading_paragraph;
-            heading_paragraph = new Paragraph();
+            PdfPTable page = new PdfPTable(1);
+            page.WidthPercentage = 100;
 
-            // Create the chunk with the heading font
-            Phrase heading_phrase = new Phrase(Resources.Resources.EGD, font_heading);
-            heading_paragraph.Add(heading_phrase);
+            PdfPCell header_cell = new PdfPCell(new Paragraph(new Chunk(Resources.Resources.FormSchedule1.ToUpper() + doublespace, normal)));
+            header_cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            header_cell.BorderWidth = 0;
+            page.AddCell(header_cell);
 
-            // Add a horizontal line below the headig text and add it to the paragraph
-            iTextSharp.text.pdf.draw.VerticalPositionMark seperator = new iTextSharp.text.pdf.draw.LineSeparator();
-            seperator.Offset = -6f;
-            heading_paragraph.Add(seperator);
+            PdfPCell title_cell = new PdfPCell(new Paragraph(new Chunk(Resources.Resources.FormTitle.ToUpper() + doublespace, bold)));
+            title_cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            title_cell.BorderWidth = 0;
+            page.AddCell(title_cell);
 
-            // Add paragraph to document
-            document.Add(heading_paragraph);
+            PdfPCell undersigned_cell = new PdfPCell(new Paragraph(new Chunk(Resources.Resources.FormUndersigned + ":" + singlespace, normal)));
+            undersigned_cell.BorderWidth = 0;
+            page.AddCell(undersigned_cell);
 
-            // Create the body paragraph
-            Paragraph body_paragraph;
-            body_paragraph = new Paragraph();
-            body_paragraph.SpacingBefore = 20f;
+            PdfPTable info_table = new PdfPTable(2);
 
-            // Create the chunk with the heading font
-            Phrase body_phrase = new Phrase(Resources.Resources.Tariff, font_body);
-            body_paragraph.Add(body_phrase);
+            List<Phrase> left_phrases = new List<Phrase>();
+            left_phrases.Add(new Phrase(new Chunk(singlespace, normal)));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormDrydockDates, model.DrydockDates, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormDrydockPurpose, model.DrydockPurpose, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormBerthageDates, model.BerthageDates, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormBerthagePurpose, model.BerthagePurpose, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormMasterName, model.MasterName, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormAgentName, model.AgentName, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormDockmasterName, model.DockmasterName, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormOverallLength, model.OverallLength, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormExtremeBreadth, model.ExtremeBreadth, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormAftDraft, model.AftDraft, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormEngines, model.Engines, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormKeel, model.Keel, font_size));
+            left_phrases.Add(FormInfoField(Resources.Resources.FormExplosiveMatter, model.ExplosiveMatter, font_size));
+            Paragraph left_paragraph = new Paragraph();
+            foreach (Phrase phrase in left_phrases)
+                left_paragraph.Add(phrase);
+            info_table.AddCell(new PdfPCell(left_paragraph));
 
-            // Add paragraph to document
-            document.Add(body_paragraph);
+            List<Phrase> right_phrases = new List<Phrase>();
+            right_phrases.Add(new Phrase(new Chunk(singlespace, normal)));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormVesselName, model.VesselName, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormOwnerName, model.OwnerName, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormRegistryPort, model.RegistryPort, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormOwnerAddress, model.OwnerAddress, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormMasterAddress, model.MasterAddress, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormAgentAddress, model.AgentAddress, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormGrossTonnage, model.GrossTonnage, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormPerpendicularsLength, model.PerpendicularsLength, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormForwardDraft, model.ForwardDraft, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormVesselType, model.VesselType, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormFuelType, model.FuelType, font_size));
+            right_phrases.Add(FormInfoField(Resources.Resources.FormFloorRiseAmidships, model.FloorRiseAmidships, font_size));
+            Paragraph right_paragraph = new Paragraph();
+            foreach (Phrase phrase in right_phrases)
+                right_paragraph.Add(phrase);
+            info_table.AddCell(new PdfPCell(right_paragraph));
+
+            PdfPCell info_cell = new PdfPCell(info_table);
+            page.AddCell(info_cell);
+
+            page.AddCell(FormField(singlespace + Resources.Resources.FormDangerousGoods + singlespace, model.DangerousGoods, font_size));
+            page.AddCell(FormField(Resources.Resources.FormOilLeak + " ", model.OilLeak, font_size));
+            page.AddCell(FormField(Resources.Resources.FormSpecialFeatures + singlespace, model.SpecialFeatures, font_size));
+            page.AddCell(FormField(Resources.Resources.FormAdditionalLength + singlespace, model.AdditionalLength, font_size));
+
+            // Add to document
+            document.Add(page);
 
             // Close the PDF document
             document.Close();
@@ -294,6 +349,65 @@ namespace egdbooking_v2.Controllers
 
             // Return the output stream
             return new FileStreamResult(output, "application/pdf");
+        }
+
+        private Phrase FormInfoField(string label, string value, int font_size)
+        {
+            string space = " "; // &#160; (aka &nbsp;)
+
+            value = space + space + value;
+            Phrase p = new Phrase();
+            Chunk clabel = new Chunk(label + ": ", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.NORMAL));
+            Chunk cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+            if (clabel.GetWidthPoint() > 180)
+            {
+                while (cvalue.GetWidthPoint() < 260)
+                {
+                    value += space;
+                    cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+                }
+            }
+            else
+            {
+                while (clabel.GetWidthPoint() + cvalue.GetWidthPoint() < 260)
+                {
+                    value += space;
+                    cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+                }
+            }
+            p.Add(clabel);
+            p.Add(cvalue);
+            return p;
+        }
+
+        private PdfPCell FormField(string label, string value, int font_size)
+        {
+            string space = " "; // &#160; (aka &nbsp;)
+            value = space + space + value;
+            Phrase p = new Phrase();
+            PdfPCell c = new PdfPCell(p);
+            c.BorderWidth = 0;
+            Chunk clabel = new Chunk(label, FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.NORMAL));
+            Chunk cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+            if (clabel.GetWidthPoint() > 440)
+            {
+                while (cvalue.GetWidthPoint() < 520)
+                {
+                    value += space;
+                    cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+                }
+            }
+            else
+            {
+                while (clabel.GetWidthPoint() + cvalue.GetWidthPoint() < 520)
+                {
+                    value += space;
+                    cvalue = new Chunk(value + "\n\n", FontFactory.GetFont(FontFactory.TIMES_ROMAN, font_size, Font.UNDERLINE));
+                }
+            }
+            p.Add(clabel);
+            p.Add(cvalue);
+            return c;
         }
     }
 }

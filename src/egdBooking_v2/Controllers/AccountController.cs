@@ -66,7 +66,7 @@ namespace core.Controllers
                     _logger.LogInformation(1, "User logged in.");
                     if (User.IsInRole("Admin"))
                     {
-                        return RedirectToAction("Index", "Admin", new { lang = ViewBag.lang });
+                        return RedirectToAction("Menu", "Admin", new { lang = ViewBag.lang });
                     } else
                     {
                         return RedirectToAction("Manage", "Bookings", new { lang = ViewBag.lang });
@@ -450,6 +450,16 @@ namespace core.Controllers
                 ModelState.AddModelError(string.Empty, "Invalid code.");
                 return View(model);
             }
+        }
+
+        //
+        // GET: /Account/Manage
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Manage(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
         }
 
         #region Helpers

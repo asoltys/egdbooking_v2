@@ -1,0 +1,53 @@
+﻿@using egdbooking_v2.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    if (ViewBag.lang == "fr")
+    {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("fr");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
+        Layout = "~/Views/Shared/_WETLayoutFra.cshtml";
+    }
+    else
+    {
+        System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en");
+        System.Globalization.CultureInfo.CurrentCulture = ci;
+        System.Globalization.CultureInfo.CurrentUICulture = ci;
+        Layout = "~/Views/Shared/_WETLayoutEng.cshtml";
+    }
+    ViewData["Title"] = Resources.ManageYourAccount;
+}
+
+<h1>@Resources.ManageYourAccount</h1>
+<p>@Resources.ManageAccountDescription</p>
+
+<div class="wb-tabs update-hash">
+    <div class="tabpanels">
+        <details id="ajout-add">
+            <summary>@Resources.Register</summary>
+            @Html.Partial("~/Views/Account/Register.cshtml")
+        </details>
+        <details id="oubli-forgot">
+            <summary>@Resources.ForgotPassword</summary>
+            @Html.Partial("~/Views/Account/ForgotPassword.cshtml")
+        </details>
+    </div>
+</div>
+
+<h2>@Resources.BookSpace</h2>
+
+<ul>
+    <li><a href="@Url.Action("Index", "Home", new { lang = ViewBag.lang })#login">@Resources.SignInToBookSpace</a></li>
+</ul>
+
+<h2>@Resources.MoreInformation</h2>
+
+<ul>
+    <li><a href="http://www.tpsgc-pwgsc.gc.ca/biens-property/cse-egd/index-eng.html">@Resources.LearnMore</a></li>
+    <li><a href="http://www.tpsgc-pwgsc.gc.ca/biens-property/cse-egd/avis-notices-eng.html">@Resources.ImportantNotices</a></li>
+    <li><a href="http://www.tpsgc-pwgsc.gc.ca/biens-property/cse-egd/cn-cu-eng.html">@Resources.Contact</a></li>
+</ul>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

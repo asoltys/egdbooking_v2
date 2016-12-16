@@ -78,11 +78,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Add New Vessel.
+        /// </summary>
+        public static string AddNewVessel {
+            get {
+                return ResourceManager.GetString("AddNewVessel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Are you sure you want to make {0} an administrator?.
+        /// </summary>
+        public static string AdminAdd {
+            get {
+                return ResourceManager.GetString("AdminAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Administrative Functions.
         /// </summary>
         public static string AdminHeader {
             get {
                 return ResourceManager.GetString("AdminHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Are you sure you want to remove {0} from administration?.
+        /// </summary>
+        public static string AdminRemove {
+            get {
+                return ResourceManager.GetString("AdminRemove", resourceCulture);
             }
         }
         
@@ -357,6 +384,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Edit Profile.
+        /// </summary>
+        public static string EditProfile {
+            get {
+                return ResourceManager.GetString("EditProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Esquimalt Graving Dock.
         /// </summary>
         public static string EGD {
@@ -402,11 +438,308 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Do you require additional length on the North Landing Wharf other than for the vessel described above?  If so, give details below.
+        /// </summary>
+        public static string FormAdditionalLength {
+            get {
+                return ResourceManager.GetString("FormAdditionalLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Draft, Aft.
+        /// </summary>
+        public static string FormAftDraft {
+            get {
+                return ResourceManager.GetString("FormAftDraft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Agent&apos;s Address.
+        /// </summary>
+        public static string FormAgentAddress {
+            get {
+                return ResourceManager.GetString("FormAgentAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Agent&apos;s Name.
+        /// </summary>
+        public static string FormAgentName {
+            get {
+                return ResourceManager.GetString("FormAgentName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Dates of Berthage (NLW).
+        /// </summary>
+        public static string FormBerthageDates {
+            get {
+                return ResourceManager.GetString("FormBerthageDates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Purpose of Berthage.
+        /// </summary>
+        public static string FormBerthagePurpose {
+            get {
+                return ResourceManager.GetString("FormBerthagePurpose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Is this vessel carrying or did carry any flammable material or dangerous cargo?  If so, describe materials below and attach a copy of the gas free certificate supplied from a marine chemist..
+        /// </summary>
+        public static string FormDangerousGoods {
+            get {
+                return ResourceManager.GetString("FormDangerousGoods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Dockmaster&apos;s Name.
+        /// </summary>
+        public static string FormDockmasterName {
+            get {
+                return ResourceManager.GetString("FormDockmasterName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Dates of Dry-dock.
+        /// </summary>
+        public static string FormDrydockDates {
+            get {
+                return ResourceManager.GetString("FormDrydockDates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Purpose of Dry-dock.
+        /// </summary>
+        public static string FormDrydockPurpose {
+            get {
+                return ResourceManager.GetString("FormDrydockPurpose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Engines (Steam/Gasoline/Oil).
+        /// </summary>
+        public static string FormEngines {
+            get {
+                return ResourceManager.GetString("FormEngines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to If there any explosive matter on board describe.
+        /// </summary>
+        public static string FormExplosiveMatter {
+            get {
+                return ResourceManager.GetString("FormExplosiveMatter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Breadth, Extreme.
+        /// </summary>
+        public static string FormExtremeBreadth {
+            get {
+                return ResourceManager.GetString("FormExtremeBreadth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Rise of Floor Amidships.
+        /// </summary>
+        public static string FormFloorRiseAmidships {
+            get {
+                return ResourceManager.GetString("FormFloorRiseAmidships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Draft, Forward.
+        /// </summary>
+        public static string FormForwardDraft {
+            get {
+                return ResourceManager.GetString("FormForwardDraft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Fuel Type.
+        /// </summary>
+        public static string FormFuelType {
+            get {
+                return ResourceManager.GetString("FormFuelType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Gross Tonnage.
+        /// </summary>
+        public static string FormGrossTonnage {
+            get {
+                return ResourceManager.GetString("FormGrossTonnage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Keel (Bar/Flat, if bar, state depth).
+        /// </summary>
+        public static string FormKeel {
+            get {
+                return ResourceManager.GetString("FormKeel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Master&apos;s Address.
+        /// </summary>
+        public static string FormMasterAddress {
+            get {
+                return ResourceManager.GetString("FormMasterAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Master&apos;s Name.
+        /// </summary>
+        public static string FormMasterName {
+            get {
+                return ResourceManager.GetString("FormMasterName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Is there any oil escaping from the vessel?  (If so, to what extent?).
+        /// </summary>
+        public static string FormOilLeak {
+            get {
+                return ResourceManager.GetString("FormOilLeak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Length, Overall.
+        /// </summary>
+        public static string FormOverallLength {
+            get {
+                return ResourceManager.GetString("FormOverallLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Owner&apos;s Address.
+        /// </summary>
+        public static string FormOwnerAddress {
+            get {
+                return ResourceManager.GetString("FormOwnerAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Owner&apos;s Name.
+        /// </summary>
+        public static string FormOwnerName {
+            get {
+                return ResourceManager.GetString("FormOwnerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Length between Perpendiculars.
+        /// </summary>
+        public static string FormPerpendicularsLength {
+            get {
+                return ResourceManager.GetString("FormPerpendicularsLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Port of Registry.
+        /// </summary>
+        public static string FormRegistryPort {
+            get {
+                return ResourceManager.GetString("FormRegistryPort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Schedule 1.
+        /// </summary>
+        public static string FormSchedule1 {
+            get {
+                return ResourceManager.GetString("FormSchedule1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Special features of ship, such as the length of &quot;cut up&quot; forward and aft, camber of keel, if any, and underwater form (State if &quot;usual&quot;; if &quot;unusual&quot;, give particulars).
+        /// </summary>
+        public static string FormSpecialFeatures {
+            get {
+                return ResourceManager.GetString("FormSpecialFeatures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Application for the use of Esquimalt Graving Dock, Public Works and Government Services Canada, Victoria, British Columbia.
+        /// </summary>
+        public static string FormTitle {
+            get {
+                return ResourceManager.GetString("FormTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to I (We), the undersigned, hereby make application for use of the facilities within the Esquimalt Graving Dock as indicated below.
+        /// </summary>
+        public static string FormUndersigned {
+            get {
+                return ResourceManager.GetString("FormUndersigned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Name of Vessel.
+        /// </summary>
+        public static string FormVesselName {
+            get {
+                return ResourceManager.GetString("FormVesselName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Type of Vessel (Screw/Sailing/Not self-propelled).
+        /// </summary>
+        public static string FormVesselType {
+            get {
+                return ResourceManager.GetString("FormVesselType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to From Date:.
         /// </summary>
         public static string FromDate {
             get {
                 return ResourceManager.GetString("FromDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Bookings Chart.
+        /// </summary>
+        public static string GanttChart {
+            get {
+                return ResourceManager.GetString("GanttChart", resourceCulture);
             }
         }
         
@@ -434,6 +767,15 @@ namespace Resources {
         public static string ImportantNotices {
             get {
                 return ResourceManager.GetString("ImportantNotices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Index.
+        /// </summary>
+        public static string Index {
+            get {
+                return ResourceManager.GetString("Index", resourceCulture);
             }
         }
         
@@ -807,6 +1149,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Request Booking.
+        /// </summary>
+        public static string RequestBooking {
+            get {
+                return ResourceManager.GetString("RequestBooking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Required.
         /// </summary>
         public static string Required {
@@ -884,6 +1235,15 @@ namespace Resources {
         public static string SignInToBookSpace {
             get {
                 return ResourceManager.GetString("SignInToBookSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Sign Out.
+        /// </summary>
+        public static string SignOut {
+            get {
+                return ResourceManager.GetString("SignOut", resourceCulture);
             }
         }
         

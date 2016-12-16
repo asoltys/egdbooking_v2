@@ -420,4 +420,124 @@
   <data name="SubmitBookingRequest" xml:space="preserve">
     <value>Submit a new booking request</value>
   </data>
+  <data name="FormAftDraft" xml:space="preserve">
+    <value>Draft, Aft</value>
+  </data>
+  <data name="FormAgentAddress" xml:space="preserve">
+    <value>Agent's Address</value>
+  </data>
+  <data name="FormAgentName" xml:space="preserve">
+    <value>Agent's Name</value>
+  </data>
+  <data name="FormBerthageDates" xml:space="preserve">
+    <value>Dates of Berthage (NLW)</value>
+  </data>
+  <data name="FormBerthagePurpose" xml:space="preserve">
+    <value>Purpose of Berthage</value>
+  </data>
+  <data name="FormDockmasterName" xml:space="preserve">
+    <value>Dockmaster's Name</value>
+  </data>
+  <data name="FormDrydockDates" xml:space="preserve">
+    <value>Dates of Dry-dock</value>
+  </data>
+  <data name="FormDrydockPurpose" xml:space="preserve">
+    <value>Purpose of Dry-dock</value>
+  </data>
+  <data name="FormEngines" xml:space="preserve">
+    <value>Engines (Steam/Gasoline/Oil)</value>
+  </data>
+  <data name="FormExplosiveMatter" xml:space="preserve">
+    <value>If there any explosive matter on board describe</value>
+  </data>
+  <data name="FormExtremeBreadth" xml:space="preserve">
+    <value>Breadth, Extreme</value>
+  </data>
+  <data name="FormFloorRiseAmidships" xml:space="preserve">
+    <value>Rise of Floor Amidships</value>
+  </data>
+  <data name="FormForwardDraft" xml:space="preserve">
+    <value>Draft, Forward</value>
+  </data>
+  <data name="FormFuelType" xml:space="preserve">
+    <value>Fuel Type</value>
+  </data>
+  <data name="FormGrossTonnage" xml:space="preserve">
+    <value>Gross Tonnage</value>
+  </data>
+  <data name="FormKeel" xml:space="preserve">
+    <value>Keel (Bar/Flat, if bar, state depth)</value>
+  </data>
+  <data name="FormMasterAddress" xml:space="preserve">
+    <value>Master's Address</value>
+  </data>
+  <data name="FormMasterName" xml:space="preserve">
+    <value>Master's Name</value>
+  </data>
+  <data name="FormOverallLength" xml:space="preserve">
+    <value>Length, Overall</value>
+  </data>
+  <data name="FormOwnerAddress" xml:space="preserve">
+    <value>Owner's Address</value>
+  </data>
+  <data name="FormOwnerName" xml:space="preserve">
+    <value>Owner's Name</value>
+  </data>
+  <data name="FormPerpendicularsLength" xml:space="preserve">
+    <value>Length between Perpendiculars</value>
+  </data>
+  <data name="FormRegistryPort" xml:space="preserve">
+    <value>Port of Registry</value>
+  </data>
+  <data name="FormVesselName" xml:space="preserve">
+    <value>Name of Vessel</value>
+  </data>
+  <data name="FormVesselType" xml:space="preserve">
+    <value>Type of Vessel (Screw/Sailing/Not self-propelled)</value>
+  </data>
+  <data name="FormSchedule1" xml:space="preserve">
+    <value>Schedule 1</value>
+  </data>
+  <data name="FormTitle" xml:space="preserve">
+    <value>Application for the use of Esquimalt Graving Dock, Public Works and Government Services Canada, Victoria, British Columbia</value>
+  </data>
+  <data name="FormUndersigned" xml:space="preserve">
+    <value>I (We), the undersigned, hereby make application for use of the facilities within the Esquimalt Graving Dock as indicated below</value>
+  </data>
+  <data name="AddNewVessel" xml:space="preserve">
+    <value>Add New Vessel</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="GanttChart" xml:space="preserve">
+    <value>Bookings Chart</value>
+  </data>
+  <data name="RequestBooking" xml:space="preserve">
+    <value>Request Booking</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="FormAdditionalLength" xml:space="preserve">
+    <value>Do you require additional length on the North Landing Wharf other than for the vessel described above?  If so, give details below</value>
+  </data>
+  <data name="FormDangerousGoods" xml:space="preserve">
+    <value>Is this vessel carrying or did carry any flammable material or dangerous cargo?  If so, describe materials below and attach a copy of the gas free certificate supplied from a marine chemist.</value>
+  </data>
+  <data name="FormOilLeak" xml:space="preserve">
+    <value>Is there any oil escaping from the vessel?  (If so, to what extent?)</value>
+  </data>
+  <data name="FormSpecialFeatures" xml:space="preserve">
+    <value>Special features of ship, such as the length of "cut up" forward and aft, camber of keel, if any, and underwater form (State if "usual"; if "unusual", give particulars)</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="AdminAdd" xml:space="preserve">
+    <value>Are you sure you want to make {0} an administrator?</value>
+  </data>
+  <data name="AdminRemove" xml:space="preserve">
+    <value>Are you sure you want to remove {0} from administration?</value>
+  </data>
 </root>
