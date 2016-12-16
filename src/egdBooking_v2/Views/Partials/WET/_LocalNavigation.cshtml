@@ -42,7 +42,11 @@
             <li>@Html.ActionLink(Resources.EditProfile, "Edit", "Users", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavHomeNotices, "Notices", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavHomeTariff, "Tariff", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            <li>@Html.ActionLink(Resources.SignOut, "LogOff", "Account", null, new { @class = "list-group-item" })</li>
+            <li><div class="list-group-item">
+                <form method="post" asp-controller="Account" asp-action="LogOff">
+                <input type="submit" value="Sign Out" />
+                </form>
+                </div></li>
         </ul>
     </section>
 </nav>
