@@ -540,4 +540,7 @@
   <data name="AdminRemove" xml:space="preserve">
     <value>Are you sure you want to remove {0} from administration?</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
 </root>
