@@ -19,6 +19,11 @@ namespace egdbooking_v2.Controllers
             _userManager = userManager;
         }
 
+        public async Task<IActionResult> Index()
+        {
+            return View(await _userManager.GetUsersInRoleAsync("Admin"));
+        }
+
         // GET: Admin
         public IActionResult Menu()
         {

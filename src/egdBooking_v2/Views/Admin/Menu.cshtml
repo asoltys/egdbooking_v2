@@ -41,14 +41,15 @@
 </div>
 
 <h2>Administrators</h2>
+@Html.ActionLink(Resources.Index, "Index", "Admin", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
 <div class="btn-group">
     @Html.ActionLink(Resources.Create, "AddIndex", "Admin", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Remove, "RemoveIndex", "Admin", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
 </div>
 
 <h2>Companies</h2>
+@Html.ActionLink(Resources.Index, "Index", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
 <div class="btn-group">
-    @Html.ActionLink(Resources.Index, "Index", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Create, "Create", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Edit, "EditIndex", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Approve, "Approve", "Companies", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
@@ -56,8 +57,8 @@
 </div>
 
 <h2>Vessels</h2>
+@Html.ActionLink(Resources.Index, "Index", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
 <div class="btn-group">
-    @Html.ActionLink(Resources.Index, "Index", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Create, "Create", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Edit, "EditIndex", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
     @Html.ActionLink(Resources.Delete, "DeleteIndex", "Vessels", new { lang = ViewBag.lang }, new { @class = "btn btn-default btn-xs" })
