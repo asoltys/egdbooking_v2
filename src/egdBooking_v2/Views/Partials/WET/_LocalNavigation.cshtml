@@ -38,7 +38,7 @@
             }
             <li>@Html.ActionLink(Resources.GanttChart, "Gantt", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.RequestBooking, "Create", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            <li>@Resources.AddNewVessel</li>
+            <li>@Html.ActionLink(Resources.AddNewVessel, "Create", "Vessels", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.EditProfile, "Edit", "Users", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavHomeNotices, "Notices", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavHomeTariff, "Tariff", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
