@@ -200,6 +200,11 @@ namespace egdbooking_v2.Controllers
                 BookingsDB = BookingsDB.Where(i => (i.UserId == userID)).ToList();
             }
 
+            if (this.RouteData.Values["status"] != null)
+            {
+                string currentStatus = (string)this.RouteData.Values["status"];
+                BookingsDB = BookingsDB.Where(i => (i.Status.Equals(currentStatus))).ToList();
+            }
             
 
             if (collection.Count != 0)

@@ -267,6 +267,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Confirmed.
+        /// </summary>
+        public static string Confirmed {
+            get {
+                return ResourceManager.GetString("Confirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Consult the public summary of bookings.
         /// </summary>
         public static string ConsultBookingsSummary {
@@ -1113,6 +1122,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Pending.
+        /// </summary>
+        public static string Pending {
+            get {
+                return ResourceManager.GetString("Pending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Register an account.
         /// </summary>
         public static string Register {
@@ -1289,6 +1307,15 @@ namespace Resources {
         public static string Tariff {
             get {
                 return ResourceManager.GetString("Tariff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Tentative.
+        /// </summary>
+        public static string Tentative {
+            get {
+                return ResourceManager.GetString("Tentative", resourceCulture);
             }
         }
         

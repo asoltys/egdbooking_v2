@@ -543,4 +543,13 @@
   <data name="Back" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="Confirmed" xml:space="preserve">
+    <value>Confirmed</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Tentative" xml:space="preserve">
+    <value>Tentative</value>
+  </data>
 </root>
