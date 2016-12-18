@@ -15,15 +15,7 @@ namespace egdbooking_v2.Models
         [StringLength(75)]
         public string Name { get; set; }
 
-        [StringLength(75)]
-        public string Name_f { get; set; }
-
-        [StringLength(75)]
-        public string Address1 { get; set; }
-
-        [StringLength(75)]
-        public string Address2 { get; set; }
-
+        public string Address { get; set; }
         [StringLength(40)]
         public string City { get; set; }
 

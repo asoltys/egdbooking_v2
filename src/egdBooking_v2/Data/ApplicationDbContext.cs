@@ -52,13 +52,7 @@ namespace egdbooking_v2.Data
                 .Property(e => e.Name);
 
             builder.Entity<Company>()
-                .Property(e => e.Name_f);
-
-            builder.Entity<Company>()
-                .Property(e => e.Address1);
-
-            builder.Entity<Company>()
-                .Property(e => e.Address2);
+                .Property(e => e.Address);
 
             builder.Entity<Company>()
                 .Property(e => e.City);
