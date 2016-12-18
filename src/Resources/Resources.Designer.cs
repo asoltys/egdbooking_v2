@@ -150,20 +150,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Bookings.
-        /// </summary>
-        public static string Booking {
-            get {
-                return ResourceManager.GetString("Booking", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///    Looks up a localized string similar to Booking Date.
         /// </summary>
         public static string BookingDate {
             get {
                 return ResourceManager.GetString("BookingDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Bookings.
+        /// </summary>
+        public static string Bookings {
+            get {
+                return ResourceManager.GetString("Bookings", resourceCulture);
             }
         }
         
@@ -236,6 +236,15 @@ namespace Resources {
         public static string CaseSensitive {
             get {
                 return ResourceManager.GetString("CaseSensitive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Companies.
+        /// </summary>
+        public static string Companies {
+            get {
+                return ResourceManager.GetString("Companies", resourceCulture);
             }
         }
         
@@ -1352,6 +1361,15 @@ namespace Resources {
         public static string Vessel {
             get {
                 return ResourceManager.GetString("Vessel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Vessels.
+        /// </summary>
+        public static string Vessels {
+            get {
+                return ResourceManager.GetString("Vessels", resourceCulture);
             }
         }
         

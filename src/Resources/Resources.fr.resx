@@ -552,4 +552,13 @@
   <data name="Tentative" xml:space="preserve">
     <value>TBD</value>
   </data>
+  <data name="Companies" xml:space="preserve">
+    <value>Entreprises</value>
+  </data>
+  <data name="Vessels" xml:space="preserve">
+    <value>Navires</value>
+  </data>
+  <data name="Bookings" xml:space="preserve">
+    <value>Réservations</value>
+  </data>
 </root>

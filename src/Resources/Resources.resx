@@ -123,7 +123,7 @@
   <data name="Approve" xml:space="preserve">
     <value>Approve</value>
   </data>
-  <data name="Booking" xml:space="preserve">
+  <data name="Bookings" xml:space="preserve">
     <value>Bookings</value>
   </data>
   <data name="CompanyRequest" xml:space="preserve">
@@ -551,5 +551,11 @@
   </data>
   <data name="Tentative" xml:space="preserve">
     <value>Tentative</value>
+  </data>
+  <data name="Companies" xml:space="preserve">
+    <value>Companies</value>
+  </data>
+  <data name="Vessels" xml:space="preserve">
+    <value>Vessels</value>
   </data>
 </root>

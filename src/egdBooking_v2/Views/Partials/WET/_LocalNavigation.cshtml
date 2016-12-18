@@ -11,16 +11,6 @@
         System.Globalization.CultureInfo.CurrentCulture = ci;
         System.Globalization.CultureInfo.CurrentUICulture = ci;
     }
-
-    if (User.IsInRole("Admin"))
-    {
-        ViewBag.IsAdmin = true;
-
-    } else
-    {
-        ViewBag.IsAdmin = false;
-
-    }
 }
 
 <nav class="wb-sec col-md-3 col-md-pull-9" typeof="SiteNavigationElement" id="wb-sec" role="navigation">
@@ -28,25 +18,17 @@
     <section class="list-group menu list-unstyled">
         <h3>@Resources.EGD</h3>
         <ul class="list-group menu list-unstyled">
-            @*<li>@Html.ActionLink(Resources.NavHome, "Index", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>*@
-            <li>@Html.ActionLink(Resources.BookingsManage, "Manage", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            <li>@Html.ActionLink(Resources.NavBookings, "Index", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            @if (ViewBag.IsAdmin)
-            {
-                <li>@Html.ActionLink(Resources.NavAdmin, "Menu", "Admin", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-
-            }
-            <li>@Html.ActionLink(Resources.GanttChart, "Gantt", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            <li>@Html.ActionLink(Resources.RequestBooking, "Create", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            <li>@Html.ActionLink(Resources.AddNewVessel, "Create", "Vessels", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            <li>@Html.ActionLink(Resources.EditProfile, "Edit", "Users", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            <li>@Html.ActionLink(Resources.Bookings, "Index", "Bookings", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            <li>@Html.ActionLink(Resources.Companies, "Index", "Companies", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            <li>@Html.ActionLink(Resources.Vessels, "Index", "Vessels", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavHomeNotices, "Notices", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
             <li>@Html.ActionLink(Resources.NavHomeTariff, "Tariff", "Home", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
-            <li><div class="list-group-item">
-                <form method="post" asp-controller="Account" asp-action="LogOff">
-                <input type="submit" value="Sign Out" />
-                </form>
-                </div></li>
+        </ul>
+    </section>
+    <section class="list-group menu list-unstyled">
+        <ul class="list-group-menu list-unstyled">
+            <li>@Html.ActionLink(Resources.EditProfile, "Index", "Manage", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
+            <li>@Html.ActionLink(Resources.SignOut, "LogOff", "Account", new { lang = ViewBag.lang }, new { @class = "list-group-item" })</li>
         </ul>
     </section>
 </nav>
